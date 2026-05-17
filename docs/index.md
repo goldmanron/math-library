@@ -96,6 +96,12 @@ This uses the "def" keyword,
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
+A special kind of a definition is an axiom, which uses the "axiom" keyword,
+
+!!! axiom "_Axiom_: This is an axiom block"
+
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
+
 ###### Theorem
 
 This uses the "thm" keyword,

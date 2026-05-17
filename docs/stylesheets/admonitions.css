@@ -1,13 +1,5 @@
 :root {
-  --md-admonition-icon--def: url()
-  --md-admonition-icon--thm: url()
-  --md-admonition-icon--lemma: url()
-  --md-admonition-icon--claim: url()
-  --md-admonition-icon--proof: url()
-  --md-admonition-icon--mexample: url()
-  --md-admonition-icon--mnote: url()
-  --md-admonition-icon--exercise: url()
-  --md-admonition-icon--solution: url()
+  --md-admonition-icon--def: url() --md-admonition-icon--axiom: url() --md-admonition-icon--thm: url() --md-admonition-icon--lemma: url() --md-admonition-icon--claim: url() --md-admonition-icon--proof: url() --md-admonition-icon--mexample: url() --md-admonition-icon--mnote: url() --md-admonition-icon--exercise: url() --md-admonition-icon--solution: url()
 }
 
 /* Definition */
@@ -27,6 +19,25 @@
   background-color: rgb(40, 30, 225);
   -webkit-mask-image: var(--md-admonition-icon--def);
   mask-image: var(--md-admonition-icon--def);
+}
+
+/* Axiom */
+
+.md-typeset .admonition.axiom,
+.md-typeset details.axiom {
+  border-color: rgb(40, 30, 225);
+}
+
+.md-typeset .axiom>.admonition-title,
+.md-typeset .axiom>summary {
+  background-color: rgba(40, 30, 225, 0.1);
+}
+
+.md-typeset .axiom>.admonition-title::before,
+.md-typeset .axiom>summary::before {
+  background-color: rgb(40, 30, 225);
+  -webkit-mask-image: var(--md-admonition-icon--axiom);
+  mask-image: var(--md-admonition-icon--axiom);
 }
 
 /* Theorem */

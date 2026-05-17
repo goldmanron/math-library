@@ -6,7 +6,8 @@ window.MathJax = {
 		processEnvironments: true,
 		macros: {
 			true: "\\mathrm{True}",
-			false: "\\mathrm{False}"
+			false: "\\mathrm{False}",
+			emptyset: "\\varnothing"
 		}
 	},
 	options: {

@@ -90,6 +90,7 @@ nav:
   - Mathematics Bachelor:
     - mathematics_bachelor/index.md
     - Discrete Mathematics:
+      - Introduction to Logic: mathematics_bachelor/discrete_mathematics/introduction_to_logic.md
       - Introduction to Set Theory: mathematics_bachelor/discrete_mathematics/introduction_to_set_theory.md
       - Introduction to Combinatorics and Graph Theory: mathematics_bachelor/discrete_mathematics/introduction_to_combinatorics_and_graph_theory.md
     - Analysis:
