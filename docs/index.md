@@ -88,17 +88,19 @@ For extended documentation on this feature visit the [Material for MkDocs docume
 
 This project defines extra admonitions for math use, in LaTex you can use environments like "Proof" or "Example", but this doesn't have a markdown counterpart, hence we use admonitions to display those environments.
 
+###### Axiom
+
+This uses the "axiom" keyword,
+
+!!! axiom "_Axiom_: This is an axiom block"
+
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
+
 ###### Definition
 
 This uses the "def" keyword,
 
 !!! def "_Definition_: This is a definition block"
-
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
-
-A special kind of a definition is an axiom, which uses the "axiom" keyword,
-
-!!! axiom "_Axiom_: This is an axiom block"
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
@@ -122,6 +124,14 @@ For example,
 
 And hyperlinks to give the authors contribution are encouraged!
 
+###### Claim
+
+This uses the "claim" keyword,
+
+!!! claim "_Claim_: This is a claim block"
+
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
+
 ###### Lemma
 
 This uses the "lemma" keyword,
@@ -130,11 +140,11 @@ This uses the "lemma" keyword,
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
-###### Claim
+###### Corollary
 
-This uses the "claim" keyword,
+This uses the "corollary" keyword,
 
-!!! claim "_Claim_: This is a claim block"
+!!! corollary "_Corollary_: This is a corollary block"
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
@@ -171,6 +181,8 @@ This uses the "mnote" keyword,
 !!! mnote "_Note_: This is a note block"
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
+
+Unlike other admonitions, a note block can be placed anywhere in a page, and the decision to keep it closed or opened are in the discration of the writer.
 
 ###### Exercise
 

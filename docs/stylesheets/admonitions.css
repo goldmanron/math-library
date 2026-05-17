@@ -1,60 +1,77 @@
 :root {
-  --md-admonition-icon--def: url() --md-admonition-icon--axiom: url() --md-admonition-icon--thm: url() --md-admonition-icon--lemma: url() --md-admonition-icon--claim: url() --md-admonition-icon--proof: url() --md-admonition-icon--mexample: url() --md-admonition-icon--mnote: url() --md-admonition-icon--exercise: url() --md-admonition-icon--solution: url()
-}
+  /* Foundational Elements */
+  --color-axiom-rgb:       215, 155, 0;   /* Rich Ochre Yellow */
+  --color-def-rgb:         25, 115, 230;  /* Intellectual Royal Blue (Slightly softened) */
+  --color-note-rgb:        0, 120, 120;   /* Deep Teal (Brighter for readability) */
 
-/* Definition */
+  /* Theoretical Core (The "Warm" Spectrum) */
+  --color-thm-rgb:         185, 20, 20;   /* Classic Crimson Red (Slightly lifted) */
+  --color-lemma-rgb:       210, 100, 20;  /* Warm Amber Orange */
+  --color-claim-rgb:       135, 40, 185;  /* Deep Amethyst Purple */
+  --color-corollary-rgb:   160, 40, 110;  /* Rich Plum/Magenta (Bridges Purple and Red) */
 
-.md-typeset .admonition.def,
-.md-typeset details.def {
-  border-color: rgb(40, 30, 225);
-}
+  /* Practical & Application */
+  --color-example-rgb:     35, 140, 60;   /* Muted Forest Green (Less neon, more bookish) */
+  --color-exercise-rgb:    190, 25, 190;  /* Deep Magenta/Fuchsia (Softened from pure neon) */
 
-.md-typeset .def>.admonition-title,
-.md-typeset .def>summary {
-  background-color: rgba(40, 30, 225, 0.1);
-}
-
-.md-typeset .def>.admonition-title::before,
-.md-typeset .def>summary::before {
-  background-color: rgb(40, 30, 225);
-  -webkit-mask-image: var(--md-admonition-icon--def);
-  mask-image: var(--md-admonition-icon--def);
+  /* Metatext / Structural */
+  --color-proof-rgb:       90, 105, 120;  /* Slate Gray */
+  --color-solution-rgb:    90, 105, 120;  /* Matches Proof for structural consistency */
 }
 
 /* Axiom */
 
 .md-typeset .admonition.axiom,
 .md-typeset details.axiom {
-  border-color: rgb(40, 30, 225);
+  border-color: rgb(var(--color-axiom-rgb));
 }
 
 .md-typeset .axiom>.admonition-title,
 .md-typeset .axiom>summary {
-  background-color: rgba(40, 30, 225, 0.1);
+  background-color: rgba(var(--color-axiom-rgb), 0.1);
 }
 
 .md-typeset .axiom>.admonition-title::before,
 .md-typeset .axiom>summary::before {
-  background-color: rgb(40, 30, 225);
+  background-color: rgb(var(--color-axiom-rgb));
   -webkit-mask-image: var(--md-admonition-icon--axiom);
   mask-image: var(--md-admonition-icon--axiom);
+}
+
+/* Definition */
+
+.md-typeset .admonition.def,
+.md-typeset details.def {
+  border-color: rgb(var(--color-def-rgb));
+}
+
+.md-typeset .def>.admonition-title,
+.md-typeset .def>summary {
+  background-color: rgba(var(--color-def-rgb), 0.1);
+}
+
+.md-typeset .def>.admonition-title::before,
+.md-typeset .def>summary::before {
+  background-color: rgb(var(--color-def-rgb));
+  -webkit-mask-image: var(--md-admonition-icon--def);
+  mask-image: var(--md-admonition-icon--def);
 }
 
 /* Theorem */
 
 .md-typeset .admonition.thm,
 .md-typeset details.thm {
-  border-color: rgb(130, 20, 20);
+  border-color: rgb(var(--color-thm-rgb));
 }
 
 .md-typeset .thm>.admonition-title,
 .md-typeset .thm>summary {
-  background-color: rgba(130, 20, 20, 0.1);
+  background-color: rgba(var(--color-thm-rgb), 0.1);
 }
 
 .md-typeset .thm>.admonition-title::before,
 .md-typeset .thm>summary::before {
-  background-color: rgb(130, 20, 20);
+  background-color: rgb(var(--color-thm-rgb));
   -webkit-mask-image: var(--md-admonition-icon--thm);
   mask-image: var(--md-admonition-icon--thm);
 }
@@ -63,17 +80,17 @@
 
 .md-typeset .admonition.lemma,
 .md-typeset details.lemma {
-  border-color: rgb(210, 120, 20);
+  border-color: rgb(var(--color-lemma-rgb));
 }
 
 .md-typeset .lemma>.admonition-title,
 .md-typeset .lemma>summary {
-  background-color: rgba(210, 120, 20, 0.1);
+  background-color: rgba(var(--color-lemma-rgb), 0.1);
 }
 
 .md-typeset .lemma>.admonition-title::before,
 .md-typeset .lemma>summary::before {
-  background-color: rgb(210, 120, 20);
+  background-color: rgb(var(--color-lemma-rgb));
   -webkit-mask-image: var(--md-admonition-icon--lemma);
   mask-image: var(--md-admonition-icon--lemma);
 }
@@ -82,17 +99,17 @@
 
 .md-typeset .admonition.claim,
 .md-typeset details.claim {
-  border-color: rgb(105, 40, 155);
+  border-color: rgb(var(--color-claim-rgb));
 }
 
 .md-typeset .claim>.admonition-title,
 .md-typeset .claim>summary {
-  background-color: rgba(105, 40, 155, 0.1);
+  background-color: rgba(var(--color-claim-rgb), 0.1);
 }
 
 .md-typeset .claim>.admonition-title::before,
 .md-typeset .claim>summary::before {
-  background-color: rgb(105, 40, 155);
+  background-color: rgb(var(--color-claim-rgb));
   -webkit-mask-image: var(--md-admonition-icon--claim);
   mask-image: var(--md-admonition-icon--claim);
 }
@@ -101,17 +118,17 @@
 
 .md-typeset .admonition.proof,
 .md-typeset details.proof {
-  border-color: rgb(70, 80, 90);
+  border-color: rgb(var(--color-proof-rgb));
 }
 
 .md-typeset .proof>.admonition-title,
 .md-typeset .proof>summary {
-  background-color: rgba(70, 80, 90, 0.1);
+  background-color: rgba(var(--color-proof-rgb), 0.1);
 }
 
 .md-typeset .proof>.admonition-title::before,
 .md-typeset .proof>summary::before {
-  background-color: rgb(70, 80, 90);
+  background-color: rgb(var(--color-proof-rgb));
   -webkit-mask-image: var(--md-admonition-icon--proof);
   mask-image: var(--md-admonition-icon--proof);
 }
@@ -120,17 +137,17 @@
 
 .md-typeset .admonition.mexample,
 .md-typeset details.mexample {
-  border-color: rgb(43, 155, 70);
+  border-color: rgb(var(--color-example-rgb));
 }
 
 .md-typeset .mexample>.admonition-title,
 .md-typeset .mexample>summary {
-  background-color: rgba(43, 155, 70, 0.1);
+  background-color: rgba(var(--color-example-rgb), 0.1);
 }
 
 .md-typeset .mexample>.admonition-title::before,
 .md-typeset .mexample>summary::before {
-  background-color: rgb(43, 155, 70);
+  background-color: rgb(var(--color-example-rgb));
   -webkit-mask-image: var(--md-admonition-icon--mexample);
   mask-image: var(--md-admonition-icon--mexample);
 }
@@ -139,17 +156,17 @@
 
 .md-typeset .admonition.mnote,
 .md-typeset details.mnote {
-  border-color: rgb(0, 80, 80);
+  border-color: rgb(var(--color-note-rgb));
 }
 
 .md-typeset .mnote>.admonition-title,
 .md-typeset .mnote>summary {
-  background-color: rgba(0, 80, 80, 0.1);
+  background-color: rgba(var(--color-note-rgb), 0.1);
 }
 
 .md-typeset .mnote>.admonition-title::before,
 .md-typeset .mnote>summary::before {
-  background-color: rgb(0, 80, 80);
+  background-color: rgb(var(--color-note-rgb));
   -webkit-mask-image: var(--md-admonition-icon--mnote);
   mask-image: var(--md-admonition-icon--mnote);
 }
@@ -158,17 +175,17 @@
 
 .md-typeset .admonition.exercise,
 .md-typeset details.exercise {
-  border-color: rgb(255, 0, 255);
+  border-color: rgb(var(--color-exercise-rgb));
 }
 
 .md-typeset .exercise>.admonition-title,
 .md-typeset .exercise>summary {
-  background-color: rgba(255, 0, 255, 0.1);
+  background-color: rgba(var(--color-exercise-rgb), 0.1);
 }
 
 .md-typeset .exercise>.admonition-title::before,
 .md-typeset .exercise>summary::before {
-  background-color: rgb(255, 0, 255);
+  background-color: rgb(var(--color-exercise-rgb));
   -webkit-mask-image: var(--md-admonition-icon--exercise);
   mask-image: var(--md-admonition-icon--exercise);
 }
@@ -177,17 +194,36 @@
 
 .md-typeset .admonition.solution,
 .md-typeset details.solution {
-  border-color: rgb(70, 80, 90);
+  border-color: rgb(var(--color-solution-rgb));
 }
 
 .md-typeset .solution>.admonition-title,
 .md-typeset .solution>summary {
-  background-color: rgba(70, 80, 90, 0.1);
+  background-color: rgba(var(--color-solution-rgb), 0.1);
 }
 
 .md-typeset .solution>.admonition-title::before,
 .md-typeset .solution>summary::before {
-  background-color: rgb(70, 80, 90);
+  background-color: rgb(var(--color-solution-rgb));
   -webkit-mask-image: var(--md-admonition-icon--solution);
   mask-image: var(--md-admonition-icon--solution);
+}
+
+/* Corollary */
+
+.md-typeset .admonition.corollary,
+.md-typeset details.corollary {
+  border-color: rgb(var(--color-corollary-rgb));
+}
+
+.md-typeset .corollary>.admonition-title,
+.md-typeset .corollary>summary {
+  background-color: rgba(var(--color-corollary-rgb), 0.1);
+}
+
+.md-typeset .corollary>.admonition-title::before,
+.md-typeset .corollary>summary::before {
+  background-color: rgb(var(--color-corollary-rgb));
+  -webkit-mask-image: var(--md-admonition-icon--corollary);
+  mask-image: var(--md-admonition-icon--corollary);
 }

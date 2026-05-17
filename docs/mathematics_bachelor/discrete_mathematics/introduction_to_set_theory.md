@@ -80,6 +80,7 @@ The second method is actually an axiom in the $\mathrm{ZF}$ axioms, and it what 
 
 !!! axiom "_Axiom_: Schema of Separation"
 
+    <div id="definition-schema-of-separation"></div>
     Let $A$ be a set, and let $\varphi$ be a predicate over $A$, then we can build a set as,
 
     $$\{x\in A\mid \varphi\left(x\right)\}$$
@@ -90,6 +91,7 @@ The second method is actually an axiom in the $\mathrm{ZF}$ axioms, and it what 
 
 !!! def "_Definition_: Element Belongs to a Set Constructed Using the Schema of Separation"
 
+    <div id="definition-element-belongs-to-a-set-constructed-using-the-schema-of-separation"></div>
     Let $A$ be a set, let $\varphi$ be a predicate over $A$, and let $a$ be an object, such that,
 
     $$\left(a\in A\right)\land\phi\left(a\right)$$
@@ -185,8 +187,60 @@ In the start of Set Theory the set construction schemes discussed above were not
 
 !!! thm "_Theorem_ [Russell 1901]: Russell's Paradox"
 
+    <div id="theorem-russells-paradox"></div>
     There exists a predicate $\varphi\left(x\right)$ such that $\{x \mid \varphi\left(x\right)\}$ isn't a set.
 
     ??? proof
 
-        TODO
+        We define the predicate as,
+
+        $$\varphi\left(x\right) = \left(x\notin x\right)$$
+
+        and now want to prove that $A = \{x \mid \varphi\left(x\right)\}$ isn't a set.
+
+        For that we first note that either $A \in A$ or $A \notin A$, but we will now show that both cases are impossible,
+
+        - If $A \in A$, then by the definition of <a href="#definition-element-belongs-to-a-set-constructed-using-the-schema-of-separation">element belongs to a set constructed using the schema of separation</a> we know that $\varphi\left(A\right)$ must be true, hence we know that $A \notin A$, which is a contradiction to our assumption.
+        - If $A \notin A$, then by the definition of <a href="#definition-element-belongs-to-a-set-constructed-using-the-schema-of-separation">element belongs to a set constructed using the schema of separation</a> we know that $\varphi\left(A\right)$ must be false, hence we know that $A \in A$, which is again a contradiction to our assumption.
+
+        all in all we get that no matter what the set $A$ can't exists since it creates a paradox.
+
+!!! corollary "_Corollary_: Set of All Sets"
+
+    The set of all sets does't exists.
+
+    Formally, this means that there isn't a set $\mathbb{S}$ such that,
+
+    $$\forall A. A\in\mathbb{S}$$
+
+    ??? proof
+
+        We assume by contradiction that there is a set of all sets, meaning that there is a set $\mathbb{S}$ such that,
+
+        $$\forall A. A\in\mathbb{S}$$
+
+        then for every predicate $\varphi$, we can define a set by the <a href="#definition-schema-of-separation">schema of separation</a> like so,
+
+        $$\mathcal{A}_{\varphi} = \{ x\in\mathbb{S}\mid \varphi\left(x\right)\}$$
+
+        but this is a contradiction to <a href=#theorem-russells-paradox>Russell's paradox</a>.
+
+##### Finite Cardinality
+
+There is another quantity that can be useful to know for sets, their cardinality, or informally their "size".
+
+!!! def "_Definition_: Finite Cardinality"
+
+    Let $a_1, \ldots, a_n$ be objects, then we define,
+
+    $$\left|\{a_1, \ldots, a_n\}\right| = n$$
+
+While this definition seems trivial and non-helpful, it will be a major topic in the end of the course.
+
+!!! mexample "_Example_"
+
+    The following statements are true,
+
+    - $\left|\{0, 1, 2\}\right| = 3$
+    - $\left|\{1, 2, 1, 2, 1\}\right| = 2$
+    - $\left|\{0.5, 0.6, 0.7, 0.8, 0.9, 1\}\right| = 6$
