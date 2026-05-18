@@ -92,7 +92,8 @@ nav:
     - Discrete Mathematics:
       - Introduction to Logic: mathematics_bachelor/discrete_mathematics/introduction_to_logic.md
       - Introduction to Set Theory: mathematics_bachelor/discrete_mathematics/introduction_to_set_theory.md
-      - Introduction to Combinatorics and Graph Theory: mathematics_bachelor/discrete_mathematics/introduction_to_combinatorics_and_graph_theory.md
+      - Introduction to Combinatorics: mathematics_bachelor/discrete_mathematics/introduction_to_combinatorics.md
+      - Introduction to Graph Theory: mathematics_bachelor/discrete_mathematics/introduction_to_graph_theory.md
     - Analysis:
       - Real Analysis 1: mathematics_bachelor/analysis/real_analysis_1.md
       - Real Analysis 2: mathematics_bachelor/analysis/real_analysis_2.md
