@@ -627,3 +627,150 @@ After proving that all empty sets are equal, we can define a singular universal 
 
         It is also common to see the notation $\{\}$ for the empty set.
 
+## Operations on Sets
+
+We talked about sets as if they are singular in their world, but now we want to start talking about different operations we can do on sets.
+
+First of all we want to have a way to visualize all those operations,
+
+!!! mnote "_Note_: Venn Diagram"
+
+    A Venn diagram is a diagram with the sole purpose of showing the relations between different sets. We will draw a set as a circle in the diagram, an element of a set as a point, and we will use color for the topic of the diagram.
+
+!!! mexample "_Example_: Venn Diagram of Containment"
+
+    Let $A$ and $B$ be sets, such that $B\subseteq A$, then we can draw for them the following diagram,
+    
+    
+    ![Venn Diagram of Containment](./introduction_to_set_theory_svgs/containment_venn_diagram.svg){ width="200px" loading=lazy }
+    /// caption
+    Venn Diagram of Containment
+    ///
+
+### Intersection
+
+The first operation we define on sets is the intersection operation that acts like an "and" on two sets.
+
+!!! def "_Definition_: Intersection"
+
+    Let $A$ and $B$ be sets, then,
+
+    $$A\cap B = \left\{x\in A\mid x\in B\right\}$$
+
+    And as a Venn diagram,
+
+    ![Venn Diagram of Intersection](./introduction_to_set_theory_svgs/intersection_venn_diagram.svg#only-dark){ width="200px" loading=lazy }
+    /// caption
+    Venn Diagram of Intersection
+    ///
+
+!!! mexample "_Example_"
+
+    Try to understand why the following are correct,
+
+    - $\left\{ 1,2,3\right\} \cap\left\{ 3,4,5,6\right\} =\left\{ 3\right\}$
+    - $\left\{ \left\{ 1\right\} \right\} \cap\left\{ 1\right\} =\emptyset$
+    - $\left\{ 3,4\right\} \cap\left\{ 3,4,5\right\} =\left\{ 3,4\right\}$
+    - $\bbn \cap \bbz = \bbn$
+
+!!! claim "_Claim_: Intersection is Associative"
+
+    Let $A, B$ and $C$ be sets, then,
+
+    $$\left(A\cap B\right)\cap C=A\cap\left(B\cap C\right)$$
+
+    ??? proof
+
+        TODO
+
+!!! mnote "_Note_: Without Loss of Generality"
+
+    In the proof above and in a lot of proofs across mathematics, we see a lot of inner repetitions, in those cases we allow ourselves to use a "symmetry argument" or "without los of generality argument" (WLoG), these allow us to assume that some parts of the proof are skippable since they are identical to things we've already proofed. Note that using those arguments requires training and will become simpler with time, and from now on we will use those in the proofs to make them shorter and easier to read but also to allow the reader to familiarize himself with this technic.
+
+!!! claim "_Claim_: Intersection is Commutative"
+
+    Let $A$ and $B$ be sets, then,
+
+    $$A\cap B=B\cap A$$
+
+    ??? proof
+
+        TODO
+
+!!! claim "_Claim_"
+
+    Let $A$ be a set, then,
+
+    $$A\cap A = A$$
+
+    ??? proof
+
+        TODO
+
+!!! exercise "_Exercise_"
+
+    Let $A$ be a set, then,
+
+    $$A\cap \emptyset =\emptyset$$
+
+    ??? solution
+
+        TODO
+
+#### Generalized Intersection
+
+We also want to be able to take the intersection of many sets at once, for that we can use the generalized intersection.
+
+But first we have to define the object on which we take the generalized intersection,
+
+!!! def "_Definition_: Family of Sets"
+
+    A set $\mathcal{F}$ is called a "family of sets", if for all $X \in \mathcal{F}$ we have that $X$ is a set.
+
+Before we define the generalized intersection, we want to show that the definition we're about to give is well defined, meaning it doesn't depend on any extra parameters other the one we use in the notation (in this case the set $A$ or $B$ that we choose),
+
+!!! thm "_Theorem_: Generalized Intersection is Well Defined"
+
+    Let $\mathcal{F}$ be a family of sets, and let $A, B\in\mathcal{F}$, then,
+
+    $$\left\{x\in A\mid \forall X\in\mathcal{F}.x\in X\right\} = \left\{x\in B\mid \forall X\in\mathcal{F}.x\in X\right\}$$
+
+    ??? proof
+
+        TODO
+
+Now that we've cleared that the choice of set from the family isn't important we can give the definition,
+
+!!! def "_Definition_: Generalized Intersection"
+
+    Let $\mathcal{F}$ be a family of sets, and let $A\in\mathcal{F}$, then,
+
+    $$\bigcap \mathcal{F} = \left\{x\in A\mid \forall X\in\mathcal{F}.x\in X\right\}$$
+
+    We also allow for sugar-syntax,
+
+    - Let $I$ be a set, and let $\left\{A_\lambda \mid \lambda \in I\right\}$ be a family of sets, then,
+
+        $$\bigcap_{\lambda \in I}A_\lambda = \bigcap\left\{A_\lambda \mid \lambda \in I\right\}$$
+    
+    - Let $\left\{A_i \mid i\in\bbn\right\}$ be a family of sets, then,
+
+        $$\bigcap_{i = 0}^{\infty} A_i = \bigcap_{i \in \bbn} A_i$$
+
+!!! mexample "_Example_"
+
+    Try to understand why the following is true,
+
+    - $\bigcap_{i=0}^{\infty}\left\{ n\in\bbn\mid n\ge i\right\} =\emptyset$.
+    - $\bigcap_{\varepsilon\in\bbr_{+}}\left[0,\varepsilon\right)=\left\{ 0\right\}$
+    - $\bigcap_{n=1}^{\infty}\left(-\frac{1}{n},\frac{1}{n}\right)=\left\{ 0\right\}$
+
+!!! exercise "_Exercise_"
+
+    Let $B$ be a set, and let $\mathcal{F}$ be a family of sets, then,
+
+    $$\left(B\subseteq\bigcap\mathcal{F}\right) \iff \left(\forall X\in\mathcal{F}. B\subseteq X\right)$$
+
+    ??? solution
+
+        TODO

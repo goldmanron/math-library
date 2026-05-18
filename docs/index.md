@@ -10,7 +10,7 @@ This is a library for free math education, it includes material from a bunch of 
 
 This project is created by [MkDocs](https://www.mkdocs.org/) and uses the [Material for MkDocs theme](https://squidfunk.github.io/mkdocs-material/), all the documentation from there can be applied for this project.
 
-### Contributing
+## Contributing
 
 If you want to contribute to this project and help math be as accessible as possible you can do so by creating a **pull request** on any of the pages in the project (and even create your own!), or you can open a [new issue on the github page of this project](https://github.com/yeahBOYYYYY/math-library/issues).
 
@@ -22,7 +22,7 @@ git clone https://github.com/yeahBOYYYYY/math-library/
 
 From that alone you now can now create new `.md` files under the folder `docs/` to be displayed in the site, but note that you won't be able to locally view your changes.
 
-#### Setting Up the Project Locally
+### Setting Up the Project Locally
 
 For starters you need to have `Python 3.x` installed on your machine since all the libraries involved in the project are downloaded with `pip`.
 
@@ -38,6 +38,7 @@ Then you'll need to install the plugins used to deploy this site,
 ```bash
 pip install mkdocs-git-authors-plugin
 pip install mkdocs-git-revision-date-localized-plugin
+pip install mkdocs-glightbox
 ```
 
 Now you can run the project locally by running the following command from the folder with the `mkdocs.yml` file,
@@ -54,11 +55,36 @@ INFO    -  [16:32:38] Serving on http://127.0.0.1:8000/math-library/
 
 And from now on all the changes you make locally will show up **live** at this URL.
 
-#### Syntax
+### Syntax
 
 The structure of this site allows for either `.md` file types or `.html` to be viewed, but be aware that all `html` code will be displayed as is in the final site while `markdown` will be parsed by `Python-Markdown`.
 
-##### Admonitions
+#### Images
+
+All images in this site use the [GlightBox Caption extension](https://blueswen.github.io/mkdocs-glightbox/caption/caption/).
+
+The convention is as follows,
+
+```
+![Caption After Clicking on the Picture](./picture.svg){ width="200px" loading=lazy }
+/// caption
+Caption to Display on the Page
+///
+```
+
+Or if you have to use a different image for dark-mode and light-mode, you can use,
+
+```
+![Caption After Clicking on the Picture](./picture1.svg#only-light){ width="200px" loading=lazy }
+![Caption After Clicking on the Picture](./picture2.svg#only-dark){ width="200px" loading=lazy }
+/// caption
+Caption to Display on the Page
+///
+```
+
+and note that the phrases `#only-light` and `#only-dark` should be in the markdown but not in the actual filename.
+
+#### Admonitions
 
 While `Python-Markdown` supports the full GitHub Markdown flavour, it also provides extra functionality, the main one being "admonitions",
 
@@ -84,11 +110,11 @@ And visually,
 
 For extended documentation on this feature visit the [Material for MkDocs documentation](https://squidfunk.github.io/mkdocs-material/reference/admonitions/?h=#custom-admonitions-docsstylesheetsextracss).
 
-##### Custom Admonitions
+#### Custom Admonitions
 
 This project defines extra admonitions for math use, in LaTex you can use environments like "Proof" or "Example", but this doesn't have a markdown counterpart, hence we use admonitions to display those environments.
 
-###### Axiom
+##### Axiom
 
 This uses the "axiom" keyword,
 
@@ -96,7 +122,7 @@ This uses the "axiom" keyword,
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
-###### Definition
+##### Definition
 
 This uses the "def" keyword,
 
@@ -104,7 +130,7 @@ This uses the "def" keyword,
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
-###### Theorem
+##### Theorem
 
 This uses the "thm" keyword,
 
@@ -124,7 +150,7 @@ For example,
 
 And hyperlinks to give the authors contribution are encouraged!
 
-###### Claim
+##### Claim
 
 This uses the "claim" keyword,
 
@@ -132,7 +158,7 @@ This uses the "claim" keyword,
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
-###### Lemma
+##### Lemma
 
 This uses the "lemma" keyword,
 
@@ -140,7 +166,7 @@ This uses the "lemma" keyword,
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
-###### Corollary
+##### Corollary
 
 This uses the "corollary" keyword,
 
@@ -148,7 +174,7 @@ This uses the "corollary" keyword,
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
-###### Proof
+##### Proof
 
 This uses the "proof" keyword,
 
@@ -166,7 +192,7 @@ Note that proofs **should** (by convention) be enclosed in another admonitions, 
 
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
-###### Example
+##### Example
 
 This uses the "mexample" keyword,
 
@@ -174,7 +200,7 @@ This uses the "mexample" keyword,
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
-###### Note
+##### Note
 
 This uses the "mnote" keyword,
 
@@ -184,7 +210,7 @@ This uses the "mnote" keyword,
 
 Unlike other admonitions, a note block can be placed anywhere in a page, and the decision to keep it closed or opened are in the discration of the writer.
 
-###### Exercise
+##### Exercise
 
 This uses the "exercise" keyword,
 
@@ -192,7 +218,7 @@ This uses the "exercise" keyword,
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
-###### Solution
+##### Solution
 
 This uses the "solution" keyword,
 

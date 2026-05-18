@@ -13,7 +13,9 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.arithmatex:
-      generic: true  
+      generic: true
+  - attr_list
+  - pymdownx.blocks.caption
 
 theme:
   name: material
@@ -71,6 +73,10 @@ plugins:
   - git-revision-date-localized:
       type: date
       enable_creation_date: true
+  - glightbox:
+      auto_themed: true
+      auto_caption: true
+      caption_position: bottom
 
 extra:
   social:
