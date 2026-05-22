@@ -21,7 +21,9 @@ window.MathJax = {
 			floor: ["\\left\\lfloor #1 \\right\\rfloor", 1],
 
 			even: "\\mathrm{even}",
-			odd: "\\mathrm{odd}"
+			odd: "\\mathrm{odd}",
+
+			e: "\\varepsilon"
 
 		}
 	},

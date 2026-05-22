@@ -227,7 +227,7 @@ In the start of Set Theory the set construction schemes discussed above were not
 
 There is another quantity that can be useful to know for sets, their cardinality, or informally their "size".
 
-!!! def "_Definition_: Finite Cardinality"
+!!! def "_Definition_: Finite Cardinality (Non formal)"
 
     Let $a_1, \ldots, a_n$ be objects, then we define,
 
@@ -382,6 +382,12 @@ The real numbers are all the numbers that lay on that "real line", which is the 
 !!! def "_Definition_: Real Numbers (Non formal)"
 
     $$\mathbb{R} = \left\{\ldots, -7.1357, \pi, 0, 1, \frac{1}{3}, 67, \ldots\right\}$$
+
+And we can also define the positive real numbers,
+
+!!! def "_Definition_: Positive Real Numbers"
+
+    $$\bbr_+ = \left\{x\in\bbr\mid x>0\right\}$$
 
 !!! claim "_Claim_ [Bernoulli 1689]: Bernoulli's Inequality"
 
@@ -659,7 +665,7 @@ The first operation we define on sets is the intersection operation that acts li
 
     And as a Venn diagram,
 
-    ![Venn Diagram of Intersection](./introduction_to_set_theory_svgs/intersection_venn_diagram.svg#only-dark){ width="200px" loading=lazy }
+    ![Venn Diagram of Intersection](./introduction_to_set_theory_svgs/intersection_venn_diagram.svg){ width="200px" loading=lazy }
     /// caption
     Venn Diagram of Intersection
     ///
@@ -727,7 +733,15 @@ But first we have to define the object on which we take the generalized intersec
 
     A set $\mathcal{F}$ is called a "family of sets", if for all $X \in \mathcal{F}$ we have that $X$ is a set.
 
-Before we define the generalized intersection, we want to show that the definition we're about to give is well defined, meaning it doesn't depend on any extra parameters other the one we use in the notation (in this case the set $A$ or $B$ that we choose),
+Now we can define non formally the generalized intersection as,
+
+!!! def "_Definition_: Generalized Intersection (Non formal)"
+
+    Let $\mathcal{F}$ be a family of sets, then,
+
+    $$\bigcap \mathcal{F} = \left\{x\mid \forall X\in\mathcal{F}.x\in X\right\}$$
+
+The problem we have is that the set on the right of the definition doesn't adhere to our set construction schemes, so to define this properly we have to somehow pick a set from which all the $x$s are from, for that we can try to just pick an arbitrary set and see where it gets us.
 
 !!! thm "_Theorem_: Generalized Intersection is Well Defined"
 
@@ -739,7 +753,7 @@ Before we define the generalized intersection, we want to show that the definiti
 
         TODO
 
-Now that we've cleared that the choice of set from the family isn't important we can give the definition,
+Now that we've cleared that the choice of set from the family isn't important we can give the full formal definition,
 
 !!! def "_Definition_: Generalized Intersection"
 
@@ -757,11 +771,13 @@ Now that we've cleared that the choice of set from the family isn't important we
 
         $$\bigcap_{i = 0}^{\infty} A_i = \bigcap_{i \in \bbn} A_i$$
 
+Because we know that the generalized intersection is well defined, we will omit the set $A$ from now on, because it doesn't provide us with any information.
+
 !!! mexample "_Example_"
 
     Try to understand why the following is true,
 
-    - $\bigcap_{i=0}^{\infty}\left\{ n\in\bbn\mid n\ge i\right\} =\emptyset$.
+    - $\bigcap_{i=0}^{\infty}\left\{ n\in\bbn\mid n\ge i\right\} =\emptyset$
     - $\bigcap_{\varepsilon\in\bbr_{+}}\left[0,\varepsilon\right)=\left\{ 0\right\}$
     - $\bigcap_{n=1}^{\infty}\left(-\frac{1}{n},\frac{1}{n}\right)=\left\{ 0\right\}$
 
@@ -770,6 +786,537 @@ Now that we've cleared that the choice of set from the family isn't important we
     Let $B$ be a set, and let $\mathcal{F}$ be a family of sets, then,
 
     $$\left(B\subseteq\bigcap\mathcal{F}\right) \iff \left(\forall X\in\mathcal{F}. B\subseteq X\right)$$
+
+    ??? solution
+
+        TODO
+
+#### Disjoint Sets
+
+!!! def "_Definition_: Disjoint Sets"
+
+    Let $A$ and $B$ be sets, such that,
+
+    $$A\cap B = \emptyset$$
+
+    then, $A$ and $B$ are called **disjoint sets**.
+
+    And as a Venn diagram,
+
+    ![Venn Diagram of Disjoint Sets](./introduction_to_set_theory_svgs/disjoint_sets_venn_diagram.svg){ width="300px" loading=lazy }
+    /// caption
+    Venn Diagram of Disjoint Sets
+    ///
+
+!!! def "_Definition_: Family of Disjoint Sets"
+
+    Let $\mathcal{F}$ be a family of sets, such that,
+
+    $$\bigcap\mathcal{F} = \emptyset$$
+
+    then, $\mathcal{F}$ is called a **family of disjoint sets**.
+
+!!! def "_Definition_: Family of Pairwise Disjoint Sets"
+
+    Let $\mathcal{F}$ be a family of sets, such that,
+
+    $$\forall A, B \in \mathcal{F}. \left(\left(A \ne B\right)\implies \left(A \cap B = \emptyset\right)\right)$$
+
+    then, $\mathcal{F}$ is called a **family of pairwise disjoint sets**.
+
+!!! exercise "_Exercise_: Pairwise Disjoint Implies Disjoint"
+
+    Let $\mathcal{F}$ be a family of pairwise disjoint sets, then, \mathcal{F} is a family of disjoint sets.
+
+    ??? solution
+
+        TODO
+
+### Union
+
+This operation on sets is the union operation, and it acts like a "or" on two sets.
+
+!!! def "_Definition_: Union (Non formal)"
+
+    Let $A$ and $B$ be sets, then,
+
+    $$A\cup B = \left\{x\mid \left(x\in A\right)\lor\left(x\in B\right)\right\}$$
+
+But this definition doesn't adhere to our set construction schemes, hence we need to somehow know in the definition from which set are all the $x$s come from, but this is cyclic problem since the union is exactly the set from which we would have wanted to draw the $x$s from. Because of that, to define this operation in our theory we have to an axiom that allows us to use the union operation,
+
+!!! axiom "_Axiom_: Axiom of Union"
+
+    Let $\mathcal{F}$ be a family of sets, then there exists a set $\mathcal{U}$, such that,
+
+    $$\forall X.\forall x.\left(\left(\left(x \in X\right)\land \left(X \in \mathcal{F}\right)\right) \implies \left(x \in \mathcal{U}\right)\right)$$
+
+    and we call such a set $\mathcal{U}$ a world of $\mathcal{F}$.
+
+Before we define the union operator we want to show that it will be well defined,
+
+!!! thm "_Theorem_: Union is Well Defined"
+
+    Let $A$ and $B$ be sets, and let $\mathcal{U}, \mathcal{V}$ be worlds of $\left\{A, B\right\}$, then,
+
+    $$\left\{x\in \mathcal{U}\mid \left(x\in A\right)\lor\left(x\in B\right)\right\} = \left\{x\in \mathcal{V}\mid \left(x\in A\right)\lor\left(x\in B\right)\right\}$$
+
+    ??? proof
+
+        TODO
+
+And now we can define union formally,
+
+!!! def "_Definition_: Union"
+
+    Let $A$ and $B$ be sets, and let $\mathcal{U}$ be a world of $\left\{A, B\right\}$, then,
+
+    $$A\cup B = \left\{x\in \mathcal{U}\mid \left(x\in A\right)\lor\left(x\in B\right)\right\}$$
+
+    And as a Venn diagram,
+
+    ![Venn Diagram of Union](./introduction_to_set_theory_svgs/union_venn_diagram.svg){ width="200px" loading=lazy }
+    /// caption
+    Venn Diagram of Union
+    ///
+
+Because we know that the union is well defined, we will omit the world $\mathcal{U}$ from now on, because it doesn't provide us with any information.
+
+!!! mexample "_Example_"
+
+    Try to understand why the following are correct,
+
+    - $\left\{ 1,2,3\right\} \cup\left\{ 3,4,5,6\right\} =\left\{ 1,2,3,4,5,6\right\}$
+    - $\left\{ \left\{ 1\right\} \right\} \cup\left\{ 1\right\} =\left\{ 1,\left\{ 1\right\} \right\}$
+    - $\bbn\cup\bbr=\bbr$
+    - $\bbn_{\even}\cup\bbn_{\odd}=\bbn$
+
+!!! claim "_Claim_: Union is Associative"
+
+    Let $A, B$ and $C$ be sets, then,
+
+    $$\left(A\cup B\right)\cup C=A\cup\left(B\cup C\right)$$
+
+    ??? proof
+
+        TODO
+
+!!! claim "_Claim_: Union is Commutative"
+
+    Let $A$ and $B$ be sets, then,
+
+    $$A\cup B=B\cup A$$
+
+    ??? proof
+
+        TODO
+
+!!! claim "_Claim_"
+
+    Let $A$ be a set, then,
+
+    $$A\cup A = A$$
+
+    ??? proof
+
+        TODO
+
+!!! exercise "_Exercise_"
+
+    Let $A$ be a set, then,
+
+    $$A\cup \emptyset = A$$
+
+    ??? solution
+
+        TODO
+
+!!! claim "_Claim_: Union is Distributive Over Intersection"
+
+    Let $A$, $B$ and $C$ be sets, then,
+
+    $$A\cup\left(B\cap C\right)=\left(A\cup B\right)\cap\left(A\cup C\right)$$
+
+    ??? proof
+
+        TODO
+
+!!! exercise "_Exercise_: Intersection is Distributive Over Union"
+
+    Let $A$, $B$ and $C$ be sets, then,
+
+    $$A\cap\left(B\cup C\right)=\left(A\cap B\right)\cup\left(A\cap C\right)$$
+
+    ??? solution
+
+        TODO
+
+#### Generalized Union
+
+We also want to be able to take the union of many sets at once, for that we can use the generalized union.
+
+Non formally we can define the generalized union as,
+
+!!! def "_Definition_: Generalized Union (Non formal)"
+
+    Let $\mathcal{F}$ be a family of sets, then,
+
+    $$\bigcup \mathcal{F} = \left\{x\mid \exists X\in\mathcal{F}.x\in X\right\}$$
+
+But we already saw this problem earlier with the union operator, hence we can solve it here the same way,
+
+!!! thm "_Theorem_: Generalized Union is Well Defined"
+
+    Let $\mathcal{F}$ be a family of sets, and let $\mathcal{U}, \mathcal{V}$ be worlds of $\mathcal{F}$, then,
+
+    $$\left\{x\in\mathcal{U}\mid \exists X\in\mathcal{F}.x\in X\right\} = \left\{x\in\mathcal{V}\mid \exists X\in\mathcal{F}.x\in X\right\}$$
+
+    ??? proof
+
+        TODO
+
+!!! def "_Definition_: Generalized Union"
+
+    Let $\mathcal{F}$ be a family of sets, and let $\mathcal{U}$ be a world of $\mathcal{F}$, then,
+
+    $$\bigcup \mathcal{F} = \left\{x\in\mathcal{U}\mid \exists X\in\mathcal{F}.x\in X\right\}$$
+
+    We also allow for sugar-syntax,
+
+    - Let $I$ be a set, and let $\left\{A_\lambda \mid \lambda \in I\right\}$ be a family of sets, then,
+
+        $$\bigcup_{\lambda \in I}A_\lambda = \bigcup\left\{A_\lambda \mid \lambda \in I\right\}$$
+    
+    - Let $\left\{A_i \mid i\in\bbn\right\}$ be a family of sets, then,
+
+        $$\bigcup_{i = 0}^{\infty} A_i = \bigcup_{i \in \bbn} A_i$$
+
+Because we know that the generalized union is well defined, we will omit the world $\mathcal{U}$ from now on, because it doesn't provide us with any information.
+
+!!! mexample "_Example_"
+
+    Try to understand why the following is true,
+
+    - $\bigcup_{i=0}^{\infty}\left\{ i\right\} =\bbn$
+    - $\bigcup_{i=0}^{\infty}\left(i,i+1\right)=\bbr_{+}\backslash\bbn$
+    - Let $\e \in \bbr_+$ then, $\bigcup_{q\in\bbq}\left(q-\e,q+\e\right)=\bbr$
+
+!!! exercise "_Exercise_"
+
+    Let $B$ be a set, and let $\mathcal{F}$ be a family of sets, then,
+
+    $$\left(\bigcup\mathcal{F}\subseteq B\right) \iff \left(\forall X\in\mathcal{F}. X\subseteq B\right)$$
+
+    ??? solution
+
+        TODO
+
+Thw following exercise is very challenging, and hence it's marked with "⭐". This exercise requires understanding of the real numbers and it's relation to the rational numbers.
+
+!!! exercise "_Exercise_⭐"
+
+    Prove the following two results,
+
+    - $\bigcap_{n\in\bbn_{+}}\left(\bigcup_{q\in\bbq}\left(q-\frac{1}{n},q+\frac{1}{n}\right)\right)=\bbr$
+    - $\bigcup_{n\in\bbn_{+}}\left(\bigcap_{q\in\bbq}\left(q-\frac{1}{n},q+\frac{1}{n}\right)\right)=\bbq$
+
+    ??? solution
+
+        TODO
+
+#### Disjoint Union
+
+!!! def "_Definition_: Disjoint Union"
+
+    Let $A$ and $B$ be disjoint sets, then,
+
+    $$A\uplus B = A\cup B$$
+
+    And as a Venn diagram,
+
+    ![Venn Diagram of Disjoint Union](./introduction_to_set_theory_svgs/disjoint_union_venn_diagram.svg){ width="300px" loading=lazy }
+    /// caption
+    Venn Diagram of Disjoint Union
+    ///
+
+!!! def "_Definition_: Generalized Disjoint Union"
+
+    Let $\mathcal{F}$ be a family of pairwise disjoint sets, then,
+
+    $$\biguplus\mathcal{F} = \bigcup\mathcal{F}$$
+
+    We also allow for sugar-syntax,
+
+    - Let $I$ be a set, and let $\left\{A_\lambda \mid \lambda \in I\right\}$ be a family of pairwise disjoint sets, then,
+
+        $$\biguplus_{\lambda \in I}A_\lambda = \biguplus\left\{A_\lambda \mid \lambda \in I\right\}$$
+    
+    - Let $\left\{A_i \mid i\in\bbn\right\}$ be a family of pairwise disjoint sets, then,
+
+        $$\biguplus_{i = 0}^{\infty} A_i = \biguplus_{i \in \bbn} A_i$$
+
+!!! mexample "_Example_"
+
+    Try to understand why the following is true,
+
+    - $\biguplus_{z\in\bbz}\left(z,z+1\right)=\bbr\backslash\bbz$
+    - $\left\{ 1\right\} \uplus\left\{ 2\right\} =\left\{ 1,2\right\}$
+    - $\left\{ \left\{ 1\right\} \right\} \uplus\left\{ 1\right\} =\left\{ 1,\left\{ 1\right\} \right\}$
+
+!!! mnote "_Note_"
+
+    Let $A$ and $B$ be finite disjoint sets, then,
+
+    $$\left|A\uplus B\right| = \left|A\right| + \left|B\right|$$
+
+### Difference
+
+!!! def "_Definition_: Difference"
+
+    Let $A$ and $B$ be sets, then,
+
+    $$A \backslash B = \left\{x\in A\mid x\notin B\right\}$$
+
+    And as a Venn diagram,
+
+    ![Venn Diagram of Difference](./introduction_to_set_theory_svgs/difference_venn_diagram.svg){ width="200px" loading=lazy }
+    /// caption
+    Venn Diagram of Difference
+    ///
+
+    ??? mnote "_Note_"
+
+        The "difference" operation may also be called "relative complement".
+
+        And the notation $A - B$ may be used instead of $A\backslash B$.
+
+!!! mexample "_Example_"
+
+    Try to understand why the following is true,
+
+    - $\left\{ 1,2,3\right\} \backslash\left\{ 3,4,5,6\right\} =\left\{ 1,2\right\}$
+    - $\left\{ \left\{ 1\right\} \right\} \backslash\left\{ 1\right\} =\left\{ \left\{ 1\right\} \right\}$
+    - $\left\{ 3,4\right\} \backslash\left\{ 3,4,5\right\} =\emptyset$
+    - $\bbn\backslash\bbn_{+}=\left\{ 0\right\}$
+
+!!! def "_Definition_: Irrational Numbers"
+
+    We define the **irrational numbers** to be the following set, $\bbr \backslash \bbq$.
+
+!!! claim "_Claim_"
+
+    Let $A$ be a set, then,
+
+    $$A\backslash A = \emptyset$$
+
+    ??? proof
+
+        TODO
+
+!!! exercise "_Exercise_"
+
+    Let $A$ be a set, then,
+
+    $$A\backslash \emptyset = A$$
+
+    ??? solution
+
+        TODO
+
+!!! claim "_Claim_"
+
+    Let $A$ and $B$ be sets, then, the following are equivalent (TFAE),
+
+    - $A\subseteq B$
+    - $A\cap B = A$
+    - $A\backslash B = \emptyset$
+    - $A\cup B = B$
+
+    ??? proof
+
+        TODO
+
+!!! mnote "_Note_"
+
+    Let $A$ and $B$ be finite sets, such that $B\subseteq A$, then,
+
+    $$\left|A\backslash B\right| = \left|A\right| - \left|B\right|$$
+
+#### Complement
+
+!!! def "_Definition_: Complement"
+
+    Let $A$ be a set, and let $\mathcal{U}$ be a world of $\left\{A\right\}$, then,
+
+    $$A^{{\mathcal C}}={\mathcal U}\backslash A$$
+
+    And as a Venn diagram,
+
+    ![Venn Diagram of Complement](./introduction_to_set_theory_svgs/complement_venn_diagram.svg){ width="200px" loading=lazy }
+    /// caption
+    Venn Diagram of Complement
+    ///
+
+!!! claim "_Claim_: De Morgan's laws"
+
+    Let $A, B$ and $C$ be sets, and let $\mathcal{U}$ be a world of $\left\{A, B\right\}$, then,
+
+    - $\left(A\cup B\right)^{{\cal C}}=A^{{\cal C}}\cap B^{{\cal C}}$
+    - $\left(A\cap B\right)^{{\cal C}}=A^{{\cal C}}\cup B^{{\cal C}}$
+    - $A\backslash\left(B\cup C\right)=\left(A\backslash B\right)\cap\left(A\backslash C\right)$
+    - $A\backslash\left(B\cap C\right)=\left(A\backslash B\right)\cup\left(A\backslash C\right)$
+
+    ??? proof
+
+        TODO
+
+#### Symmetric Difference
+
+!!! def "_Definition_: Symmetric Difference"
+
+    Let $A$ and $B$ be sets, then,
+
+    $$A\triangle B=\left(A\backslash B\right)\cup\left(B\backslash A\right)$$
+
+    And as a Venn diagram,
+
+    ![Venn Diagram of Symmetric Difference](./introduction_to_set_theory_svgs/symmetric_difference_venn_diagram.svg){ width="200px" loading=lazy }
+    /// caption
+    Venn Diagram of Symmetric Difference
+    ///
+
+!!! mexample "_Example_"
+
+    Try to understand why the following is true,
+
+    - $\left\{ 1,2,3\right\} \triangle\left\{ 3,4,5,6\right\} =\left\{ 1,2,5,6\right\}$
+    - $\left\{ \left\{ 1\right\} \right\} \triangle\left\{ 1\right\} =\left\{ \left\{ 1\right\} ,1\right\}$
+    - $\left\{ 3,4\right\} \triangle\left\{ 3,4,5\right\} =\left\{ 5\right\}$
+
+!!! exercise "_Exercise_: Symmetric Difference is Associative"
+
+    Let $A, B$ and $C$ be sets, then,
+
+    $$\left(A\triangle B\right)\triangle C=A\triangle\left(B\triangle C\right)$$
+
+    ??? solution
+
+        TODO
+
+!!! claim "_Claim_: Symmetric Difference is Commutative"
+
+    Let $A$ and $B$ be sets, then,
+
+    $$A\triangle B=B\triangle A$$
+
+    ??? proof
+
+        TODO
+
+!!! claim "_Claim_"
+
+    Let $A$ be a set, then,
+
+    $$A\triangle A=\emptyset$$
+
+    ??? proof
+
+        TODO
+
+!!! exercise "_Exercise_"
+
+    Let $A$ be a set, then,
+
+    $$A\triangle\emptyset=A$$
+
+    ??? solution
+
+        TODO
+
+!!! exercise "_Exercise_"
+
+    Let $A, B$ and $C$ be sets, then,
+
+    $$\left(A\triangle B=B\triangle C\right)\implies \left(A=C\right)$$
+
+    ??? solution
+
+        TODO
+
+### Power Set
+
+!!! def "_Definition_: Power Set (Non formal)"
+
+    Let $A$ be a set, then,
+
+    $$\mathcal{P}\left(A\right)=\left\{ B\mid B\subseteq A\right\}$$
+
+But this definition doesn't adhere to our set construction schemes, hence we need to somehow know in the definition from which set are all the $B$s come from, but this is cyclic problem since the power set is exactly the set from which we would have wanted to draw the $B$s from. Because of that, to define this operation in our theory we have to an axiom that allows us to use the power set,
+
+!!! axiom "_Axiom_: Axiom of Power Set"
+
+    Let $A$ be a set, then there exists a set $\mathcal{Q}$, such that,
+
+    $$\forall X. \left(\left(X\subseteq A\right)\implies\left(X\in\mathcal{Q}\right)\right)$$
+
+    and we call such a set $\mathcal{Q}$ a power set world of $A$.
+
+Before we define the power set we want to show that it will be well defined,
+
+!!! thm "_Theorem_: Power Set is Well Defined"
+
+    Let $A$ be a set, and let $\mathcal{Q}, \mathcal{R}$ be power set worlds of $A$, then,
+
+    $$\left\{ B\in \mathcal{Q}\mid B\subseteq A\right\} = \left\{ B\in \mathcal{R}\mid B\subseteq A\right\}$$
+
+    ??? proof
+
+        TODO
+
+And now we can define the power set formally,
+
+!!! def "_Definition_: Power Set"
+
+    Let $A$ be a set, and let $\mathcal{Q}$ be a power set world of $A$, then,
+
+    $$\mathcal{P}\left(A\right) = \left\{ B\in \mathcal{Q}\mid B\subseteq A\right\}$$
+
+Because we know that the union is well defined, we will omit the power set world $\mathcal{Q}$ from now on, because it doesn't provide us with any information.
+
+!!! mexample "_Example_"
+
+    Try to understand why the following is true,
+
+    - $\mathcal{P}\left(\emptyset\right)=\left\{ \emptyset\right\}$
+    - $\mathcal{P}\left(\left\{ 1,2\right\} \right)=\left\{ \emptyset,\left\{ 1\right\} ,\left\{ 2\right\} ,\left\{ 1,2\right\} \right\}$
+
+!!! exercise "_Exercise_"
+
+    Let $A$ and $B$ be sets, then,
+
+    $$\left(A\subseteq B\right)\iff\left(\mathcal{P}\left(A\right)\subseteq\mathcal{P}\left(B\right)\right)$$
+
+    ??? proof
+
+        TODO
+
+!!! thm "_Theorem_"
+
+    Let $A$ be a finite set, then,
+
+    $$\left|\mathcal{P}\left(A\right)\right| = 2^{\left|A\right|}$$
+
+    ??? proof
+
+        TODO
+
+!!! exercise "_Exercise_"
+
+    Compute the following sets (meaning find a canonical way to write them without the power set),
+
+    - $\left\{ X\backslash\left\{ 0\right\} \mid X\in\mathcal{P}\left(\bbn\right)\right\}$
+    - $\left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\}$
+    - Let $A$ be a set, what is $\bigcup\mathcal{P}\left(A\right)$?
+    - Let $A$ be a set, what is $\bigcap\mathcal{P}\left(A\right)$?
 
     ??? solution
 
