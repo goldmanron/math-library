@@ -532,7 +532,7 @@ Informally, a set is contained in another set, if it contains only part of the e
     - $\left\{ 1\right\} \subset\left\{ 1,2\right\}$
     - $\left\{ 0\right\} \nsubseteq\left\{ 6, \bbn,\left\{8\right\}\right\}$
 
-!!! exercise "_Exercise_"
+???+ exercise "_Exercise_"
 
     Prove the following results,
 
@@ -542,7 +542,11 @@ Informally, a set is contained in another set, if it contains only part of the e
     
     ??? solution
 
-        TODO
+        We prove each containment by showing that any element of the first set is necessarily an element of the second.
+
+        - Let $n \in \bbn_+$, by the definition of $\bbn_+$, we know that $n \in \bbn$ and $n \ge 1$. In particular, $n \in \bbn$, thus, $\bbn_+ \subseteq \bbn$.
+        - Let $z \in \bbz$, we can write $z$ as the fraction $\frac{z}{1}$. Since $z \in \bbz$ and $1 \in \bbn_+$, by the definition of rational numbers, $\frac{z}{1} \in \bbq$. Thus, $z \in \bbq$, which implies $\bbz \subseteq \bbq$.
+        - Let $r \in \bbr$, we can write $r$ in the complex form $r + i \cdot 0$. Since $r, 0 \in \bbr$, by the definition of complex numbers, $r + i \cdot 0 \in \bbc$. Thus, $r \in \bbc$, which implies $\bbr \subseteq \bbc$.
 
 !!! thm "_Theorem_: Empty Set is a Subset of Every Set"
 
@@ -563,6 +567,7 @@ Informally, a set is contained in another set, if it contains only part of the e
 
 !!! claim "_Claim_: Containment is Transitive"
 
+    <div id=claim-containment-is-transitive></div>
     Let $A, B$ and $C$ be sets, then,
 
     $$\left(A\subseteq B\land B\subseteq C\right)\implies\left(A\subseteq C\right)$$
@@ -595,13 +600,14 @@ Moreover, since this is a basic and useful definition, this is actually an axiom
 
 !!! axiom "_Axiom_: Axiom of Extensionality"
 
+    <div id="axiom-axiom-of-extensionality"></div>
     Let $A$ and $B$ be sets, such that,
 
     $$\forall x.\left(x\in A\iff x\in B\right)$$
 
     then we say that $A$ is equal to $B$, and notate it using $A = B$.
 
-!!! exercise "_Exercise_"
+???+ exercise "_Exercise_"
 
     Let $A$ and $B$ be sets, then,
 
@@ -609,10 +615,38 @@ Moreover, since this is a basic and useful definition, this is actually an axiom
 
     ??? solution
 
-        TODO
+        We prove the equivalence by showing both directions of the implication:
+
+        - $\underline{\implies}$: Assume $A = B$, by the <a href="#axiom-axiom-of-extensionality">axiom of extensionality</a>, we know that
+            
+            $$\forall x.(x \in A \iff x \in B)$$
+            
+            This implies both
+            
+            $$\forall x.(x \in A \implies x \in B)$$
+            
+            and,
+            
+            $$\forall x.(x \in B \implies x \in A)$$
+            
+            Thus, by the definition of containment, $A \subseteq B$ and $B \subseteq A$.
+        - $\underline{\impliedby}$: Assume $A \subseteq B$ and $B \subseteq A$, by the definition of containment, this means that, 
+            
+            $$\forall x.(x \in A \implies x \in B)$$
+            
+            and,
+            
+            $$\forall x.(x \in B \implies x \in A)$$
+            
+            Combining these gives by the definition of iff,
+            
+            $$\forall x.(x \in A \iff x \in B)$$
+            
+            Therefore, by the <a href="#axiom-axiom-of-extensionality">axiom of extensionality</a>, $A = B$.
 
 !!! claim "_Claim_: Uniqueness of the Empty Set"
 
+    <div id="claim-uniqueness-of-the-empty-set"></div>
     Let $A$ and $B$ be empty sets, then $A = B$.
 
     ??? proof
@@ -687,7 +721,15 @@ The first operation we define on sets is the intersection operation that acts li
 
     ??? proof
 
-        TODO
+        Let $x$ be an object, then, to prove this, we use the definition of the intersection, and the fact that the conjunction connective is associative,
+
+        $$\begin{align*}
+        x \in (A \cap B) \cap C & \iff (x \in A \land x \in B) \land x \in C \\
+        & \iff x \in A \land (x \in B \land x \in C) && \text{(Associativity of } \land\text{)} \\
+        & \iff x \in A \cap (B \cap C)
+        \end{align*}$$
+
+        And from the definition of equality we get that the sets are equal.
 
 !!! mnote "_Note_: Without Loss of Generality"
 
@@ -701,9 +743,17 @@ The first operation we define on sets is the intersection operation that acts li
 
     ??? proof
 
-        TODO
+        Let $x$ be an object, then, to prove this, we use the definition of the intersection, and the fact that the conjunction connective is commutative,
 
-!!! claim "_Claim_"
+        $$\begin{align*}
+        x \in A \cap B & \iff x \in A \land x \in B \\
+        & \iff x \in B \land x \in A && \text{(Commutativity of } \land\text{)} \\
+        & \iff x \in B \cap A
+        \end{align*}$$
+
+        And from the definition of equality we get that the sets are equal.
+
+!!! claim "_Claim_: Intersection is Idempotent"
 
     Let $A$ be a set, then,
 
@@ -711,9 +761,18 @@ The first operation we define on sets is the intersection operation that acts li
 
     ??? proof
 
-        TODO
+        Let $x$ be an object, to prove this, we use the definition of the intersection, and the fact that the conjunction connective is idempotent,
 
-!!! exercise "_Exercise_"
+        $$
+        \begin{align*}
+        x \in A \cap A & \iff x \in A \land x \in A \\
+        & \iff x \in A && \text{(Idempotency of } \land\text{)}
+        \end{align*}
+        $$
+
+        And from the definition of equality we get that the sets are equal.
+
+???+ exercise "_Exercise_"
 
     Let $A$ be a set, then,
 
@@ -721,7 +780,9 @@ The first operation we define on sets is the intersection operation that acts li
 
     ??? solution
 
-        TODO
+        Let $x \in A \cap \emptyset$. Then $x \in A \land x \in \emptyset$. Since $x \in \emptyset$ is false for all $x$, the conjunction is always false.
+        
+        Thus, $A \cap \emptyset$ contains no elements, and from the <a href="#claim-uniqueness-of-the-empty-set">uniqueness of the empty set</a> we get that $A \cap \emptyset = \emptyset$.
 
 #### Generalized Intersection
 
@@ -751,7 +812,21 @@ The problem we have is that the set on the right of the definition doesn't adher
 
     ??? proof
 
-        TODO
+        We show that any element in the first set must be in the second, and vice versa:
+
+        - $\underline{\subseteq}$: Let
+            
+            $$x \in \{x \in A \mid \forall X \in \mathcal{F}. x \in X\}$$
+            
+            Then $x \in A$ and for all $X \in \mathcal{F}$ we know that $x \in X$.
+            
+            Since $B \in \mathcal{F}$, it follows that $x \in B$, thus, $x$ satisfies the conditions for,
+            
+            $$\{x \in B \mid \forall X \in \mathcal{F}. x \in X\}$$
+
+        - $\underline{\supseteq}$: By symmetry (WLoG), swapping $A$ and $B$ in the argument above shows that any element in the second set is also in the first.
+
+        Since both sets contain the same elements, they are equal.
 
 Now that we've cleared that the choice of set from the family isn't important we can give the full formal definition,
 
@@ -781,7 +856,7 @@ Because we know that the generalized intersection is well defined, we will omit 
     - $\bigcap_{\varepsilon\in\bbr_{+}}\left[0,\varepsilon\right)=\left\{ 0\right\}$
     - $\bigcap_{n=1}^{\infty}\left(-\frac{1}{n},\frac{1}{n}\right)=\left\{ 0\right\}$
 
-!!! exercise "_Exercise_"
+???+ exercise "_Exercise_"
 
     Let $B$ be a set, and let $\mathcal{F}$ be a family of sets, then,
 
@@ -789,7 +864,26 @@ Because we know that the generalized intersection is well defined, we will omit 
 
     ??? solution
 
-        TODO
+        We prove the equivalence as follows,
+
+        - $\underline{\implies}$: Assume the prefix, meaning that, $B \subseteq \bigcap \mathcal{F}$.
+            
+            Let $X \in \mathcal{F}$ be an arbitrary set. Since $\bigcap \mathcal{F} \subseteq X$ by definition, and because <a href="#claim-containment-is-transitive">containment is transitive</a> we get that $B \subseteq X$.
+        - $\underline{\impliedby}$: Assume that for all $X \in \mathcal{F}$, we have that, $B \subseteq X$.
+            
+            Now let $b \in B$, then for all $X \in \mathcal{F}$, we have $b \in X$ (since $B \subseteq X$). By the definition of generalized intersection, $b \in \bigcap \mathcal{F}$. Thus, $B \subseteq \bigcap \mathcal{F}$.
+
+!!! claim "_Claim_"
+
+    Let $\mathcal{F}$ be a family of sets, and let $A\in\mathcal{F}$, then,
+
+    $$\bigcap\mathcal{F}\subseteq A$$
+
+    ??? proof
+
+        Let $x\in \bigcap\mathcal{F}$, by the definition of containment, we have to prove that $x\in A$.
+
+        By the definition of the generalized intersection, we know that $\forall X\in\mathcal{F}. x\in X$, hence it also follows for our set $A$, meaning that $x\in A$ as required.
 
 #### Disjoint Sets
 
@@ -824,13 +918,15 @@ Because we know that the generalized intersection is well defined, we will omit 
 
     then, $\mathcal{F}$ is called a **family of pairwise disjoint sets**.
 
-!!! exercise "_Exercise_: Pairwise Disjoint Implies Disjoint"
+???+ exercise "_Exercise_: Pairwise Disjoint Implies Disjoint"
 
-    Let $\mathcal{F}$ be a family of pairwise disjoint sets, then, \mathcal{F} is a family of disjoint sets.
+    Let $\mathcal{F}$ be a family of pairwise disjoint sets, such that there exists sets $A, B\in\mathcal{F}$ for which $A\ne B$, then, $\mathcal{F}$ is a family of disjoint sets.
 
     ??? solution
 
-        TODO
+        Assume $\mathcal{F}$ is a family of pairwise disjoint sets.
+        
+        By the definition of pairwise disjoint sets, $A \cap B = \emptyset$. We know that $\mathcal{F}\subseteq A$ and also $\mathcal{F}\subseteq B$, hence we get that $\mathcal{F}\subseteq A\cap B$, meaning that $\mathcal{F}\subseteq\emptyset$. Moreover, by the <a href="#theorem-empty-set-is-a-subset-of-every-set">theorem that the empty set is a subset of every set</a>, we get that $\bigcap \mathcal{F} = \emptyset$, meaning that $\mathcal{F}$ is a family of disjoint sets.
 
 ### Union
 
@@ -862,7 +958,15 @@ Before we define the union operator we want to show that it will be well defined
 
     ??? proof
 
-        TODO
+        Let
+        
+        $$y \in \{x \in \mathcal{U} \mid (x \in A) \lor (x \in B)\}$$
+        
+        This means $(y \in A) \lor (y \in B)$. Since $\mathcal{V}$ is a world of $\{A, B\}$, if $y \in A$ then $y \in \mathcal{V}$, and if $y \in B$ then we get that $y \in \mathcal{V}$. In either case, $y \in \mathcal{V}$. Thus,
+        
+        $$y \in \{x \in \mathcal{V} \mid (x \in A) \lor (x \in B)\}$$
+        
+        By swapping the roles of $\mathcal{U}$ and $\mathcal{V}$, we get the reverse containment. Therefore, the union is well defined.
 
 And now we can define union formally,
 
@@ -898,7 +1002,17 @@ Because we know that the union is well defined, we will omit the world $\mathcal
 
     ??? proof
 
-        TODO
+        Let $x$ be an object, to prove this, we use the definition of the union, and the fact that the disjunction connective is associative,
+
+        $$
+        \begin{align*}
+        x \in (A \cup B) \cup C & \iff (x \in A \lor x \in B) \lor x \in C \\
+        & \iff x \in A \lor (x \in B \lor x \in C) && \text{(Associativity of } \lor\text{)} \\
+        & \iff x \in A \cup (B \cup C)
+        \end{align*}
+        $$
+
+        And from the definition of equality we get that the sets are equal.
 
 !!! claim "_Claim_: Union is Commutative"
 
@@ -908,9 +1022,19 @@ Because we know that the union is well defined, we will omit the world $\mathcal
 
     ??? proof
 
-        TODO
+        Let $x$ be an object, to prove this, we use the definition of the union, and the fact that the disjunction connective is commutative,
 
-!!! claim "_Claim_"
+        $$
+        \begin{align*}
+        x \in A \cup B & \iff x \in A \lor x \in B \\
+        & \iff x \in B \lor x \in A && \text{(Commutativity of } \lor\text{)} \\
+        & \iff x \in B \cup A
+        \end{align*}
+        $$
+
+        And from the definition of equality we get that the sets are equal.
+
+!!! claim "_Claim_: Union is Idempotent"
 
     Let $A$ be a set, then,
 
@@ -918,9 +1042,18 @@ Because we know that the union is well defined, we will omit the world $\mathcal
 
     ??? proof
 
-        TODO
+        Let $x$ be an object, to prove this, we use the definition of the union, and the fact that the disjunction connective is idempotent,
 
-!!! exercise "_Exercise_"
+        $$
+        \begin{align*}
+        x \in A \cup A & \iff x \in A \lor x \in A \\
+        & \iff x \in A && \text{(Idempotency of } \lor\text{)}
+        \end{align*}
+        $$
+
+        And from the definition of equality we get that the sets are equal.
+
+???+ exercise "_Exercise_"
 
     Let $A$ be a set, then,
 
@@ -928,7 +1061,17 @@ Because we know that the union is well defined, we will omit the world $\mathcal
 
     ??? solution
 
-        TODO
+        Let $x$ be an object, to prove this, we use the definition of the union, and the fact that the empty set is empty,
+
+        $$
+        \begin{align*}
+        x \in A \cup \emptyset & \iff x \in A \lor x \in \emptyset \\
+        & \iff x \in A \lor \false && \text{(Definition of } \emptyset\text{)} \\
+        & \iff x \in A
+        \end{align*}
+        $$
+
+        Thus, $A \cup \emptyset = A$.
 
 !!! claim "_Claim_: Union is Distributive Over Intersection"
 
@@ -938,9 +1081,19 @@ Because we know that the union is well defined, we will omit the world $\mathcal
 
     ??? proof
 
-        TODO
+        Let $x$ be an object, to prove this, we use the definition of the union and intersection, and the fact that that the disjunction connective is distributive over the conjunction connective,
 
-!!! exercise "_Exercise_: Intersection is Distributive Over Union"
+        $$
+        \begin{align*}
+        x \in A \cup (B \cap C) & \iff x \in A \lor (x \in B \land x \in C) \\
+        & \iff (x \in A \lor x \in B) \land (x \in A \lor x \in C) && \text{(Distribution of } \lor \text{ over } \land\text{)} \\
+        & \iff x \in (A \cup B) \cap (A \cup C)
+        \end{align*}
+        $$
+
+        Since the truth conditions are identical, the sets are equal.
+
+???+ exercise "_Exercise_: Intersection is Distributive Over Union"
 
     Let $A$, $B$ and $C$ be sets, then,
 
@@ -948,7 +1101,17 @@ Because we know that the union is well defined, we will omit the world $\mathcal
 
     ??? solution
 
-        TODO
+        Let $x$ be an object, to prove this, we use the definition of the union and intersection, and the fact that that the conjunction connective is distributive over the disjunction connective,
+
+        $$
+        \begin{align*}
+        x \in A \cap (B \cup C) & \iff x \in A \land (x \in B \lor x \in C) \\
+        & \iff (x \in A \land x \in B) \lor (x \in A \land x \in C) && \text{(Distribution of } \land \text{ over } \lor\text{)} \\
+        & \iff x \in (A \cap B) \cup (A \cap C)
+        \end{align*}
+        $$
+
+        Since the truth conditions are identical, the sets are equal.
 
 #### Generalized Union
 
@@ -972,7 +1135,11 @@ But we already saw this problem earlier with the union operator, hence we can so
 
     ??? proof
 
-        TODO
+        Let $x \in \{x \in \mathcal{U} \mid \exists X \in \mathcal{F}. x \in X\}$. Then there exists some $X \in \mathcal{F}$ such that $x \in X$. By the definition of a world $\mathcal{V}$ for $\mathcal{F}$, since $X \in \mathcal{F}$, we must have $X \subseteq \mathcal{V}$, and therefore $x \in \mathcal{V}$.
+        
+        This shows $x \in \{x \in \mathcal{V} \mid \exists X \in \mathcal{F}. x \in X\}$. The reverse direction is identical by swapping $\mathcal{U}$ and $\mathcal{V}$.
+
+        Therefore, the generalized union is well defined.
 
 !!! def "_Definition_: Generalized Union"
 
@@ -1000,7 +1167,7 @@ Because we know that the generalized union is well defined, we will omit the wor
     - $\bigcup_{i=0}^{\infty}\left(i,i+1\right)=\bbr_{+}\backslash\bbn$
     - Let $\e \in \bbr_+$ then, $\bigcup_{q\in\bbq}\left(q-\e,q+\e\right)=\bbr$
 
-!!! exercise "_Exercise_"
+???+ exercise "_Exercise_"
 
     Let $B$ be a set, and let $\mathcal{F}$ be a family of sets, then,
 
@@ -1008,20 +1175,112 @@ Because we know that the generalized union is well defined, we will omit the wor
 
     ??? solution
 
-        TODO
+        We prove the equivalence as follows:
 
-Thw following exercise is very challenging, and hence it's marked with "⭐". This exercise requires understanding of the real numbers and it's relation to the rational numbers.
+        - $\underline{\implies}$: Assume $\bigcup \mathcal{F} \subseteq B$. Let $X \in \mathcal{F}$ be an arbitrary set. Since $X \subseteq \bigcup \mathcal{F}$ by definition, transitivity of containment implies $X \subseteq B$.
+        - $\underline{\impliedby}$: Assume that for all $X \in \mathcal{F}$, we have that, $X \subseteq B$. Let $x \in \bigcup \mathcal{F}$, then there exists some $X_0 \in \mathcal{F}$ such that $x \in X_0$. By our assumption, $X_0 \subseteq B$, so $x \in B$. Thus, $\bigcup \mathcal{F} \subseteq B$.
 
-!!! exercise "_Exercise_⭐"
+The following exercise is very challenging, and hence it's marked with "⭐". This exercise requires understanding of the real numbers and it's relation to the rational numbers.
+
+???+ exercise "_Exercise_⭐"
 
     Prove the following two results,
 
-    - $\bigcap_{n\in\bbn_{+}}\left(\bigcup_{q\in\bbq}\left(q-\frac{1}{n},q+\frac{1}{n}\right)\right)=\bbr$
-    - $\bigcup_{n\in\bbn_{+}}\left(\bigcap_{q\in\bbq}\left(q-\frac{1}{n},q+\frac{1}{n}\right)\right)=\bbq$
+    1. $\bigcap_{n\in\bbn_{+}}\left(\bigcup_{q\in\bbq}\left(q-\frac{1}{n},q+\frac{1}{n}\right)\right)=\bbr$
+    2. $\bigcup_{q\in\bbq}\left(\bigcap_{n\in\bbn_{+}}\left(q-\frac{1}{n},q+\frac{1}{n}\right)\right)=\bbq$
 
     ??? solution
 
-        TODO
+        1. To prove that,
+            
+            $$\bigcap_{n\in\bbn_{+}}\left(\bigcup_{q\in\bbq}\left(q-\frac{1}{n},q+\frac{1}{n}\right)\right)=\bbr$$
+
+            we will use the definition of equality as bidirectional containment,
+            
+            - $\underline{\subseteq}$: Let $n_0 \in \bbn_+$, and let $q_0 \in \bbq$, then from the definition of an interval we get that,
+                
+                $$\left(q-\frac{1}{n},q+\frac{1}{n}\right)\subseteq \bbr$$
+
+                And since it's correct for all $q_0\in\bbq$, we get that,
+
+                $$\bigcup_{q\in\bbq}\left(q-\frac{1}{n},q+\frac{1}{n}\right) \subseteq \bbr$$
+
+                Now since it also true for all $n_0\in\bbn_+$, we get that,
+
+                $$\bigcap_{n\in\bbn_{+}}\left(\bigcup_{q\in\bbq}\left(q-\frac{1}{n},q+\frac{1}{n}\right)\right)\subseteq\bbr$$
+
+            - $\underline{\supseteq}$: Let $x \in \bbr$. We need to show that,
+                
+                $$x \in \bigcup_{q\in\bbq}\left(q-\frac{1}{n}, q+\frac{1}{n}\right)$$
+                
+                for any $n \in \bbn_+$.
+
+                Let $n \in \bbn_+$, and define $q_0 = \frac{\floor{nx}}{n}$, now since, $\floor{nx} \in \bbz$, we get that, $q_0 \in \bbq$. And from the properties of the floor function,
+                
+                $$\floor{nx} \le nx < \floor{nx} + 1$$
+
+                Meaning that,
+                
+                $$q_0 \le x < q_0 + \frac{1}{n}$$
+                
+                This implies that,
+                
+                $$|x - q_0| < \frac{1}{n}$$
+
+                Thus,
+                
+                $$x \in \left(q_0 - \frac{1}{n}, q_0 + \frac{1}{n}\right)$$
+                
+                And since $q_0 \in \bbq$, we have that,
+
+                $$x\in \bigcup_{q\in\bbq}\left(q-\frac{1}{n}, q+\frac{1}{n}\right)$$
+
+                as required.
+        2. To prove that,  
+            
+            $$\bigcup_{q\in\bbq}\left(\bigcap_{n\in\bbn_{+}}\left(q-\frac{1}{n},q+\frac{1}{n}\right)\right)=\bbq$$
+
+            we will prove a stronger statement, let $q_0 \in \bbq$, then,
+
+            $$\bigcap_{n\in\bbn_{+}}\left(q_0-\frac{1}{n},q_0+\frac{1}{n}\right) = \left\{q_0\right\}$$
+            
+            and for that we will use the definition of equality as bidirectional containment,
+
+            - $\underline{\subseteq}$: Let
+                
+                $$x\in\bigcap_{n\in\bbn_{+}}\left(q_0-\frac{1}{n},q_0+\frac{1}{n}\right)$$
+
+                and assume by contradiction that $x \ne q_0$. Then we define $]\delta = \left|x - q_0\right|$, and notice that there exists $n_0\in\bbn_+$ such that,
+
+                $$\frac{1}{n} < \delta$$
+
+                meaning that,
+
+                $$x\notin \left(q_0-\frac{1}{n_0},q_0+\frac{1}{n_0}\right)$$
+
+                Hence, by the definition of the generalized intersection we get that,
+
+                $$x\notin \bigcap_{n\in\bbn_{+}}\left(q_0-\frac{1}{n},q_0+\frac{1}{n}\right)$$
+
+                which is a contradiction to our assumption, meaning that $x = q_0$.
+
+            - $\underline{\supseteq}$: We want to prove that,
+
+                $$\bigcap_{n\in\bbn_{+}}\left(q_0-\frac{1}{n},q_0+\frac{1}{n}\right) \supseteq \left\{q_0\right\}$$
+
+                meaning that,
+
+                $$q_0 \in \bigcap_{n\in\bbn_{+}}\left(q_0-\frac{1}{n},q_0+\frac{1}{n}\right)$$
+
+                For that, let $n_0 \in \bbn_+$, then we need to show that,
+
+                $$q_0 \in \left(q_0-\frac{1}{n},q_0+\frac{1}{n}\right)$$
+
+                but this is true since,
+
+                $$q_0 - \frac{1}{n} < q_0 < q_0 + \frac{1}{n}$$
+
+                as required.
 
 #### Disjoint Union
 
@@ -1110,9 +1369,18 @@ Thw following exercise is very challenging, and hence it's marked with "⭐". Th
 
     ??? proof
 
-        TODO
+        Let $x$ be an object, to prove this, we use the definition of the difference,
 
-!!! exercise "_Exercise_"
+        $$
+        \begin{align*}
+        x \in A \backslash A & \iff x \in A \land x \notin A \\
+        & \iff \false
+        \end{align*}
+        $$
+
+        Thus, by the <a href="#claim-uniqueness-of-the-empty-set">uniqueness of the empty set</a> $A \backslash A = \emptyset$.
+
+???+ exercise "_Exercise_"
 
     Let $A$ be a set, then,
 
@@ -1120,20 +1388,43 @@ Thw following exercise is very challenging, and hence it's marked with "⭐". Th
 
     ??? solution
 
-        TODO
+        Let $x$ be an object, to prove this, we use the definition of the difference, and the definition of the empty set,
+
+        $$
+        \begin{align*}
+        x \in A \backslash \emptyset & \iff x \in A \land x \notin \emptyset \\
+        & \iff x \in A \land \true \\
+        & \iff x \in A
+        \end{align*}
+        $$
+
+        Thus, $A \backslash\emptyset = A$.
 
 !!! claim "_Claim_"
 
     Let $A$ and $B$ be sets, then, the following are equivalent (TFAE),
 
-    - $A\subseteq B$
-    - $A\cap B = A$
-    - $A\backslash B = \emptyset$
-    - $A\cup B = B$
+    1. $A\subseteq B$
+    2. $A\cap B = A$
+    3. $A\backslash B = \emptyset$
+    4. $A\cup B = B$
 
     ??? proof
 
-        TODO
+        We prove the equivalence by following a cycle of implications,
+
+        $$1\implies 2\implies 3\implies 4\implies 1$$
+        
+        as follows,
+
+        - $\underline{1 \implies 2}$: We assume the prefix, meaning that $A\subseteq B$,
+            - $\underline{\supseteq}$: Let $x \in A$. Since $A \subseteq B$, we know that, $x \in B$. Thus $x \in A \cap B$.
+            - $\underline{\subseteq}$: From a previous result we have that $A \cap B \subseteq A$ is always true.
+        - $\underline{2 \implies 3}$: We assume that $A \cap B = A$. If $A\backslash B$ is not the empty set, there must be an element in it, let's call it $x \in A \backslash B$, then $x \in A$ and $x \notin B$. But $x \in A$ implies $x \in A \cap B$, so $x \in B$, a contradiction.
+        - $\underline{3 \implies 4}$: We assume that $A \backslash B = \emptyset$,
+            - $\underline{\subseteq}$: Let $x \in A \cup B$. If $x \in B$, we are done. If $x \in A$, then since $A \backslash B = \emptyset$, $x$ cannot be in $A$ without being in $B$ (because if it was then $x\in A\backslash B$ meaning that $x \in \emptyset$), so $x \in B$. Hence no matter what we get that $x\in B$, meaning that $A\cup B \subseteq B$.
+            - $\underline{\supseteq}$: Let $x\in B$, then $x\in A\cup B$ by the definition of union, hence $B\subseteq A\cup B$.
+        - $\underline{4 \implies 1}$: We assume that $A\cup B = B$. Let $x \in A$, then $x \in A \cup B$, and since $A \cup B = B$, it follows that $x \in B$. Hence $A \subseteq B$.
 
 !!! mnote "_Note_"
 
@@ -1158,6 +1449,7 @@ Thw following exercise is very challenging, and hence it's marked with "⭐". Th
 
 !!! claim "_Claim_: De Morgan's laws"
 
+    <div id=claim-de-morgans-laws></div>
     Let $A, B$ and $C$ be sets, and let $\mathcal{U}$ be a world of $\left\{A, B\right\}$, then,
 
     - $\left(A\cup B\right)^{{\cal C}}=A^{{\cal C}}\cap B^{{\cal C}}$
@@ -1167,7 +1459,58 @@ Thw following exercise is very challenging, and hence it's marked with "⭐". Th
 
     ??? proof
 
-        TODO
+        - Let $x$ be an object, to prove this, we use the definition of the complement, and De Morgan's laws for logical connectives,
+        
+            $$
+            \begin{align*}
+            x \in (A \cup B)^{\mathcal{C}} & \iff x \in \mathcal{U} \land x \notin (A \cup B) \\
+            & \iff x \in \mathcal{U} \land \neg(x \in A \lor x \in B) \\
+            & \iff x \in \mathcal{U} \land (x \notin A \land x \notin B) && \text{(Logical De Morgan)} \\
+            & \iff (x \in \mathcal{U} \land x \notin A) \land (x \in \mathcal{U} \land x \notin B) \\
+            & \iff x \in A^{\mathcal{C}} \land x \in B^{\mathcal{C}} \\
+            & \iff x \in A^{\mathcal{C}} \cap B^{\mathcal{C}}
+            \end{align*}
+            $$
+
+            Thus, $\left(A\cup B\right)^{{\cal C}}=A^{{\cal C}}\cap B^{{\cal C}}$.
+        - Let $x$ be an object, to prove this, we use the definition of the complement, and De Morgan's laws for logical connectives,
+
+            $$
+            \begin{align*}
+            x \in (A \cap B)^{\mathcal{C}} & \iff x \in \mathcal{U} \land x \notin (A \cap B) \\
+            & \iff x \in \mathcal{U} \land \neg(x \in A \land x \in B) \\
+            & \iff x \in \mathcal{U} \land (x \notin A \lor x \notin B) && \text{(Logical De Morgan)} \\
+            & \iff (x \in \mathcal{U} \land x \notin A) \lor (x \in \mathcal{U} \land x \notin B) && \text{(Distributivity)} \\
+            & \iff x \in A^{\mathcal{C}} \lor x \in B^{\mathcal{C}} \\
+            & \iff x \in A^{\mathcal{C}} \cup B^{\mathcal{C}}
+            \end{align*}
+            $$
+
+            Thus, $\left(A\cap B\right)^{{\cal C}}=A^{{\cal C}}\cup B^{{\cal C}}$.
+        - Let $x$ be an object, then,
+
+            $$
+            \begin{align*}
+            x \in A \setminus (B \cup C) & \iff x \in A \land x \notin (B \cup C) \\
+            & \iff x \in A \land \neg(x \in B \lor x \in C) \\
+            & \iff x \in A \land (x \notin B \land x \notin C) && \text{(Logical De Morgan)} \\
+            & \iff (x \in A \land x \notin B) \land (x \in A \land x \notin C) && \text{(Idempotency)} \\
+            & \iff x \in (A \setminus B) \land x \in (A \setminus C) \\
+            & \iff x \in (A \setminus B) \cap (A \setminus C)
+            \end{align*}
+            $$
+        - Let $x$ be an object, then,
+
+            $$
+            \begin{align*}
+            x \in A \setminus (B \cap C) & \iff x \in A \land x \notin (B \cap C) \\
+            & \iff x \in A \land \neg(x \in B \land x \in C) \\
+            & \iff x \in A \land (x \notin B \lor x \notin C) && \text{(Logical De Morgan)} \\
+            & \iff (x \in A \land x \notin B) \lor (x \in A \land x \notin C) && \text{(Distributivity)} \\
+            & \iff x \in (A \setminus B) \lor x \in (A \setminus C) \\
+            & \iff x \in (A \setminus B) \cup (A \setminus C)
+            \end{align*}
+            $$
 
 #### Symmetric Difference
 
@@ -1175,7 +1518,7 @@ Thw following exercise is very challenging, and hence it's marked with "⭐". Th
 
     Let $A$ and $B$ be sets, then,
 
-    $$A\triangle B=\left(A\backslash B\right)\cup\left(B\backslash A\right)$$
+    $$A\triangle B = \left\{x\in A\cup B\mid \left(x\in A\right)\oplus\left(x\in B\right)\right\}$$
 
     And as a Venn diagram,
 
@@ -1183,6 +1526,66 @@ Thw following exercise is very challenging, and hence it's marked with "⭐". Th
     /// caption
     Venn Diagram of Symmetric Difference
     ///
+
+There are a lot of variations to the definition of the symmetric difference, hence we will prove that they are all equivalent, and from now on won't worry about the specific definition we use in each instance.
+
+!!! thm "_Theorem_: Alternative Definitions of the Symmetric Difference"
+
+    Let $A$ and $B$ be sets, and let $\mathcal{U}$ be a world of $\left\{A, B\right\}$, then,
+
+    1. $A\triangle B=\left(A\backslash B\right)\cup\left(B\backslash A\right)$
+    2. $A\triangle B = \left(A\cup B\right)\backslash\left(A\cap B\right)$
+    3. $A\triangle B = \left(A \cap B^\mathcal{C}\right) \cup \left(A^\mathcal{C} \cap B\right)$
+    4. $A\triangle B = \left(A\cup B\right)\cap\left(A^\mathcal{C}\cup B^\mathcal{C}\right)$
+    
+    ??? proof
+
+        We will prove these identities by showing that the membership conditions for each set are logically equivalent to the definition of the symmetric difference,
+    
+        $$x \in A \triangle B \iff x \in A \cup B \land \left(\left(x \in A\right) \oplus \left(x \in B\right)\right)$$
+
+        1. Let $x$ be an object. By the definition of union and difference,
+            
+            $$
+            \begin{align*}
+            x \in \left(A \setminus B\right) \cup \left(B \setminus A\right) & \iff \left(x \in A \land x \notin B\right) \lor \left(x \in B \land x \notin A\right) \\
+            & \iff \left(x \in A\right) \oplus \left(x \in B\right)
+            \end{align*}
+            $$
+            
+            Since $\left(x \in A\right) \oplus \left(x \in B\right)$ implies that either $x \in A$ or $x \in B$, the condition $x \in A \cup B$ is automatically satisfied. Thus, the identity holds.
+        2. Let $x$ be an object. By the definition of difference,
+            
+            $$
+            \begin{align*}
+            x \in \left(A \cup B\right) \setminus \left(A \cap B\right) & \iff x \in \left(A \cup B\right) \land x \notin \left(A \cap B\right) \\
+            & \iff \left(x \in A \lor x \in B\right) \land \neg\left(x \in A \land x \in B\right)
+            \end{align*}
+            $$
+            
+            From propositional logic, we know that the condition is equivalent to $\left(x \in A\right) \oplus \left(x \in B\right)$, and hence $x \in A \cup B$, which is the definition of $A \triangle B$.
+        3. Let $x$ be an object. Since $\mathcal{U}$ is a world of $\{A, B\}$, we have $A \subseteq \mathcal{U}$ and $B \subseteq \mathcal{U}$. Using the definition of intersection and complement,
+            
+            $$
+            \begin{align*}
+            x \in \left(A \cap B^{\mathcal{C}}\right) \cup \left(A^{\mathcal{C}} \cap B\right) & \iff \left(x \in A \land x \in B^{\mathcal{C}}\right) \lor \left(x \in A^{\mathcal{C}} \land x \in B\right) \\
+            & \iff \left(x \in A \land x \notin B\right) \lor \left(x \notin A \land x \in B\right)
+            \end{align*}
+            $$
+            
+            This is identical to the logic in part 1, which we already showed is equivalent to $A \triangle B$.
+        4. Let $x$ be an object. By the <a href="#claim-de-morgans-laws">De Morgan's laws</a> for sets, we know that $A^{\mathcal{C}} \cup B^{\mathcal{C}} = \left(A \cap B\right)^{\mathcal{C}}$. Substituting this into the expression,
+            
+            $$
+            \begin{align*}
+            x \in \left(A \cup B\right) \cap \left(A^{\mathcal{C}} \cup B^{\mathcal{C}}\right) & \iff x \in \left(A \cup B\right) \cap \left(A \cap B\right)^{\mathcal{C}} \\
+            & \iff x \in \left(A \cup B\right) \setminus \left(A \cap B\right)
+            \end{align*}
+            $$
+            
+            This is identical to the logic in part 2, which we already showed is equivalent to $A \triangle B$.
+
+        Since the membership conditions for all four expressions are equivalent to the definition of the symmetric difference, the theorem is proved.
 
 !!! mexample "_Example_"
 
@@ -1192,7 +1595,7 @@ Thw following exercise is very challenging, and hence it's marked with "⭐". Th
     - $\left\{ \left\{ 1\right\} \right\} \triangle\left\{ 1\right\} =\left\{ \left\{ 1\right\} ,1\right\}$
     - $\left\{ 3,4\right\} \triangle\left\{ 3,4,5\right\} =\left\{ 5\right\}$
 
-!!! exercise "_Exercise_: Symmetric Difference is Associative"
+???+ exercise "_Exercise_: Symmetric Difference is Associative"
 
     Let $A, B$ and $C$ be sets, then,
 
@@ -1200,7 +1603,41 @@ Thw following exercise is very challenging, and hence it's marked with "⭐". Th
 
     ??? solution
 
-        TODO
+        From the definition of the set construction schemes, and from the definition of the symmetric difference, we get that,
+
+        $$
+        \begin{align*}
+        \left(A\triangle B\right)\triangle C & =\left\{ x\in\left(A\triangle B\right)\cup C\mid\left(x\in A\triangle B\right)\oplus\left(x\in C\right)\right\} \\
+        & = \left\{ x\in\left(A\cup B\right)\cup C\mid\left(\left(x\in A\right)\oplus\left(x\in B\right)\right)\oplus\left(x\in C\right)\right\} \\
+        & = \left\{ x\in A\cup\left(B\cup C\right)\mid\left(\left(x\in A\right)\oplus\left(x\in B\right)\right)\oplus\left(x\in C\right)\right\} \\
+        & = \left\{ x\in A\cup\left(B\cup C\right)\mid\left(x\in A\right)\oplus\left(\left(x\in B\right)\oplus\left(x\in C\right)\right)\right\} \\
+        & = \left\{ x\in A\cup\left(B\triangle C\right)\mid\left(x\in A\right)\oplus\left(x\in B\triangle C\right)\right\} \\
+        & = A\triangle\left(B\triangle C\right)
+        \end{align*}
+        $$
+
+        and note that we used the fact that union and xor are associative.
+
+        <!-- $$
+        \begin{align*}
+        \left(A\triangle B\right)\triangle C & =\left(\left(A\triangle B\right)\cap C^{\mathcal{C}}\right)\cup\left(\left(A\triangle B\right)^{\mathcal{C}}\cap C\right) &  & \text{(...)}\\
+        & =\left(\left(\left(A\cap B^{\mathcal{C}}\right)\cup\left(A^{\mathcal{C}}\cap B\right)\right)\cap C^{\mathcal{C}}\right)\cup\left(\left(A\triangle B\right)^{\mathcal{C}}\cap C\right) &  & \text{(...)}\\
+        & =\left(\left(\left(A\cap B^{\mathcal{C}}\right)\cap C^{\mathcal{C}}\right)\cup\left(\left(A^{\mathcal{C}}\cap B\right)\cap C^{\mathcal{C}}\right)\right)\cup\left(\left(A\triangle B\right)^{\mathcal{C}}\cap C\right) &  & \text{(Intersection is Distributive Over Union)}\\
+        & =\left(\left(\left(A\cap B^{\mathcal{C}}\right)\cap C^{\mathcal{C}}\right)\cup\left(\left(A^{\mathcal{C}}\cap B\right)\cap C^{\mathcal{C}}\right)\right)\cup\left(\left(\left(A\cup B\right)\cap\left(A^{\mathcal{C}}\cup B^{\mathcal{C}}\right)\right)^{\mathcal{C}}\cap C\right) &  & \text{(...)}\\
+        & =\left(\left(\left(A\cap B^{\mathcal{C}}\right)\cap C^{\mathcal{C}}\right)\cup\left(\left(A^{\mathcal{C}}\cap B\right)\cap C^{\mathcal{C}}\right)\right)\cup\left(\left(\left(A\cup B\right)^{\mathcal{C}}\cup\left(A^{\mathcal{C}}\cup B^{\mathcal{C}}\right)^{\mathcal{C}}\right)\cap C\right) &  & \text{(De Morgan's Laws)}\\
+        & =\left(\left(\left(A\cap B^{\mathcal{C}}\right)\cap C^{\mathcal{C}}\right)\cup\left(\left(A^{\mathcal{C}}\cap B\right)\cap C^{\mathcal{C}}\right)\right)\cup\left(\left(\left(A^{\mathcal{C}}\cap B^{\mathcal{C}}\right)\cup\left(A\cap B\right)\right)\cap C\right) &  & \text{(De Morgan's Laws)}\\
+        & =\left(\left(\left(A\cap B^{\mathcal{C}}\right)\cap C^{\mathcal{C}}\right)\cup\left(\left(A^{\mathcal{C}}\cap B\right)\cap C^{\mathcal{C}}\right)\right)\cup\left(\left(\left(A^{\mathcal{C}}\cap B^{\mathcal{C}}\right)\cap C\right)\cup\left(\left(A\cap B\right)\cap C\right)\right) &  & \text{(Intersection is Distributive Over Union)}\\
+        & =\left(\left(A\cap\left(B^{\mathcal{C}}\cap C^{\mathcal{C}}\right)\right)\cup\left(A^{\mathcal{C}}\cap\left(B\cap C^{\mathcal{C}}\right)\right)\right)\cup\left(\left(A^{\mathcal{C}}\cap\left(B^{\mathcal{C}}\cap C\right)\right)\cup\left(A\cap\left(B\cap C\right)\right)\right) &  & \text{(Intersection is Associative)}\\
+        & =\left(\left(A\cap\left(B^{\mathcal{C}}\cap C^{\mathcal{C}}\right)\right)\cup\left(A\cap\left(B\cap C\right)\right)\right)\cup\left(\left(A^{\mathcal{C}}\cap\left(B\cap C^{\mathcal{C}}\right)\right)\cup\left(A^{\mathcal{C}}\cap\left(B^{\mathcal{C}}\cap C\right)\right)\right) &  & \text{(Union is Associative)}\\
+        & =\left(A\cap\left(\left(B^{\mathcal{C}}\cap C^{\mathcal{C}}\right)\cup\left(B\cap C\right)\right)\right)\cup\left(\left(A^{\mathcal{C}}\cap\left(B\cap C^{\mathcal{C}}\right)\right)\cup\left(A^{\mathcal{C}}\cap\left(B^{\mathcal{C}}\cap C\right)\right)\right) &  & \text{(Intersection is Distributive Over Union)}\\
+        & =\left(A\cap\left(\left(B\cup C\right)^{\mathcal{C}}\cup\left(B^{\mathcal{C}}\cup C^{\mathcal{C}}\right)^{\mathcal{C}}\right)\right)\cup\left(\left(A^{\mathcal{C}}\cap\left(B\cap C^{\mathcal{C}}\right)\right)\cup\left(A^{\mathcal{C}}\cap\left(B^{\mathcal{C}}\cap C\right)\right)\right) &  & \text{(De Morgan's Laws)}\\
+        & =\left(A\cap\left(\left(B\cup C\right)\cap\left(B^{\mathcal{C}}\cup C^{\mathcal{C}}\right)\right)^{\mathcal{C}}\right)\cup\left(\left(A^{\mathcal{C}}\cap\left(B\cap C^{\mathcal{C}}\right)\right)\cup\left(A^{\mathcal{C}}\cap\left(B^{\mathcal{C}}\cap C\right)\right)\right) &  & \text{(De Morgan's Laws)}\\
+        & =\left(A\cap\left(B\triangle C\right)^{\mathcal{C}}\right)\cup\left(\left(A^{\mathcal{C}}\cap\left(B\cap C^{\mathcal{C}}\right)\right)\cup\left(A^{\mathcal{C}}\cap\left(B^{\mathcal{C}}\cap C\right)\right)\right) &  & \text{(...)}\\
+        & =\left(A\cap\left(B\triangle C\right)^{\mathcal{C}}\right)\cup\left(A^{\mathcal{C}}\cap\left(\left(B\cap C^{\mathcal{C}}\right)\cup\left(B^{\mathcal{C}}\cap C\right)\right)\right) &  & \text{(Intersection is Distributive Over Union)}\\
+        & =\left(A\cap\left(B\triangle C\right)^{\mathcal{C}}\right)\cup\left(A^{\mathcal{C}}\cap\left(B\triangle C\right)\right) &  & \text{(...)}\\
+        & =A\triangle\left(B\triangle C\right) &  & \text{(...)}
+        \end{align*}
+        $$ -->
 
 !!! claim "_Claim_: Symmetric Difference is Commutative"
 
@@ -1210,7 +1647,13 @@ Thw following exercise is very challenging, and hence it's marked with "⭐". Th
 
     ??? proof
 
-        TODO
+        $$
+        \begin{align*}
+        A\triangle B &= (A \setminus B) \cup (B \setminus A) \\
+        &= (B \setminus A) \cup (A \setminus B) && \text{(Union is Commutative)} \\
+        &= B \triangle A
+        \end{align*}
+        $$
 
 !!! claim "_Claim_"
 
@@ -1220,19 +1663,35 @@ Thw following exercise is very challenging, and hence it's marked with "⭐". Th
 
     ??? proof
 
-        TODO
+        $$
+        \begin{align*}
+        A \triangle A & = (A \setminus A) \cup (A \setminus A) \\
+        & = \emptyset \cup \emptyset \\
+        & = \emptyset
+        \end{align*}
+        $$
+        
+        Thus, $A \triangle A = \emptyset$.
 
-!!! exercise "_Exercise_"
+???+ exercise "_Exercise_"
 
     Let $A$ be a set, then,
 
     $$A\triangle\emptyset=A$$
 
     ??? solution
+        
+        $$
+        \begin{align*}
+        A \triangle \emptyset & = (A \setminus \emptyset) \cup (\emptyset \setminus A) \\
+        & = A \cup \emptyset \\
+        & = A
+        \end{align*}
+        $$
+        
+        Thus, $A \triangle \emptyset = A$.
 
-        TODO
-
-!!! exercise "_Exercise_"
+???+ exercise "_Exercise_"
 
     Let $A, B$ and $C$ be sets, then,
 
@@ -1240,7 +1699,27 @@ Thw following exercise is very challenging, and hence it's marked with "⭐". Th
 
     ??? solution
 
-        TODO
+        We assume that $A \triangle B = B \triangle C$. then we get that,
+
+        $$\left(A\triangle B\right)\triangle B = \left(B\triangle C\right)\triangle B$$
+
+        Now by the commutativity of the symmetric difference,
+
+        $$\left(A\triangle B\right)\triangle B=\left(C\triangle B\right)\triangle B$$
+
+        And by the associativity of the symmetric difference,
+
+        $$A\triangle\left(B\triangle B\right)=C\triangle\left(B\triangle B\right)$$
+
+        Then by the last claim we saw, we get that,
+
+        $$A\triangle\emptyset=C\triangle\emptyset$$
+
+        And by the last exercise we saw, we get that,
+        
+        $$A = C$$
+
+        as required.
 
 ### Power Set
 
@@ -1270,7 +1749,17 @@ Before we define the power set we want to show that it will be well defined,
 
     ??? proof
 
-        TODO
+        Let
+        
+        $$X \in \left\{ B\in \mathcal{Q}\mid B\subseteq A\right\}$$
+        
+        this means $X \in \mathcal{Q}$ and $X \subseteq A$.
+        
+        Since $X \subseteq A$, by the definition of the power set world $\mathcal{R}$, we must have $X \in \mathcal{R}$. Thus,
+        
+        $$X\in \left\{ B\in \mathcal{R}\mid B\subseteq A\right\}$$
+        
+        And the reverse containment holds by symmetry and WLoG by swapping $\mathcal{Q}$ and $\mathcal{R}$. Therefore, the power set is well defined.
 
 And now we can define the power set formally,
 
@@ -1289,7 +1778,7 @@ Because we know that the union is well defined, we will omit the power set world
     - $\mathcal{P}\left(\emptyset\right)=\left\{ \emptyset\right\}$
     - $\mathcal{P}\left(\left\{ 1,2\right\} \right)=\left\{ \emptyset,\left\{ 1\right\} ,\left\{ 2\right\} ,\left\{ 1,2\right\} \right\}$
 
-!!! exercise "_Exercise_"
+???+ exercise "_Exercise_"
 
     Let $A$ and $B$ be sets, then,
 
@@ -1297,9 +1786,12 @@ Because we know that the union is well defined, we will omit the power set world
 
     ??? proof
 
-        TODO
+        We'll prove this exercise using two-directional implication,
 
-!!! thm "_Theorem_"
+        - $\underline{\implies}$: We assume that $A \subseteq B$. Let $X \in \mathcal{P}(A)$, then $X \subseteq A$, and by transitivity, $X \subseteq B$, so $X \in \mathcal{P}(B)$. Thus $\mathcal{P}(A) \subseteq \mathcal{P}(B)$.
+        - $\underline{\impliedby}$: We assume that $\mathcal{P}(A) \subseteq \mathcal{P}(B)$. Since $A \subseteq A$, we have $A \in \mathcal{P}(A)$, and by our assumption, $A \in \mathcal{P}(B)$, which means $A \subseteq B$.
+
+!!! thm "_Theorem_ (Not formal)"
 
     Let $A$ be a finite set, then,
 
@@ -1307,9 +1799,9 @@ Because we know that the union is well defined, we will omit the power set world
 
     ??? proof
 
-        TODO
+        Let $A$ be a finite set, then we will denote $\left|A\right|=n\in\mathbb{N}$ and therefore it holds that $A=\left\{ a_{1}\ldots a_{n}\right\}$. Let us notice that every subset of $A$ can be described in the following way: "every element in $A$ will tell us whether it is located in the subset or not", for example the set $\emptyset$ describes the case in which no element of $A$ enters the set, on the other hand $\left\{ a_{2},a_{7}\right\}$ describes the case in which $a_{2},a_{7}$ entered the set and the rest of the elements did not (verify that you understand why this process returns all the subsets of $A$), now let us notice that in every such subset, for every element there are two possibilities, to choose to enter or not, and therefore the amount of subsets is $\underbrace{2\cdot2\cdot\ldots\cdot2}_{n\text{ elements}}=2^{n}$. In particular we will get that $\left|\mathcal{P}\left(A\right)\right|=2^{\left|A\right|}$.
 
-!!! exercise "_Exercise_"
+???+ exercise "_Exercise_"
 
     Compute the following sets (meaning find a canonical way to write them without the power set),
 
@@ -1320,4 +1812,74 @@ Because we know that the union is well defined, we will omit the power set world
 
     ??? solution
 
-        TODO
+        1. We want to show that,
+            
+            $$\left\{ X\backslash\left\{ 0\right\} \mid X\in\mathcal{P}\left(\bbn\right)\right\} = \mathcal{P}(\bbn \backslash \{0\})$$
+
+            - $\underline{\subseteq}$: Let
+
+                $$Y \in \{ X \setminus \{0\} \mid X \in \mathcal{P}(\bbn) \}$$
+
+                Then there exists a set $X\subseteq \bbn$ such that $Y = X \setminus \{0\}$.
+                
+                Meaning that, $Y \subseteq \bbn$ and $0 \notin Y$, so $Y \subseteq \bbn \setminus \{0\}$, hence,
+                
+                $$Y \in \mathcal{P}(\bbn \backslash \{0\})$$
+
+            - $\underline{\supseteq}$: Let $Y \in \mathcal{P}(\bbn \backslash \{0\})$, then $Y \subseteq \bbn \setminus \{0\}$. Since $Y \subseteq \bbn$ and $Y = Y \setminus \{0\}$, we get that,
+
+                $$Y\in \left\{ X\backslash\left\{ 0\right\} \mid X\in\mathcal{P}\left(\bbn\right)\right\}$$
+
+        2. We want to show that,
+            
+            $$\left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\} = \left\{\emptyset, \left\{0\right\}\right\}$$
+
+            - $\underline{\subseteq}$: Let
+
+                $$Y\in \left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\}$$
+
+                Then, there exists a set $X\in\mathcal{P}$ such that, $Y = \left\{0\right\}\backslash X$, then by the definition of difference, we get that $Y\subseteq\left\{0\right\}$, hence,
+
+                $$Y \in \mathcal{P}\left(\left\{0\right\}\right) = \left\{\emptyset, \left\{0\right\}\right\}$$
+                
+            - $\underline{\supseteq}$: We want to show that,
+
+                $$\left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\} \supseteq \left\{\emptyset, \left\{0\right\}\right\}$$
+
+                meaning that we want to show that,
+
+                $$\left(\emptyset\in\left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\} \right)\land\left(\left\{ 0\right\} \in\left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\} \right)$$
+
+                For that, we will prove those two things separately,
+
+                1. We want to show that,
+                    
+                    $$\emptyset\in\left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\}$$
+
+                    We define, $X_0 \in \mathcal{P}$ as $X_0 = \left\{0\right\}$, and note that,
+
+                    $$\left\{0\right\} \backslash X_0 = \left\{0\right\} \backslash \left\{0\right\} = \emptyset$$
+                
+                2. We want to show that,
+
+                    $$\left\{0\right\}\in\left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\}$$
+
+                    We define, $X_1 \in \mathcal{P}$ as $X_1 = \emptyset$, and note that,
+
+                    $$\left\{0\right\} \backslash X_1 = \left\{0\right\} \backslash \emptyset = \left\{0\right\}$$
+
+        3. We want to show that,
+                
+            $$\bigcup\mathcal{P}\left(A\right) = A$$
+
+            - $\underline{\subseteq}$: Let $x \in \bigcup\mathcal{P}\left(A\right)$, meaning that there exists a set $X\in \mathcal{P}\left(A\right)$ for which, $x \in X$, but since $X\subseteq A$, we get that $x\in A$.
+            - $\underline{\supseteq}$: Let $x\in A$, then because $A\subseteq A$ we get that $A\in\mathcal{P}\left(A\right)$, hence $x\in \bigcup\mathcal{P}\left(A\right)$.
+        4. We want to show that,
+                
+            $$\bigcap\mathcal{P}\left(A\right) = \emptyset$$
+
+            We note that $\emptyset\subseteq \bigcap\mathcal{P}\left(A\right)$, hence we need to show only one directional containment.
+
+            We know that $\emptyset \subseteq A$, hence $\emptyset \in\mathcal{P}\left(A\right)$, and from the definition of the generalized intersection we get that,
+
+            $$\emptyset \subseteq \bigcap\mathcal{P}\left(A\right)$$

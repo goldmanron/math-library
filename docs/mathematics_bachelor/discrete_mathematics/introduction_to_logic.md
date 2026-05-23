@@ -40,7 +40,9 @@ This type of logic deals with sentences, a mathematical object that can be eithe
 
 ### Logical Connectives
 
-Until now we talked about atomic sentence in mathematics but we still can't express complex sentences, for that we need connectives between atomic sentences.
+Atomic sentences are the fundamental blocks of logic, but on their own, they are incredibly limited. In everyday speech and mathematical reasoning, we rarely use isolated claims. Instead, we link them together: "If it rains, _then_ I will stay home," or "The number $n$ is even _and_ $n$ is a prime."
+
+To replicate this in mathematical logic, we introduce formal tools that act like linguistic glue. These are called **Logical Connectives**. They take one or more sentences as inputs and construct a brand-new, complex sentence whose truth depends entirely on the components.
 
 !!! def "_Definition_: Negation Connective"
 
@@ -62,7 +64,7 @@ Until now we talked about atomic sentence in mathematics but we still can't expr
 
     Given two sentences $A$ and $B$ we express "if $A$ then $B$" symbolically as "$A \implies B$", and we call $A$ the "**Prefix**" and $B$ the "**Suffix**" of the sentence.
 
-#### Sentence
+### Sentences
 
 Now after defining the atomic sentences and the connectives we can define what a sentence is formally,
 
@@ -93,7 +95,7 @@ Now after defining the atomic sentences and the connectives we can define what a
     
     Which are phrases without mathematical meaning or with dual meaning are not considered as sentence in propositional calculus, and such phrases are called "**abuse of notation**".
 
-### Values of Sentences
+#### Values of Sentences
 
 Now that we have sentences in our mathematical language we want to give them meaning, for that we have to talk about truth and falseness of sentences.
 
@@ -146,11 +148,15 @@ From the last note we can infer the rule "reductio ad absurdum", which means in 
 
         assignments of truth values to $A_1, \ldots, A_n$.
 
-Now because we know that there are only finite number of assignments possible for a collection of atomic sentences, we can create a table that summarizes the truthfulness of each logical connective!
+Knowing that a collection of $n$ atomic sentences yields exactly $2^n$ unique truth environments gives us immense power. Because this number is finite, we don't have to guess how a complex sentence will behave under different circumstances. We can map out every single possibility systematically.
+
+This exhaustive mapping is called a **Truth Table**. By evaluating our logical connectives row by row for every possible combination of $\true$ and $\false$, we completely strip away ambiguity.
 
 !!! def "_Definition_: Truth Table"
 
     A table that summarizes the truth value of a complex sentence given a change in the truth assignment of each of the atomic sentences that he's composed of.
+
+Let's look at how our primary connectives are rigidly defined by these tables,
 
 !!! def "_Definition_: Truth Tables for the Logical Connectives"
 
@@ -250,6 +256,48 @@ Now given the truth assignment of the connectives between atomic sentences we ca
         1. The solution is answer "**d**", by the truth table of the disjunction connective we know that for the result to be false both the sentenced being or-ed must be false themselves, hence $A$ is false, and $\neg B$ is false, then by the truth table of the negation connective we know that for $\neg B$ to be false it must follow that $B$ is true.
         2. The solution is answer "**a**". First of all we need to look at $A \implies B$ and $B \implies A$ separately to infer about the whole complex sentence, since we know that $A$ is false we know by the truth table of the implication connective that $A \implies B$ is true, likewise because $B$ is false we know by the truth table of the implication connective that $B \implies A$ is true. Now, we can see that by the truth table of the conjunction connective that $\left(A\implies B\right) \land \left(B\implies A\right)$ must be true.
 
+### Complex Logical Connectives
+
+We have defined previously the base logical connectives, those are the logical connectives that are the most primitive in our logic, then we have given them meaning by truth tables. But who said that those are the only logical connectives we are allowed to use? In fact we can define a lot of other logical connectives that might be useful.
+
+The **if and only if** (abbreviated **iff**) is one of the most useful logical connectives, informally it means that the implication done is bidirectional.
+
+!!! def "_Definition_: If and Only If Connective"
+
+    Let $A$ and $B$ be sentences such that,
+
+    $$\left(A\implies B\right)\land\left(B\implies A\right)$$
+
+    Then we use the notation $A\iff B$ and say that "$A$ if and only if $B$", or abbreviated to "$A$ iff $B$".
+
+    ??? def "_Definition_: Truth Table for the If and Only If Connective"
+
+        | $V\left(A\right)$      | $V\left(B\right)$      | $V\left(A\iff B\right)$ |
+        |----------|----------|---------------|
+        | $\true$  | $\true$  | $\true$       |
+        | $\true$  | $\false$ | $\false$      |
+        | $\false$ | $\true$  | $\false$      |
+        | $\false$ | $\false$ | $\true$       |
+
+Likewise, the **exclusive or** connective (abbreviated **xor**), can be very useful, and it's the opposite of the iff connective logically.
+
+!!! def "_Definition_: Exclusive Or Connective"
+
+    Let $A$ and $B$ be sentences such that,
+
+    $$\left(A\land \left(\neg B\right)\right)\lor \left(\left(\neg A\right)\lor B\right)$$
+
+    Then we use the notation $A\oplus B$ and say that "$A$ xor $B$".
+
+    ??? def "_Definition_: Truth Table for the Exclusive Or Connective"
+
+        | $V\left(A\right)$      | $V\left(B\right)$      | $V\left(A\oplus B\right)$ |
+        |----------|----------|----------------|
+        | $\true$  | $\true$  | $\false$       |
+        | $\true$  | $\false$ | $\true$        |
+        | $\false$ | $\true$  | $\true$        |
+        | $\false$ | $\false$ | $\false$       |
+
 ### Equivalence of Sentences
 
 After talking about sentences and their truth value, we want to be able to distinguish different logic sentences, for example we know that "Today is Monday and tomorrow is Tuesday" is equivalent to saying "Tomorrow is Tuesday and today is Monday", but we want to give this a formal definition,
@@ -268,7 +316,9 @@ After talking about sentences and their truth value, we want to be able to disti
 
 Now that we know how to prove equivalence of sentences we want to show some commonly used results that will be very important for your entire math journey.
 
-First of all we show that conjunction and disjunction are commutative, this is a neat trick to use when needed!
+#### Commutativity
+
+We want to show that conjunction and disjunction are commutative, this is a neat trick to use when needed!
 
 !!! claim "_Claim_: Conjunction is Commutative"
 
@@ -304,7 +354,28 @@ First of all we show that conjunction and disjunction are commutative, this is a
         | $\false$ | $\true$ | $\true$ | $\true$ |
         | $\false$ | $\false$ | $\false$ | $\false$ |
 
-Secondly we show that conjunction and disjunction are associative, this is very useful for reducing complex sentences by shuffling the parentheses around them.
+Likewise, some of the complex logical connectives are also commutative.
+
+!!! claim "_Claim_: Exclusive Or is Commutative"
+
+    Let $A$ and $B$ be sentences then,
+
+    $$A\oplus B\equiv B\oplus A$$
+
+    ??? proof
+
+        We will show that the columns in the truth table match,
+
+        | $A$ | $B$ | $A \oplus B$ | $B \oplus A$ |
+        |-----|-----|-------------|-------------|
+        | $\true$ | $\true$ | $\false$ | $\false$ |
+        | $\true$ | $\false$ | $\true$ | $\true$ |
+        | $\false$ | $\true$ | $\true$ | $\true$ |
+        | $\false$ | $\false$ | $\false$ | $\false$ |
+
+#### Associativity
+
+We want to show that conjunction and disjunction are associative, this is very useful for reducing complex sentences by shuffling the parentheses around them.
 
 !!! claim "_Claim_: Conjunction is Associative"
 
@@ -348,7 +419,70 @@ Secondly we show that conjunction and disjunction are associative, this is very 
         | $\false$ | $\true$ | $\false$ | $\true$ | $\true$ |
         | $\false$ | $\false$ | $\false$ | $\false$ | $\false$ |
 
-Thirdly we show that conjunction and disjunction are distributive over one another, this is also very useful for reducing complex sentences by being able to pull out conjunctions and disjunctions.
+Likewise, some of the complex logical connectives are also associative.
+
+!!! claim "_Claim_: Exclusive Or is Associative"
+
+    Let $A$ and $B$ be sentences then,
+
+    $$A\oplus\left(B\oplus C\right)\equiv\left(A\oplus B\right)\oplus C$$
+
+    ??? solution
+
+        We will show that the columns in the truth table match,
+
+        | $A$ | $B$ | $C$ | $A\oplus\left(B\oplus C\right)$ | $\left(A\oplus B\right)\oplus C$ |
+        |-----|-----|-----|-------------------------------|--------------------------------|
+        | $\true$ | $\true$ | $\true$ | $\true$ | $\true$ |
+        | $\true$ | $\false$ | $\true$ | $\false$ | $\false$ |
+        | $\true$ | $\true$ | $\false$ | $\false$ | $\false$ |
+        | $\true$ | $\false$ | $\false$ | $\true$ | $\true$ |
+        | $\false$ | $\true$ | $\true$ | $\false$ | $\false$ |
+        | $\false$ | $\false$ | $\true$ | $\true$ | $\true$ |
+        | $\false$ | $\true$ | $\false$ | $\true$ | $\true$ |
+        | $\false$ | $\false$ | $\false$ | $\false$ | $\false$ |
+
+#### Idempotency
+
+We want to show that conjunction and disjunction are idempotence, meaning that if they are applied twice it can be reduced to one logical connective.
+
+!!! claim "_Claim_: Conjunction is Idempotent"
+
+    Let $A$ be a sentence then,
+
+    $$A\land A\equiv A$$
+
+    ??? proof
+
+        We will show that the columns in the truth table match,
+
+        | $A$ | $A \land A$ |
+        |-----|-------------|
+        | $\true$ | $\true$ |
+        | $\false$ | $\false$ |
+
+        Since the columns for $A$ and $A \land A$ are identical, $A \land A \equiv A$.
+
+???+ exercise "_Exercise_: Disjunction is Idempotent"
+
+    Let $A$ be a sentence, show that the following holds,
+
+    $$A\lor A\equiv A$$
+
+    ??? solution
+
+        We will show that the columns in the truth table match,
+
+        | $A$ | $A \lor A$ |
+        |-----|------------|
+        | $\true$ | $\true$ |
+        | $\false$ | $\false$ |
+
+        Since the columns for $A$ and $A \lor A$ are identical, $A \lor A \equiv A$.
+
+#### Distributivity
+
+We want to show that conjunction and disjunction are distributive over one another, this is also very useful for reducing complex sentences by being able to pull out conjunctions and disjunctions.
 
 !!! claim "_Claim_: Conjunction is Distributive Over Disjunction"
 
@@ -391,6 +525,8 @@ Thirdly we show that conjunction and disjunction are distributive over one anoth
         | $\false$ | $\false$ | $\true$ | $\false$ | $\false$ |
         | $\false$ | $\true$ | $\false$ | $\false$ | $\false$ |
         | $\false$ | $\false$ | $\false$ | $\false$ | $\false$ |
+
+#### Negation Equivalences
 
 Now we still want to show some useful equivalences to use.
 
@@ -455,6 +591,10 @@ Now we still want to show some useful equivalences to use.
         | $\false$ | $\true$ | $\false$ | $\false$ |
         | $\false$ | $\false$ | $\false$ | $\false$ |
 
+Intuitively, how do we negate a compound statement? Imagine someone tells you: _"The suspect is tall and wearing a jacket."_ If you find out this statement is false, what does that mean? It doesn't mean the suspect is short _and_ not wearing a jacket. It simply means at least one of those attributes failed: either they are not tall, _or_ they are not wearing a jacket.
+
+This brings us to **De Morgan's Laws**, which show us that when you distribute a negation $(\neg)$ over a conjunction $(\land)$, it transforms into a disjunction $(\lor)$, and vice versa.
+
 !!! claim "_Claim_: De Morgan's laws"
 
     <div id="claim-de-morgans-laws"></div>
@@ -485,15 +625,7 @@ Now we still want to show some useful equivalences to use.
         | $\false$ | $\true$ | $\false$ | $\false$ |
         | $\false$ | $\false$ | $\true$ | $\true$ |
 
-Given two sentences that imply each other, we know that this means that they are both true or false together, hence this is the strongest relationship two sentences can have.
-
-!!! def "_Definition_: If and Only If"
-
-    Let $A$ and $B$ be sentences such that,
-
-    $$\left(A\implies B\right)\land\left(B\implies A\right)$$
-
-    Then we use the notation $A\iff B$ and say that "$A$ if and only if $B$", or abbreviated to "$A$ iff $B$".
+#### Tautologies and Contradictions
 
 !!! def "_Definition_: Tautology"
 
@@ -580,11 +712,13 @@ Given two sentences that imply each other, we know that this means that they are
         | $\true$ | $\true$ |
         | $\false$ | $\true$ |
 
+#### Semantic Entailment
+
 !!! def "_Definition_: Semantically Entailment Sentence"
 
     Let $A_1,\ldots , A_n$ be sentences and let $B$ be a sentence, such that the following holds,
 
-    $$\left(\text{For all $i$ in range $1$ to $n$ we have} V\left(A_i\right) = \true\right) \implies V\left(B\right) = \true$$
+    $$\left(\text{For all $i$ in range $1$ to $n$ we have } V\left(A_i\right) = \true\right) \implies V\left(B\right) = \true$$
 
     then we call $B$ a semantically entailment sentence in $A_1,\ldots , A_n$.
 
@@ -626,15 +760,22 @@ Given two sentences that imply each other, we know that this means that they are
 
 ## Predicate Calculus
 
-After dealing with sentences in [propositional calculus](#propositional-calculus) we want to deal with sentences that contain variables and quantifiers on those variables.
+In Propositional Calculus, a sentence like $A$ has a fixed, unyielding truth value. But mathematics needs to express properties of numbers and objects dynamically. Consider the statement:
+
+$$\text{"}x \text{ is an even number"}$$
+
+Is this true or false? We cannot say until someone tells us what $x$ is. If $x=4$, it is true; if $x=7$, it is false. This "open sentence" is a **Predicate**.
 
 !!! def "_Definition_: Predicate"
 
     A predicate in $n$ variables is a proposition in $n$ terms.
 
-The proposition "There exists $x$ such that $x^2 = -1$" is a predicate in one variable, but on which domain does this defined? Does it even have meaning for all mathematical object? Likewise the proposition "For all $x, y$ holds that $x > y$" is a predicate in two variables, but again we don't know that is the domain of $x, y$, are they numbers? Maybe they're some arbitrary objects?
-
 ### Quantifiers
+
+To turn a predicate back into a concrete sentence that can be definitively evaluated as $\true$ or $\false$, we have two choices:
+
+1. Plug in a specific element for $x$.
+2. State _how many_ elements in our universe satisfy the property using **Quantifiers**.
 
 !!! def "_Definition_: Exists Quantifier"
 
@@ -733,7 +874,9 @@ After talking about the base quantifiers we can define ourselves more complex qu
 
 ### Domain of Discourse
 
-As explained earlier, there is a problem in writing a general formula in predicate calculus, this is since it is not clear from where the variables in the expression come from, so we will define the domain of discourse to be the domain from which the variables come. But also, when it is clear what the domain is, we will not specify it (as in the formula $\exists x.x=1$ where it is clear that we are working over some number system that was disclosed beforehand).
+The proposition "There exists $x$ such that $x^2 = -1$" is a predicate in one variable, but on which domain does this defined? Does it even have meaning for all mathematical object? Likewise the proposition "For all $x, y$ holds that $x > y$" is a predicate in two variables, but again we don't know that is the domain of $x, y$, are they numbers? Maybe they're some arbitrary objects? For that we will define the **domain of discourse**.
+
+We will define the domain of discourse to be the domain from which the variables come. But also, when it is clear what the domain is, we will not specify it (as in the formula $\exists x.x=1$ where it is clear that we are working over some number system that was disclosed beforehand).
 
 !!! def "_Definition_: Domain of Discourse"
 
@@ -914,13 +1057,40 @@ This sections contains a lot of formal proofs for mathematical facts, try firstl
 
 !!! claim "_Claim_: Forall Quantifiers are Interchangeable"
 
+    <div id="claim-forall-quantifiers-are-interchangeable"></div>
     Let $\varphi$ be a formula, then,
 
     $$\forall x.\forall y.\varphi\left(x,y\right)\equiv\forall y.\forall x.\varphi\left(x,y\right)$$
 
     ??? proof
 
-        TODO
+        Let $D$ be a domain of discourse, and let $P(x,y)$ be an interpretation of $\varphi(x,y)$ over $D$.
+        
+        We must show that the statement $\forall x.\forall y.P(x,y)$ evaluates to $\true$ if and only if $\forall y.\forall x.P(x,y)$ evaluates to $\true$.
+
+        - $\underline{\implies}$: We assume that the prefix is true, meaning that we know,
+            
+            $$\forall x.\forall y.P(x,y)$$
+            
+            By the semantic definition of the universal quantifier $\forall x$, this means that for every single element $a \in D$, the remaining formula $\forall y.P(a,y)$ must evaluate to $\true$.
+
+            In turn, if $\forall y.P(a,y)$ is $\true$ for a given $a$, then by the semantic definition of $\forall y$, the statement $P(a,b)$ evaluates to $\true$ for every single element $b \in D$. 
+
+            Since this holds across the selections, let us fix an arbitrary element $b_0 \in D$. We observe that for every element $a \in D$, the condition $P(a,b_0)$ holds. This implies that the statement $\forall x.P(x,b_0)$ is $\true$. 
+
+            Since $b_0$ was an arbitrarily selected member of $D$, it must follow that for every element $y \in D$, the statement $\forall x.P(x,y)$ is $\true$. Thus, by definition, $\forall y.\forall x.P(x,y)$ is $\true$.
+
+        - $\underline{\impliedby}$: We assume that the prefix is true, meaning that we know,
+            
+            $$\forall y.\forall x.P(x,y)$$
+            
+            By the semantic definition of $\forall y$, this means that for every single element $b \in D$, the statement $\forall x.P(x,b)$ evaluates to $\true$. 
+            
+            If $\forall x.P(x,b)$ is $\true$ for a given $b$, then by the definition of $\forall x$, the statement $P(a,b)$ evaluates to $\true$ for every single element $a \in D$.
+            
+            Now, let us fix an arbitrary element $a_0 \in D$. We look across all possible elements of $D$ and notice that for every element $b \in D$, the condition $P(a_0,b)$ holds. This means that the statement $\forall y.P(a_0,y)$ is $\true$. 
+            
+            Since $a_0$ was chosen arbitrarily from $D$, it must hold for all elements in the domain, meaning that for every element $x \in D$, the statement $\forall y.P(x,y)$ is $\true$. Thus, by definition, $\forall x.\forall y.P(x,y)$ is $\true$.
 
 ???+ exercise "_Exercise_: Exists Quantifiers are Interchangeable"
 
@@ -930,7 +1100,27 @@ This sections contains a lot of formal proofs for mathematical facts, try firstl
 
     ??? solution
 
-        TODO
+        By the <a href="#claim-forall-and-exists-are-inverses">forall and exists are inverses claim</a>, we know that $\exists z.\psi(z) \equiv \neg\forall z.\neg\psi(z)$. Applying this to our formula,
+
+        $$\begin{align*}
+        \exists x.\exists y.\varphi\left(x,y\right) & \equiv \neg\forall x.\neg\left(\exists y.\varphi\left(x,y\right)\right) \\
+        & \equiv \neg\forall x.\left(\forall y.\neg\varphi\left(x,y\right)\right) \\
+        & \equiv \neg\left(\forall x.\forall y.\neg\varphi\left(x,y\right)\right)
+        \end{align*}$$
+
+        Now, we apply the <a href="#claim-forall-quantifiers-are-interchangeable">forall quantifiers are interchangeable claim</a> to swap the order of the universal quantifiers,
+
+        $$\neg\left(\forall x.\forall y.\neg\varphi\left(x,y\right)\right) \equiv \neg\left(\forall y.\forall x.\neg\varphi\left(x,y\right)\right)$$
+
+        Finally, we use the forall and exists are inverses claim again to convert the universal quantifiers back into existential ones,
+
+        $$\begin{align*}
+        \neg\left(\forall y.\forall x.\neg\varphi\left(x,y\right)\right) & \equiv \neg\forall y.\left(\forall x.\neg\varphi\left(x,y\right)\right) \\
+        & \equiv \exists y.\neg\left(\forall x.\neg\varphi\left(x,y\right)\right) \\
+        & \equiv \exists y.\exists x.\varphi\left(x,y\right)
+        \end{align*}$$
+
+        Thus, we have shown that $\exists x.\exists y.\varphi\left(x,y\right) \equiv \exists y.\exists x.\varphi\left(x,y\right)$.
 
 !!! claim "_Claim_: Forall Quantifier is Distributive Over Conjunction"
 
@@ -940,9 +1130,14 @@ This sections contains a lot of formal proofs for mathematical facts, try firstl
 
     ??? proof
 
-        TODO
+        Let $D$ be a domain of discourse, and let $P(x)$ and $Q(x)$ be interpretations of $\varphi(x)$ and $\psi(x)$ over $D$ respectively.
 
-!!! exercise "_Exercise_: Exists Quantifier is Distributive Over Disjunction"
+        - $\underline{\implies}$: Assume that $\forall x.\left(P(x) \land Q(x)\right)$ is true. Let $a \in D$ be an arbitrary element. By our assumption, $P(a) \land Q(a)$ is true, which implies that both $P(a)$ and $Q(a)$ are true. Since $a$ was arbitrary, we can conclude that $\forall x.P(x)$ is true and $\forall y.Q(y)$ is true. Thus, their conjunction $\left(\forall x.P(x)\right) \land \left(\forall y.Q(y)\right)$ is true.
+        - $\underline{\impliedby}$: Assume that $\left(\forall x.P(x)\right) \land \left(\forall y.Q(y)\right)$ is true. This means that both $\forall x.P(x)$ and $\forall y.Q(y)$ are true. Let $a \in D$ be an arbitrary element. From the first part of our assumption, $P(a)$ is true. From the second part, $Q(a)$ is true. Thus, $P(a) \land Q(a)$ is true. Since $a$ was arbitrary, we conclude that $\forall x.\left(P(x) \land Q(x)\right)$ is true.
+
+        Having shown both directions, we conclude that the formulas are equivalent.
+
+???+ exercise "_Exercise_: Exists Quantifier is Distributive Over Disjunction"
 
     Let $\varphi$ and $\psi$ be formulas, then,
 
@@ -950,7 +1145,15 @@ This sections contains a lot of formal proofs for mathematical facts, try firstl
 
     ??? solution
 
-        TODO
+        We can prove this result by applying the <a href="#claim-forall-and-exists-are-inverses">forall and exists are inverses claim</a> and the previously proven <a href="#claim-forall-quantifier-is-distributive-over-conjunction">distribution of forall over conjunction</a>.
+
+        $$\begin{align*}
+        \exists x.\left(\varphi\left(x\right)\lor\psi\left(x\right)\right) & \equiv \neg\forall x.\neg\left(\varphi\left(x\right)\lor\psi\left(x\right)\right) \\
+        & \equiv \neg\forall x.\left(\neg\varphi\left(x\right)\land\neg\psi\left(x\right)\right) && \text{(De Morgan's Laws)} \\
+        & \equiv \neg\left(\left(\forall x.\neg\varphi\left(x\right)\right)\land\left(\forall y.\neg\psi\left(y\right)\right)\right) && \text{(Distribution of } \forall \text{ over } \land\text{)} \\
+        & \equiv \neg\left(\forall x.\neg\varphi\left(x\right)\right)\lor\neg\left(\forall y.\neg\psi\left(y\right)\right) && \text{(De Morgan's Laws)} \\
+        & \equiv \left(\exists x.\varphi\left(x\right)\right)\lor\left(\exists y.\psi\left(y\right)\right) && \text{(Inverse relation)}
+        \end{align*}$$
 
 !!! claim "_Claim_: Exists and Forall Quantifiers are Not Interchangeable"
 
@@ -960,7 +1163,14 @@ This sections contains a lot of formal proofs for mathematical facts, try firstl
 
     ??? proof
 
-        TODO
+        To prove that the formulas are not equivalent, we provide a counter-example using a specific domain of discourse and interpretation.
+
+        Let the domain of discourse $D$ be the natural numbers, and let $\varphi(x, y)$ be the predicate $x > y$.
+
+        1. Consider the formula $\forall y. \exists x. (x > y)$. This statement says "For every real number $y$, there exists a real number $x$ that is greater than $y$." This is **true** (for any $y$, we can choose $x = y + 1$).
+        2. Consider the formula $\exists x. \forall y. (x > y)$. This statement says "There exists a real number $x$ that is greater than every real number $y$." This is **false** (no such "maximum" real number exists, as for any $x$, the statement $x > x$ is false).
+
+        Since we found a domain and an interpretation where one formula is true and the other is false, they are not equivalent.
 
 ???+ exercise "_Exercise_"
 
