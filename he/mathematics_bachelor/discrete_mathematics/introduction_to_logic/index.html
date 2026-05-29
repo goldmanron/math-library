@@ -1,0 +1,4165 @@
+<!DOCTYPE html><html lang="he" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A documentation site for my project.">
+      
+      
+        <meta name="author" content="Ron Mikhelman">
+      
+      
+        <link rel="canonical" href="https://yeahBOYYYYY.github.io/math-library/he/mathematics_bachelor/discrete_mathematics/introduction_to_logic/">
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+        <link rel="next" href="../introduction_to_set_theory/">
+      
+      
+        
+          <link rel="alternate" href="../../../../mathematics_bachelor/discrete_mathematics/introduction_to_logic/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="he">
+        
+      
+      
+      <link rel="icon" href="../../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>מבוא ללוגיקה - ספריית מתמטיקה</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/admonitions.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="rtl" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#propositional-calculus" class="md-skip">
+          לדלג לתוכן
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="כותרת עליונה">
+    <a href="../../../" title="ספריית מתמטיקה" class="md-header__button md-logo" aria-label="ספריית מתמטיקה" data-md-component="logo">
+      
+  <img src="../../../../assets/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ספריית מתמטיקה
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              מבוא ללוגיקה
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to system preference" type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 2c-1.05 0-2.05.16-3 .46 4.06 1.27 7 5.04 7 9.54s-2.94 8.27-7 9.54c.95.3 1.95.46 3 .46a10 10 0 0 0 10-10A10 10 0 0 0 9 2"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="בחירת שפה">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../../mathematics_bachelor/discrete_mathematics/introduction_to_logic/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="he" class="md-select__link">
+              Hebrew
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="חיפוש" placeholder="חיפוש" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="חיפוש">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="שיתוף" aria-label="שיתוף" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="ניקוי" aria-label="ניקוי" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            אתחול חיפוש
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yeahBOYYYYY/math-library/" title="לעבור אל המאגר" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    yeahBOYYYYY/math-library
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="לשוניות" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  דף הבית
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  תואר ראשון במתמטיקה
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../computer_science_bachelor/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  תואר ראשון במדעי המחשב
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ניווט" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="ספריית מתמטיקה" class="md-nav__button md-logo" aria-label="ספריית מתמטיקה" data-md-component="logo">
+      
+  <img src="../../../../assets/favicon.ico" alt="logo">
+
+    </a>
+    ספריית מתמטיקה
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yeahBOYYYYY/math-library/" title="לעבור אל המאגר" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    yeahBOYYYYY/math-library
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    דף הבית
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    תואר ראשון במתמטיקה
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    תואר ראשון במתמטיקה
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    מתמטיקה בדידה
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    מתמטיקה בדידה
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    מבוא ללוגיקה
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    מבוא ללוגיקה
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#propositional-calculus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Propositional Calculus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Propositional Calculus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-connectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logical Connectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sentences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sentences
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sentences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#values-of-sentences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Values of Sentences
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-logical-connectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complex Logical Connectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equivalence-of-sentences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Equivalence of Sentences
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Equivalence of Sentences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commutativity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commutativity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#associativity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Associativity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idempotency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idempotency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distributivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negation-equivalences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Negation Equivalences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tautologies-and-contradictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tautologies and Contradictions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-entailment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic Entailment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicate-calculus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predicate Calculus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Predicate Calculus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantifiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantifiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#existence-and-uniqueness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existence and Uniqueness
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain-of-discourse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domain of Discourse
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proofs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proofs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction_to_set_theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    מבוא לתורת הקבוצות
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction_to_combinatorics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    מבוא לקומבינטוריקה
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction_to_graph_theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    מבוא לתורת הגרפים
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../analysis/real_analysis_1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    אנליזה
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../computer_science_bachelor/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    תואר ראשון במדעי המחשב
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#propositional-calculus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Propositional Calculus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Propositional Calculus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-connectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logical Connectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sentences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sentences
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sentences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#values-of-sentences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Values of Sentences
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-logical-connectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complex Logical Connectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equivalence-of-sentences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Equivalence of Sentences
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Equivalence of Sentences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commutativity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commutativity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#associativity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Associativity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idempotency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idempotency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distributivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negation-equivalences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Negation Equivalences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tautologies-and-contradictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tautologies and Contradictions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-entailment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic Entailment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicate-calculus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predicate Calculus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Predicate Calculus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantifiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantifiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#existence-and-uniqueness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existence and Uniqueness
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain-of-discourse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domain of Discourse
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proofs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proofs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="ניווט">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../" class="md-path__link">
+        
+  <span class="md-ellipsis">
+    דף הבית
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    תואר ראשון במתמטיקה
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    מתמטיקה בדידה
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>מבוא ללוגיקה</h1>
+
+<p>Mathematical logic is a branch of mathematics that deals with the expression of simple and complex mathematical statements. It allows for the removal of the multiplicity of meanings that exists in human languages by establishing precise rules for presenting different statements in a way that can be understood in only one way. Logic also deals with systems of rules for drawing valid conclusions from data or assumptions in our possession.</p>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em>: Uncertainty in Language</p>
+<p>When you are in a restaurant and ask for a Coke, the waitress asks, "Would you like regular <em>or</em> zero?" Of course, the word <em>or</em> in this case refers to the choice between one of the two and not both, on the other hand, when asked, "Are you hungry <em>or</em> thirsty?" You can mean either one of the two or perhaps both at the same time, meaning that the word <em>or</em> has a double meaning depending on the context.</p>
+</div>
+<p>Logic began its journey in ancient Greece as a branch of philosophy, but following many significant developments in its formal directions, it is now also considered a branch of mathematics. Logic serves as the central theoretical basis for computer science. It is necessary, for example, when we want to "talk" to a machine (such as a computer), because communication with a computer must be very precise and unambiguous, and must comply with predetermined logical rules. Developing logical thinking is also necessary for dealing with various and diverse problems, especially in the fields of science and technology, which require precise and orderly analysis of processes and ideas. In addition, the ability to justify arguments accurately while avoiding logical fallacies that would harm the validity of conclusions is a central tool in mathematics and computer science.</p>
+<h2 id="propositional-calculus">Propositional Calculus<a class="headerlink" href="#propositional-calculus" title="Permanent link">🔗</a></h2>
+<p>In everyday language, words like "if" or "or" are fuzzy. A legal contract might use "if" differently than a parent talking to a child. In mathematics and computer science, we cannot afford this fuzziness. Propositional Calculus strips away the meaning of the words to focus entirely on the <strong>structure</strong> of the truth. Think of it as the "algebra" of logic: just as <span class="arithmatex">\(x + y\)</span> works the same whether <span class="arithmatex">\(x\)</span> represents apples or dollars, <span class="arithmatex">\(A \text{ and } B\)</span> works the same whether <span class="arithmatex">\(A\)</span> is a weather report or a status bit in a CPU.</p>
+<p>Imagine you are writing a computer program to launch a rocket. If your code says "launch if the weather is good or the override switch is pressed and fuel is full," the computer needs to know exactly how to group those conditions. Does it mean <code>(weather is good OR override switch is pressed) AND fuel is full</code>? Or does it mean <code>weather is good OR (override switch is pressed AND fuel is full)</code>? Formalization rescues us from disastrous ambiguity by forcing us to name our basic facts and build exact relationships between them.</p>
+<p>This type of logic deals with sentences, a mathematical object that can be either true or false, and the relations between those sentences.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Formalization</p>
+<p>The transformation of a literal verse into a language of mathematical forms.</p>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>We'll formalize the sentence "Today is not Tuesday, today is Monday and tomorrow will be Tuesday", to do that we will define three sentences,</p>
+<div class="arithmatex">\[\begin{aligned}
+a &amp; =\text{"Today is Tuesday"} &amp; b &amp; =\text{"Today is Monday"} &amp; c &amp; =\text{"Tomorrow is Tuesday"}
+\end{aligned}\]</div>
+<p>Then our original sentence takes the following form, "(not <span class="arithmatex">\(a\)</span>) and (<span class="arithmatex">\(b\)</span> and <span class="arithmatex">\(c\)</span>)".</p>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Atomic Sentence</p>
+<p>A self-contained sentence that can be either <span class="arithmatex">\(\true\)</span> or <span class="arithmatex">\(\false\)</span>.</p>
+<details class="mnote">
+<summary><em>Note</em></summary>
+<p>An "atomic sentence" may also be called a "proposition".</p>
+</details>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>"It is raining outside" Is an atomic sentence because it can be <span class="arithmatex">\(\true\)</span> or <span class="arithmatex">\(\false\)</span> and is not composed of sub-sentences that can be <span class="arithmatex">\(\true\)</span> or <span class="arithmatex">\(\false\)</span>.</p>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Identifying Atomic Sentences</summary>
+<p>Determine which of the following English sentences are atomic sentences. Remember, an atomic sentences must be a declarative sentence that is strictly true or false (but not both).</p>
+<ol>
+<li>Boston is the capital of Massachusetts.</li>
+<li>How are you doing today?</li>
+<li><span class="arithmatex">\(2 + 3 = 6\)</span>.</li>
+<li><span class="arithmatex">\(x + 5 = 10\)</span>.</li>
+<li>Read this book carefully!</li>
+</ol>
+<details class="solution">
+<summary>Solution</summary>
+<ol>
+<li><strong>Yes, this is an atomic sentences.</strong> It is a declarative statement and it is true.</li>
+<li><strong>No.</strong> This is a question, not a declarative statement. It cannot be assigned a truth value.</li>
+<li><strong>Yes, this is an atomic sentences.</strong> It is a declarative statement, even though it evaluates to <span class="arithmatex">\(\false\)</span>. Falsity doesn't stop it from being an atomic sentences!</li>
+<li><strong>No.</strong> This statement's truth depends entirely on the value of <span class="arithmatex">\(x\)</span>. Without knowing <span class="arithmatex">\(x\)</span>, we cannot say it is true or false. (In later chapters, you'll learn this is called a <em>predicate</em>, but it is not an atomic sentences on its own).</li>
+<li><strong>No.</strong> This is an imperative command, not a statement of fact.</li>
+</ol>
+</details>
+</details>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: The Liar Paradox</summary>
+<p>Is the following self-referential statement an atomic sentence?</p>
+<p><em>"This sentence is false."</em></p>
+<details class="solution">
+<summary>Solution</summary>
+<p><strong>No.</strong> If the statement evaluates to <span class="arithmatex">\(\true\)</span>, then by its own definition, it must be <span class="arithmatex">\(\false\)</span>. If it evaluates to <span class="arithmatex">\(\false\)</span>, then the statement is telling the truth, making it <span class="arithmatex">\(\true\)</span>. Since it leads to a strict contradiction and cannot hold a definitive truth value, it is not an atomic sentence.</p>
+</details>
+</details>
+<p>Understanding how to identify atomic sentences isn't just an abstract philosophical game; it is the foundation of how computer programs make decisions. When a compiler or an interpreter reads your code, it needs to evaluate conditions inside if statements or while loops. These conditions must resolve to definitively true or definitively false. If a statement is ambiguous, a computer simply cannot process it. By training yourself to spot atomic propositions, you are essentially training your brain to think like a machine processing data. Let's look at how this applies to everyday technology.</p>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Identifying Atomic Sentences in Computer Systems</summary>
+<p>Determine which of the following system logs or code snippets represent atomic sentences:</p>
+<ol>
+<li><code>Error 404: File not found.</code></li>
+<li><code>Restart the server immediately!</code></li>
+<li><code>User 'admin' logged in at 10:00 AM.</code></li>
+<li><code>CPU usage &gt; 90%</code></li>
+<li><code>x = 5</code> (as an assignment instruction, not a comparison)</li>
+</ol>
+<details class="solution">
+<summary>Solution</summary>
+<ol>
+<li><strong>Yes.</strong> This is a declarative statement about the state of the system. It is true if the file is genuinely missing, and false otherwise.</li>
+<li><strong>No.</strong> This is a command (imperative), not a proposition.</li>
+<li><strong>Yes.</strong> This is a factual claim that can be verified as true or false by checking server logs.</li>
+<li><strong>No.</strong> Just like <span class="arithmatex">\(x + 5 = 10\)</span>, this depends on the current CPU usage. Without a specific point in time, we cannot say if it's true or false. (It is a predicate).</li>
+<li><strong>No.</strong> This is an action/command instructing the computer to assign a value to memory, not a declaration of truth.</li>
+</ol>
+</details>
+</details>
+<h3 id="logical-connectives">Logical Connectives<a class="headerlink" href="#logical-connectives" title="Permanent link">🔗</a></h3>
+<p>Atomic sentences are the fundamental blocks of logic, but on their own, they are incredibly limited. In everyday speech and mathematical reasoning, we rarely use isolated claims. Instead, we link them together: "If it rains, <em>then</em> I will stay home," or "The number <span class="arithmatex">\(n\)</span> is even <em>and</em> <span class="arithmatex">\(n\)</span> is a prime."</p>
+<p>To replicate this in mathematical logic, we introduce formal tools that act like linguistic glue. These are called <strong>Logical Connectives</strong>. They take one or more sentences as inputs and construct a brand-new, complex sentence whose truth depends entirely on the components.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Negation Connective</p>
+<p>Given a sentence <span class="arithmatex">\(A\)</span> we express "not <span class="arithmatex">\(A\)</span>" symbolically as "<span class="arithmatex">\(\neg A\)</span>".</p>
+<details class="mnote">
+<summary><em>Note</em></summary>
+<p>It is also common to use the notation "<span class="arithmatex">\(\sim A\)</span>" or "<span class="arithmatex">\(\overline{A}\)</span>" for negation, but we will use only "<span class="arithmatex">\(\neg A\)</span>".</p>
+</details>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Conjunction Connective</p>
+<p>Given two sentences <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> we express "<span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>" symbolically as "<span class="arithmatex">\(A \land B\)</span>".</p>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Disjunction Connective</p>
+<p>Given two sentences <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> we express "<span class="arithmatex">\(A\)</span> or <span class="arithmatex">\(B\)</span>" symbolically as "<span class="arithmatex">\(A \lor B\)</span>".</p>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Implication Connective</p>
+<p>Given two sentences <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> we express "if <span class="arithmatex">\(A\)</span> then <span class="arithmatex">\(B\)</span>" symbolically as "<span class="arithmatex">\(A \implies B\)</span>", and we call <span class="arithmatex">\(A\)</span> the "<strong>Prefix</strong>" and <span class="arithmatex">\(B\)</span> the "<strong>Suffix</strong>" of the sentence.</p>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Translating Campus Rules</summary>
+<p>Let <span class="arithmatex">\(p\)</span>, <span class="arithmatex">\(q\)</span>, and <span class="arithmatex">\(r\)</span> be the propositions:</p>
+<ul>
+<li><span class="arithmatex">\(p\)</span>: "You get an A on the final exam."</li>
+<li><span class="arithmatex">\(q\)</span>: "You do every exercise in this book."</li>
+<li><span class="arithmatex">\(r\)</span>: "You get an A in this class."</li>
+</ul>
+<p>Write the following propositions using <span class="arithmatex">\(p, q, r\)</span> and logical connectives:</p>
+<ol>
+<li>You get an A in this class, but you do not do every exercise in this book.</li>
+<li>To get an A in this class, it is necessary for you to get an A on the final exam.</li>
+<li>Getting an A on the final exam and doing every exercise in this book is sufficient for getting an A in this class.</li>
+</ol>
+<details class="solution">
+<summary>Solution</summary>
+<ol>
+<li>The word "but" logically means "and". You are achieving <span class="arithmatex">\(r\)</span> AND you are NOT achieving <span class="arithmatex">\(q\)</span>.
+   <strong>Answer</strong>: <span class="arithmatex">\(r \land \neg q\)</span></li>
+<li>Saying something is "necessary" means you can't have the result without it. If you get an A in the class, then you must have gotten an A on the final.
+   <strong>Answer</strong>: <span class="arithmatex">\(r \implies p\)</span></li>
+<li>Saying something is "sufficient" means it guarantees the result. If you do both <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span>, then <span class="arithmatex">\(r\)</span> will happen.
+   <strong>Answer</strong>: <span class="arithmatex">\((p \land q) \implies r\)</span></li>
+</ol>
+</details>
+</details>
+<p>Translating English to formal logic is a crucial skill for software engineers, lawyers, and mathematicians. Human language is full of colloquialisms and hidden meanings. Words like "unless", "provided that", and "only if" can trip up even experienced university students. The motivation here is safety and precision: if you are coding the logic for an autopilot system or drafting a legal contract, misinterpreting an "unless" can be catastrophic. Formalizing these words removes the guesswork.</p>
+<details class="exercise" open="open">
+<summary>Exercise: The Tricky "Unless"</summary>
+<p>Let <span class="arithmatex">\(P\)</span> be "You have a ticket" and <span class="arithmatex">\(Q\)</span> be "You can board the train".
+Translate the following sentence into formal logic:
+"You cannot board the train unless you have a ticket."</p>
+<details class="solution">
+<summary>Solution</summary>
+<p>The word "unless" can almost always be translated logically as "if not". So, the sentence becomes:
+"You cannot board the train <strong>if you do not</strong> have a ticket."
+This translates cleanly into an implication: If (you do not have a ticket), then (you cannot board the train).</p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(\neg P \implies \neg Q\)</span></p>
+</details>
+</details>
+<details class="exercise" open="open">
+<summary>Exercise: Necessary and Sufficient Conditions</summary>
+<p>Let <span class="arithmatex">\(R\)</span> be "It rains" and <span class="arithmatex">\(C\)</span> be "The game is canceled".
+Translate the following English phrasing into logical implications:</p>
+<ol>
+<li>Rain is a sufficient condition for the game to be canceled.</li>
+<li>Rain is a necessary condition for the game to be canceled.</li>
+<li>The game is canceled only if it rains.</li>
+</ol>
+<details class="solution">
+<summary>Solution</summary>
+<ol>
+<li>
+<p>"Sufficient" means it guarantees the outcome. If it rains, the cancellation definitely happens. </p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(R \implies C\)</span></p>
+</li>
+<li>
+<p>"Necessary" means the outcome cannot happen without it. If the game was canceled, it <em>must</em> have rained. </p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(C \implies R\)</span></p>
+</li>
+<li>
+<p>"Only if" indicates a necessary condition. The cancellation forces us to conclude that it rained. </p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(C \implies R\)</span></p>
+</li>
+</ol>
+</details>
+</details>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Translating Number Theory</summary>
+<p>Let <span class="arithmatex">\(P\)</span> be "<span class="arithmatex">\(n\)</span> is divisible by 4" and <span class="arithmatex">\(Q\)</span> be "<span class="arithmatex">\(n\)</span> is divisible by 2". Translate the following into propositional logic and determine if they are True or False over the integers.</p>
+<ol>
+<li><span class="arithmatex">\(n\)</span> is divisible by 4 implies <span class="arithmatex">\(n\)</span> is divisible by 2.</li>
+<li><span class="arithmatex">\(n\)</span> is divisible by 2 is a sufficient condition for <span class="arithmatex">\(n\)</span> to be divisible by 4.</li>
+</ol>
+<details class="solution">
+<summary>Solution</summary>
+<ol>
+<li>
+<p><strong>Translation:</strong> <span class="arithmatex">\(P \implies Q\)</span>.</p>
+<p><strong>Truth:</strong> <span class="arithmatex">\(\true\)</span>. Every multiple of 4 is a multiple of 2.</p>
+</li>
+<li>
+<p><strong>Translation:</strong> <span class="arithmatex">\(Q \implies P\)</span>.</p>
+<p><strong>Truth:</strong> <span class="arithmatex">\(\false\)</span>. For example, <span class="arithmatex">\(n=6\)</span> is divisible by 2, but it is not divisible by 4.</p>
+</li>
+</ol>
+</details>
+</details>
+<h3 id="sentences">Sentences<a class="headerlink" href="#sentences" title="Permanent link">🔗</a></h3>
+<p>Now after defining the atomic sentences and the connectives we can define what a sentence is formally,</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Sentence</p>
+<p>A claim that is composed by atomic sentences and connectives between them.</p>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>The phrase "Today is Tuesday" is a sentence, while "What is the time?", "Close the door!" and "1 + 1" are not.</p>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Let <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> be atomic sentences, then the following phrases are also sentences,</p>
+<ul>
+<li><span class="arithmatex">\(A \implies B\)</span></li>
+<li><span class="arithmatex">\(\left(A\lor B\right)\land\left(C\lor B\right)\)</span></li>
+<li><span class="arithmatex">\(\left(\left(A\lor B\right)\implies\neg A\right)\implies C\)</span></li>
+</ul>
+</div>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em></p>
+<p>Phrases of the form,</p>
+<ul>
+<li><span class="arithmatex">\(A\implies\)</span></li>
+<li><span class="arithmatex">\(A\land\lor B\)</span></li>
+<li><span class="arithmatex">\(A\land B\implies C\)</span></li>
+<li><span class="arithmatex">\(A \neg\)</span></li>
+</ul>
+<p>Which are phrases without mathematical meaning or with dual meaning are not considered as sentence in propositional calculus, and such phrases are called "<strong>abuse of notation</strong>".</p>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: The Island of Knights and Knaves</summary>
+<p>On a famous fictional island, every inhabitant is either a <strong>Knight</strong> (who always tells the truth) or a <strong>Knave</strong> (who always lies). You meet Alice and Bob. 
+Alice says: "At least one of us is a Knave."
+Formalize this scenario and determine what Alice and Bob are.</p>
+<details class="solution">
+<summary>Solution</summary>
+<p>Let <span class="arithmatex">\(A\)</span> be the sentence "Alice is a Knight" and <span class="arithmatex">\(B\)</span> be the sentence "Bob is a Knight".
+    1. Assume Alice is a Knight (<span class="arithmatex">\(A\)</span> is <span class="arithmatex">\(\true\)</span>). Then <span class="arithmatex">\(\neg A \lor \neg B\)</span> is <span class="arithmatex">\(\true\)</span>. Since <span class="arithmatex">\(A\)</span> is <span class="arithmatex">\(\true\)</span>, <span class="arithmatex">\(\neg A\)</span> is <span class="arithmatex">\(\false\)</span>, so <span class="arithmatex">\(\neg B\)</span> must be <span class="arithmatex">\(\true\)</span>. This means Bob is a Knave. This is a consistent assignment.
+    2. Assume Alice is a Knave (<span class="arithmatex">\(A\)</span> is <span class="arithmatex">\(\false\)</span>). Then <span class="arithmatex">\(A \land B\)</span> must be <span class="arithmatex">\(\true\)</span> (the negation of her statement). But <span class="arithmatex">\(A\)</span> is <span class="arithmatex">\(\false\)</span>, so <span class="arithmatex">\(A \land B\)</span> is <span class="arithmatex">\(\false\)</span>. This is a contradiction.
+Conclusion: Alice is a Knight and Bob is a Knave.</p>
+</details>
+</details>
+<h4 id="values-of-sentences">Values of Sentences<a class="headerlink" href="#values-of-sentences" title="Permanent link">🔗</a></h4>
+<p>Now that we have sentences in our mathematical language we want to give them meaning, for that we have to talk about truth and falseness of sentences.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Truth Assignment</p>
+<p>Let <span class="arithmatex">\(A\)</span> be an atomic sentence, then we assign to <span class="arithmatex">\(A\)</span> a value of either <span class="arithmatex">\(\true\)</span> or <span class="arithmatex">\(\false\)</span>. Moreover we'll use the notation <span class="arithmatex">\(V\left(A\right)\)</span> for the truth assignment of <span class="arithmatex">\(A\)</span>.</p>
+</div>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em></p>
+<p>In our logic system a sentence is either <span class="arithmatex">\(\true\)</span> or <span class="arithmatex">\(\false\)</span> but never both.</p>
+<p>And mathematically, for all atomic sentences <span class="arithmatex">\(A\)</span> the following holds,</p>
+<div class="arithmatex">\[\left(\left(V\left(A\right)=\true\right)\land\left(V\left(A\right)\ne\false\right)\right)\lor\left(\left(V\left(A\right)=\false\right)\land\left(V\left(A\right)\ne\true\right)\right)\]</div>
+</div>
+<p>From the last note we can infer the rule "reductio ad absurdum", which means in English "<strong>proof by contradiction</strong>", to prove that a statement <span class="arithmatex">\(\varphi\)</span> is true we can assume that it's false and show that it implies a contradiction, hence because we have only two options for the truthiness of <span class="arithmatex">\(\varphi\)</span> we can deduce that <span class="arithmatex">\(\varphi\)</span> must be true!</p>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>This are a few sentences and their truth assignments,</p>
+<ul>
+<li><span class="arithmatex">\(V\left(1&lt;3\right) = \true\)</span></li>
+<li><span class="arithmatex">\(V\left(1+ 1 = 3\right) = \false\)</span></li>
+</ul>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Formalize and determine if the following sentence is true, false or not a sentence, "Today is Tuesday and Tomorrow will also be Tuesday".</p>
+<details class="solution">
+<summary>Solution</summary>
+<p>We will define two sentences,</p>
+<div class="arithmatex">\[\begin{aligned}
+A &amp; =\text{"Today is Tuesday"} &amp; B &amp; =\text{"Tomorrow is Tuesday"}
+\end{aligned}\]</div>
+<p>Then our original sentence is <span class="arithmatex">\(A \land B\)</span>, but we also note that only of them can be true by our understanding of the week days, hence we can that</p>
+<div class="arithmatex">\[V\left(A\land B\right) = \false\]</div>
+</details>
+</details>
+<p>When analyzing the truth values of complex sentences, we often don't need to know the truth value of every single atomic sentence to find the final result. Sometimes, knowing just one piece of information is enough to collapse the whole expression. This is known as "short-circuit evaluation" in computer programming. For example, if you have a massive conjunction of requirements (<span class="arithmatex">\(A \land B \land C \land \dots\)</span>), finding out that <span class="arithmatex">\(A\)</span> is false immediately tells you the whole sentence is false, saving the computer from having to check <span class="arithmatex">\(B\)</span> or <span class="arithmatex">\(C\)</span>. This saves immense processing time and is a highly practical application of logic mechanics.</p>
+<details class="exercise" open="open">
+<summary>Exercise: Short-Circuit Logic</summary>
+<p>Suppose you know for a fact that the atomic sentence <span class="arithmatex">\(A\)</span> is <span class="arithmatex">\(\false\)</span>. Without knowing the truth values of <span class="arithmatex">\(B\)</span>, <span class="arithmatex">\(C\)</span>, or <span class="arithmatex">\(D\)</span>, determine the truth value of the following complex sentences:
+1. <span class="arithmatex">\(A \land (B \lor C \lor \neg D)\)</span>
+2. <span class="arithmatex">\(A \implies (B \land \neg C)\)</span>
+3. <span class="arithmatex">\((B \land C) \implies A\)</span></p>
+<details class="solution">
+<summary>Solution</summary>
+<ol>
+<li><strong>False.</strong> Since <span class="arithmatex">\(A\)</span> is <span class="arithmatex">\(\false\)</span>, the conjunction of <span class="arithmatex">\(A\)</span> with absolutely anything else must evaluate to <span class="arithmatex">\(\false\)</span>.</li>
+<li><strong>True.</strong> An implication with a <span class="arithmatex">\(\false\)</span> prefix (hypothesis) is always true, thanks to the Principle of Explosion (also known as a vacuous truth).</li>
+<li><strong>Cannot be determined.</strong> The implication <span class="arithmatex">\((B \land C) \implies A\)</span> evaluates to <span class="arithmatex">\(\false \implies \false\)</span> (which is True) if <span class="arithmatex">\(B \land C\)</span> is false. However, it evaluates to <span class="arithmatex">\(\true \implies \false\)</span> (which is False) if <span class="arithmatex">\(B \land C\)</span> is true. Since the outcome changes, we need more information.</li>
+</ol>
+</details>
+</details>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em></p>
+<p>Let <span class="arithmatex">\(A_1, \ldots, A_n\)</span> be atomic sentences then there are overall <span class="arithmatex">\(2^n\)</span> possible assignments of all the atomic sentences to truth values.</p>
+<details class="proof">
+<summary>Proof</summary>
+<p>Each atomic sentence <span class="arithmatex">\(A_i\)</span> can be assigned to either <span class="arithmatex">\(\true\)</span> or <span class="arithmatex">\(\false\)</span>, therefore each <span class="arithmatex">\(A_i\)</span> has two options for it's assignment, and the atomic sentences don't have any connection between then (since they are atomic, and therefore the choice of their values is arbitrary). Hence overall there are</p>
+<div class="arithmatex">\[\underbrace{2\cdot\ldots\cdot2}_{n}=2^{n}\]</div>
+<p>assignments of truth values to <span class="arithmatex">\(A_1, \ldots, A_n\)</span>.</p>
+</details>
+</div>
+<p>Knowing that a collection of <span class="arithmatex">\(n\)</span> atomic sentences yields exactly <span class="arithmatex">\(2^n\)</span> unique truth environments gives us immense power. Because this number is finite, we don't have to guess how a complex sentence will behave under different circumstances. We can map out every single possibility systematically.</p>
+<p>This exhaustive mapping is called a <strong>Truth Table</strong>. By evaluating our logical connectives row by row for every possible combination of <span class="arithmatex">\(\true\)</span> and <span class="arithmatex">\(\false\)</span>, we completely strip away ambiguity.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Truth Table</p>
+<p>A table that summarizes the truth value of a complex sentence given a change in the truth assignment of each of the atomic sentences that he's composed of.</p>
+</div>
+<p>Let's look at how our primary connectives are rigidly defined by these tables,</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Truth Tables for the Logical Connectives</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be atomic sentences then,</p>
+<details class="def">
+<summary><em>Definition</em>: Truth Table for the Negation Connective</summary>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(V\left(A\right)\)</span></th>
+<th><span class="arithmatex">\(V\left(\neg A\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="def">
+<summary><em>Definition</em>: Truth Table for the  Conjunction Connective</summary>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(V\left(A\right)\)</span></th>
+<th><span class="arithmatex">\(V\left(B\right)\)</span></th>
+<th><span class="arithmatex">\(V\left(A\land B\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="def">
+<summary><em>Definition</em>: Truth Table for the  Disjunction Connective</summary>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(V\left(A\right)\)</span></th>
+<th><span class="arithmatex">\(V\left(B\right)\)</span></th>
+<th><span class="arithmatex">\(V\left(A\lor B\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="def">
+<summary><em>Definition</em>: Truth Table for the  Implication Connective</summary>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(V\left(A\right)\)</span></th>
+<th><span class="arithmatex">\(V\left(B\right)\)</span></th>
+<th><span class="arithmatex">\(V\left(A\implies B\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<p>Wait but how did the two last entries in the implication table got assigned to true? Well we can think it through with a simpler example,</p>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em>: Falseness Implies All</p>
+<p>Imagine a parent tells their child "If it rains, then I will take you to the movies.", then four options may occur,</p>
+<ul>
+<li>It rains and they go to the movies: Promise kept (True).</li>
+<li>It rains and they don't go: Promise broken (False).</li>
+<li>It does not rain and they go anyway: The parent didn't break their promise. The promise only applied "if it rains." (True).</li>
+<li>It does not rain and they don't go: Again, the parent didn't break their promise. (True).</li>
+</ul>
+</div>
+<p>This is actually a bigger phenomena in logic that we can note and formalize!</p>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em>: Principle of Explosion</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be atomic sentences then,</p>
+<div class="arithmatex">\[\left(V\left(A\right) = \false\right) \implies \left(V\left(A \implies B\right) = \true\right)\]</div>
+</div>
+<p>Now given the truth assignment of the connectives between atomic sentences we can finally talk about the truth assignment of all sentences, this is done by noticing that all sentences by definition are compose from atomic sentences and connectives between them.</p>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Given that <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> are atomic sentences, we want to create a truth table for the following sentence,</p>
+<div class="arithmatex">\[\left(\left(A\land B\right)\implies C\right)\implies\left(\left(\neg A\right)\lor C\right)\]</div>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(C\)</span></th>
+<th><span class="arithmatex">\(A\land B\)</span></th>
+<th><span class="arithmatex">\(\left(A\land B\right)\implies C\)</span></th>
+<th><span class="arithmatex">\(\neg A\)</span></th>
+<th><span class="arithmatex">\(\left(\neg A\right)\lor C\)</span></th>
+<th><span class="arithmatex">\(\left(\left(A\land B\right)\implies C\right)\implies\left(\left(\neg A\right)\lor C\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>* If the math in the table shows tiny please right click on it and zoom.</p>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Deducing From Truth Tables</summary>
+<p>Try to deduce the truth assignment from the following given data,</p>
+<ol>
+<li>Given that <span class="arithmatex">\(A \lor \left(\neg B\right)\)</span> is a false sentence, what can we deduce?<ol>
+<li><span class="arithmatex">\(A\)</span> is true, <span class="arithmatex">\(B\)</span> is true.</li>
+<li><span class="arithmatex">\(A\)</span> is true, <span class="arithmatex">\(B\)</span> is false.</li>
+<li><span class="arithmatex">\(A\)</span> can't be determined, <span class="arithmatex">\(B\)</span> is true.</li>
+<li><span class="arithmatex">\(A\)</span> is false, <span class="arithmatex">\(B\)</span> is true.</li>
+<li><span class="arithmatex">\(A\)</span> is false, <span class="arithmatex">\(B\)</span> can't be determined.</li>
+</ol>
+</li>
+<li>Given that <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are both false, what can we infer about <span class="arithmatex">\(\left(A\implies B\right) \land \left(B\implies A\right)\)</span>?<ol>
+<li>It's a true sentence.</li>
+<li>It's a false sentence.</li>
+<li>It can't be determined.</li>
+</ol>
+</li>
+</ol>
+<details class="solution">
+<summary>Solution</summary>
+<ol>
+<li>The solution is answer "<strong>d</strong>", by the truth table of the disjunction connective we know that for the result to be false both the sentenced being or-ed must be false themselves, hence <span class="arithmatex">\(A\)</span> is false, and <span class="arithmatex">\(\neg B\)</span> is false, then by the truth table of the negation connective we know that for <span class="arithmatex">\(\neg B\)</span> to be false it must follow that <span class="arithmatex">\(B\)</span> is true.</li>
+<li>The solution is answer "<strong>a</strong>". First of all we need to look at <span class="arithmatex">\(A \implies B\)</span> and <span class="arithmatex">\(B \implies A\)</span> separately to infer about the whole complex sentence, since we know that <span class="arithmatex">\(A\)</span> is false we know by the truth table of the implication connective that <span class="arithmatex">\(A \implies B\)</span> is true, likewise because <span class="arithmatex">\(B\)</span> is false we know by the truth table of the implication connective that <span class="arithmatex">\(B \implies A\)</span> is true. Now, we can see that by the truth table of the conjunction connective that <span class="arithmatex">\(\left(A\implies B\right) \land \left(B\implies A\right)\)</span> must be true.</li>
+</ol>
+</details>
+</details>
+<p>Truth tables are essentially the brute-force search algorithm of logic. While they are 100% reliable, they grow exponentially. A formula with 3 variables requires 8 rows, 4 variables require 16, and 10 variables require a massive 1,024 rows! Despite their size, they are invaluable for verifying logical equivalence and analyzing circuit designs.</p>
+<details class="exercise" open="open">
+<summary>Exercise: Three-Variable Truth Table</summary>
+<p>Construct a truth table for the formula: <span class="arithmatex">\((P \lor Q) \implies (\neg P \land R)\)</span>.
+In how many distinct scenarios (rows) does this formula evaluate to True?</p>
+<details class="solution">
+<summary>Solution</summary>
+<p>Let's systematically build the table for <span class="arithmatex">\(P, Q, R\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(P\)</span></th>
+<th><span class="arithmatex">\(Q\)</span></th>
+<th><span class="arithmatex">\(R\)</span></th>
+<th><span class="arithmatex">\(P \lor Q\)</span></th>
+<th><span class="arithmatex">\(\neg P\)</span></th>
+<th><span class="arithmatex">\(\neg P \land R\)</span></th>
+<th><span class="arithmatex">\((P \lor Q) \implies (\neg P \land R)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Answer:</strong> Looking at the final column, the formula evaluates to True in exactly <strong>3 scenarios</strong>.</p>
+</details>
+</details>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Building Truth Tables</summary>
+<p>Construct a truth table for the formula: <span class="arithmatex">\((P \implies Q) \lor \neg P\)</span>.
+What is unique about the final column of this truth table?</p>
+<details class="solution">
+<summary>Solution</summary>
+<p>Let's construct the table for <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(Q\)</span>. We need columns for <span class="arithmatex">\(\neg P\)</span>, <span class="arithmatex">\(P \implies Q\)</span>, and the final expression <span class="arithmatex">\((P \implies Q) \lor \neg P\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(P\)</span></th>
+<th><span class="arithmatex">\(Q\)</span></th>
+<th><span class="arithmatex">\(\neg P\)</span></th>
+<th><span class="arithmatex">\(P \implies Q\)</span></th>
+<th><span class="arithmatex">\((P \implies Q) \lor \neg P\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Analysis:</strong> The final column is <span class="arithmatex">\(\true\)</span> except when <span class="arithmatex">\(P\)</span> is <span class="arithmatex">\(\true\)</span> and <span class="arithmatex">\(Q\)</span> is <span class="arithmatex">\(\false\)</span>. This is exactly the same truth column as the implication <span class="arithmatex">\(P \implies Q\)</span> alone! We've just proven that <span class="arithmatex">\((P \implies Q) \lor \neg P\)</span> is logically equivalent to <span class="arithmatex">\(P \implies Q\)</span>.</p>
+</details>
+</details>
+<details class="exercise" open="open">
+<summary>Exercise: Reverse Engineering a Formula</summary>
+<p>Find a logical formula using only variables <span class="arithmatex">\(A, B\)</span>, and the standard connectives (<span class="arithmatex">\(\land, \lor, \neg\)</span>) that is True <strong>only</strong> when <span class="arithmatex">\(A\)</span> is true and <span class="arithmatex">\(B\)</span> is false, and False in all other three cases.</p>
+<details class="solution">
+<summary>Solution</summary>
+<p>We want a formula that evaluates to True strictly in the row where <span class="arithmatex">\(A = \true\)</span> and <span class="arithmatex">\(B = \false\)</span>.
+This corresponds directly to asserting that <span class="arithmatex">\(A\)</span> is true AND simultaneously <span class="arithmatex">\(B\)</span> is not true.</p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(A \land \neg B\)</span></p>
+</details>
+</details>
+<h3 id="complex-logical-connectives">Complex Logical Connectives<a class="headerlink" href="#complex-logical-connectives" title="Permanent link">🔗</a></h3>
+<p>We have defined previously the base logical connectives, those are the logical connectives that are the most primitive in our logic, then we have given them meaning by truth tables. But who said that those are the only logical connectives we are allowed to use? In fact we can define a lot of other logical connectives that might be useful.</p>
+<p>The <strong>if and only if</strong> (abbreviated <strong>iff</strong>) is one of the most useful logical connectives, informally it means that the implication done is bidirectional.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: If and Only If Connective</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sentences such that,</p>
+<div class="arithmatex">\[\left(A\implies B\right)\land\left(B\implies A\right)\]</div>
+<p>Then we use the notation <span class="arithmatex">\(A\iff B\)</span> and say that "<span class="arithmatex">\(A\)</span> if and only if <span class="arithmatex">\(B\)</span>", or abbreviated to "<span class="arithmatex">\(A\)</span> iff <span class="arithmatex">\(B\)</span>".</p>
+<details class="def">
+<summary><em>Definition</em>: Truth Table for the If and Only If Connective</summary>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(V\left(A\right)\)</span></th>
+<th><span class="arithmatex">\(V\left(B\right)\)</span></th>
+<th><span class="arithmatex">\(V\left(A\iff B\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<p>Likewise, the <strong>exclusive disjunction</strong> connective (abbreviated <strong>xor</strong>), can be very useful, and it's the opposite of the iff connective logically.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Exclusive Disjunction Connective</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sentences such that,</p>
+<div class="arithmatex">\[\left(A\land \left(\neg B\right)\right)\lor \left(\left(\neg A\right)\lor B\right)\]</div>
+<p>Then we use the notation <span class="arithmatex">\(A\oplus B\)</span> and say that "<span class="arithmatex">\(A\)</span> exclusive or <span class="arithmatex">\(B\)</span>", or abbreviated to "<span class="arithmatex">\(A\)</span> xor <span class="arithmatex">\(B\)</span>".</p>
+<details class="def">
+<summary><em>Definition</em>: Truth Table for the Exclusive Disjunction Connective</summary>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(V\left(A\right)\)</span></th>
+<th><span class="arithmatex">\(V\left(B\right)\)</span></th>
+<th><span class="arithmatex">\(V\left(A\oplus B\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: The Sheffer Stroke (NAND)</summary>
+<p>In computer engineering, almost all chips are built using a single type of gate called <strong>NAND</strong> (Not-AND), symbolized as <span class="arithmatex">\(A \uparrow B\)</span>. It is true unless both <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are true.</p>
+<ol>
+<li>Write the truth table for <span class="arithmatex">\(A \uparrow B\)</span>.</li>
+<li>Show that <span class="arithmatex">\(\neg A\)</span> is equivalent to <span class="arithmatex">\(A \uparrow A\)</span>.</li>
+</ol>
+<details class="solution">
+<summary>Solution</summary>
+<ol>
+<li>
+<p>Truth Table for NAND,</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(A \uparrow B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>If <span class="arithmatex">\(A\)</span> is <span class="arithmatex">\(\true\)</span>, then <span class="arithmatex">\(A \uparrow A\)</span> is <span class="arithmatex">\(\true \uparrow \true = \false\)</span>. If <span class="arithmatex">\(A\)</span> is <span class="arithmatex">\(\false\)</span>, then <span class="arithmatex">\(A \uparrow A\)</span> is <span class="arithmatex">\(\false \uparrow \false = \true\)</span>. In both cases, the result is exactly <span class="arithmatex">\(\neg A\)</span>.</p>
+</li>
+</ol>
+</details>
+</details>
+<p>You might wonder why we invent new complex connectives like XOR or NAND if we can already express everything with AND, OR, and NOT. The answer is hardware efficiency and cryptography. The XOR operation is the mathematical backbone of almost all modern encryption algorithms. It allows us to perfectly mask a message with a cryptographic key.</p>
+<p>Meanwhile, the NAND gate is the "universal gate" of hardware. In manufacturing computer processors, it is dramatically cheaper and easier to mass-produce billions of identical NAND gates and wire them up to simulate AND, OR, and NOT, rather than building three separate types of physical electronic gates.</p>
+<details class="exercise" open="open">
+<summary>Exercise: XOR as a Parity Checker</summary>
+<p>Calculate the truth table for <span class="arithmatex">\((A \oplus B) \oplus C\)</span>.
+What simple property of the inputs <span class="arithmatex">\(A, B, C\)</span> causes the final result to evaluate to <span class="arithmatex">\(\true\)</span>?</p>
+<details class="solution">
+<summary>Solution</summary>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(C\)</span></th>
+<th><span class="arithmatex">\(A \oplus B\)</span></th>
+<th><span class="arithmatex">\((A \oplus B) \oplus C\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Analysis:</strong> The final result is <span class="arithmatex">\(\true\)</span> exactly when an <strong>odd number</strong> (1 or 3) of the inputs are <span class="arithmatex">\(\true\)</span>. This mathematically reliable trait is why XOR is heavily used to calculate "parity" bits for error checking in RAM memory chips!</p>
+</details>
+</details>
+<h3 id="equivalence-of-sentences">Equivalence of Sentences<a class="headerlink" href="#equivalence-of-sentences" title="Permanent link">🔗</a></h3>
+<p>After talking about sentences and their truth value, we want to be able to distinguish different logic sentences, for example we know that "Today is Monday and tomorrow is Tuesday" is equivalent to saying "Tomorrow is Tuesday and today is Monday", but we want to give this a formal definition,</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Sentence Equivalence</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sentences such that, for every truth assignment of the atomic sentences the following holds,</p>
+<div class="arithmatex">\[V\left(A\right) = V\left(B\right)\]</div>
+<p>then we call <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> equivalent sentences, and use the notation <span class="arithmatex">\(A \equiv B\)</span>.</p>
+</div>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em></p>
+<p>Given two sentences <span class="arithmatex">\(\varphi\)</span> and <span class="arithmatex">\(\psi\)</span>, if the truth table of <span class="arithmatex">\(\varphi\)</span> and <span class="arithmatex">\(\psi\)</span> is the same then we know that they are equivalent, this is because by definition the truth table shows us the result of the truth assignment for <span class="arithmatex">\(\varphi\)</span> and <span class="arithmatex">\(\psi\)</span> under every truth assignment to the atomic sentence that makes them.</p>
+</div>
+<p>Now that we know how to prove equivalence of sentences we want to show some commonly used results that will be very important for your entire math journey.</p>
+<h4 id="commutativity">Commutativity<a class="headerlink" href="#commutativity" title="Permanent link">🔗</a></h4>
+<p>We want to show that conjunction and disjunction are commutative, this is a neat trick to use when needed!</p>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Conjunction is Commutative</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sentences then,</p>
+<div class="arithmatex">\[A\land B\equiv B\land A\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>We will show that the columns in the truth table match,</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(A \land B\)</span></th>
+<th><span class="arithmatex">\(B \land A\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Disjunction is Commutative</summary>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sentences, show that the following holds,</p>
+<div class="arithmatex">\[A\lor B\equiv B\lor A\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>We will show that the columns in the truth table match,</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(A \lor B\)</span></th>
+<th><span class="arithmatex">\(B \lor A\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<p>Likewise, some of the complex logical connectives are also commutative.</p>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Exclusive Disjunction is Commutative</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sentences then,</p>
+<div class="arithmatex">\[A\oplus B\equiv B\oplus A\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>We will show that the columns in the truth table match,</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(A \oplus B\)</span></th>
+<th><span class="arithmatex">\(B \oplus A\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<h4 id="associativity">Associativity<a class="headerlink" href="#associativity" title="Permanent link">🔗</a></h4>
+<p>We want to show that conjunction and disjunction are associative, this is very useful for reducing complex sentences by shuffling the parentheses around them.</p>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Conjunction is Associative</p>
+<p>Let <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> be sentences then,</p>
+<div class="arithmatex">\[A\land\left(B\land C\right)\equiv\left(A\land B\right)\land C\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>We will show that the columns in the truth table match,</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(C\)</span></th>
+<th><span class="arithmatex">\(A\land\left(B\land C\right)\)</span></th>
+<th><span class="arithmatex">\(\left(A\land B\right)\land C\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Disjunction is Associative</summary>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sentences, show that the following holds,</p>
+<div class="arithmatex">\[A\lor\left(B\lor C\right)\equiv\left(A\lor B\right)\lor C\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>We will show that the columns in the truth table match,</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(C\)</span></th>
+<th><span class="arithmatex">\(A\lor\left(B\lor C\right)\)</span></th>
+<th><span class="arithmatex">\(\left(A\lor B\right)\lor C\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<p>Likewise, some of the complex logical connectives are also associative.</p>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Exclusive Disjunction is Associative</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sentences then,</p>
+<div class="arithmatex">\[A\oplus\left(B\oplus C\right)\equiv\left(A\oplus B\right)\oplus C\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>We will show that the columns in the truth table match,</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(C\)</span></th>
+<th><span class="arithmatex">\(A\oplus\left(B\oplus C\right)\)</span></th>
+<th><span class="arithmatex">\(\left(A\oplus B\right)\oplus C\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<h4 id="idempotency">Idempotency<a class="headerlink" href="#idempotency" title="Permanent link">🔗</a></h4>
+<p>We want to show that conjunction and disjunction are idempotence, meaning that if they are applied twice it can be reduced to one logical connective.</p>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Conjunction is Idempotent</p>
+<p>Let <span class="arithmatex">\(A\)</span> be a sentence then,</p>
+<div class="arithmatex">\[A\land A\equiv A\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>We will show that the columns in the truth table match,</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(A \land A\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Since the columns for <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(A \land A\)</span> are identical, <span class="arithmatex">\(A \land A \equiv A\)</span>.</p>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Disjunction is Idempotent</summary>
+<p>Let <span class="arithmatex">\(A\)</span> be a sentence, show that the following holds,</p>
+<div class="arithmatex">\[A\lor A\equiv A\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>We will show that the columns in the truth table match,</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(A \lor A\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Since the columns for <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(A \lor A\)</span> are identical, <span class="arithmatex">\(A \lor A \equiv A\)</span>.</p>
+</details>
+</details>
+<h4 id="distributivity">Distributivity<a class="headerlink" href="#distributivity" title="Permanent link">🔗</a></h4>
+<p>We want to show that conjunction and disjunction are distributive over one another, this is also very useful for reducing complex sentences by being able to pull out conjunctions and disjunctions.</p>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Conjunction is Distributive Over Disjunction</p>
+<p>Let <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> be sentences then,</p>
+<div class="arithmatex">\[A\land\left(B\lor C\right)\equiv\left(A\land B\right)\lor\left(A\land C\right)\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>We will show that the columns in the truth table match,</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(C\)</span></th>
+<th><span class="arithmatex">\(A\land\left(B\lor C\right)\)</span></th>
+<th><span class="arithmatex">\(\left(A\land B\right)\lor\left(A\land C\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Disjunction is Distributive Over Conjunction</summary>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sentences, show that the following holds,</p>
+<div class="arithmatex">\[A\lor\left(B\land C\right)\equiv\left(A\lor B\right)\land\left(A\lor C\right)\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>We will show that the columns in the truth table match,</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(C\)</span></th>
+<th><span class="arithmatex">\(A\lor\left(B\land C\right)\)</span></th>
+<th><span class="arithmatex">\(\left(A\lor B\right)\land\left(A\lor C\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<h4 id="negation-equivalences">Negation Equivalences<a class="headerlink" href="#negation-equivalences" title="Permanent link">🔗</a></h4>
+<p>Now we still want to show some useful equivalences to use.</p>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Negation is an Involution</p>
+<p>Let <span class="arithmatex">\(A\)</span> be a sentence then,</p>
+<div class="arithmatex">\[\neg\left(\neg A\right)\equiv A\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>We will show that the columns in the truth table match,</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(\neg A\)</span></th>
+<th><span class="arithmatex">\(\neg \left(\neg A\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<p>In mathematics, proving "If P then Q" is sometimes very hard. But proving its <strong>Contrapositive</strong>, "If NOT Q then NOT P", is often much easier!</p>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Contraposition</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sentences then,</p>
+<div class="arithmatex">\[A\implies B\equiv\left(\neg B\right)\implies\left(\neg A\right)\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>We will show that the columns in the truth table match,</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(A\implies B\)</span></th>
+<th><span class="arithmatex">\(\left(\neg B\right)\implies\left(\neg A\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em>: The Contrapositive in Action</p>
+<p>Original: "If an integer <span class="arithmatex">\(n^2\)</span> is even (<span class="arithmatex">\(P\)</span>), then <span class="arithmatex">\(n\)</span> is even (<span class="arithmatex">\(Q\)</span>)."</p>
+<p>Contrapositive: "If <span class="arithmatex">\(n\)</span> is odd (<span class="arithmatex">\(\neg Q\)</span>), then <span class="arithmatex">\(n^2\)</span> is odd (<span class="arithmatex">\(\neg P\)</span>)."</p>
+<p>It is much easier to prove the contrapositive algebraically! Truth tables guarantee that this bypass is perfectly valid.</p>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sentences, show that each of the following holds,</p>
+<ol>
+<li><span class="arithmatex">\(A\implies B\equiv\left(\neg A\right)\lor B\)</span>.</li>
+<li><span class="arithmatex">\(\neg\left(A\implies B\right)\equiv A\land\left(\neg B\right)\)</span>.</li>
+</ol>
+<details class="proof">
+<summary>Proof</summary>
+<p>We will show that the columns in the truth table match,</p>
+<p>1.</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(A\implies B\)</span></th>
+<th><span class="arithmatex">\(\left(\neg A\right)\lor B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>2.</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(\neg\left(A\implies B\right)\)</span></th>
+<th><span class="arithmatex">\(A\land\left(\neg B\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: The Converse and Inverse Fallacies</summary>
+<p>A common mistake among first-year university math students is assuming that if <span class="arithmatex">\(P \implies Q\)</span> is true, then <span class="arithmatex">\(Q \implies P\)</span> (the Converse) must also be true.</p>
+<p>Construct a truth table to show that <span class="arithmatex">\(P \implies Q\)</span> is <strong>NOT</strong> logically equivalent to its converse <span class="arithmatex">\(Q \implies P\)</span>, nor its inverse <span class="arithmatex">\(\neg P \implies \neg Q\)</span>.</p>
+<details class="solution">
+<summary>Solution</summary>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(P\)</span></th>
+<th><span class="arithmatex">\(Q\)</span></th>
+<th><span class="arithmatex">\(\neg P\)</span></th>
+<th><span class="arithmatex">\(\neg Q\)</span></th>
+<th><span class="arithmatex">\(P \implies Q\)</span></th>
+<th><span class="arithmatex">\(Q \implies P\)</span></th>
+<th><span class="arithmatex">\(\left(\neg P\right) \implies \left(\neg Q\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Notice rows 2 and 3: The truth values differ. Therefore, they are not logically equivalent!</p>
+</details>
+</details>
+<p>Intuitively, how do we negate a compound statement? Imagine someone tells you: <em>"The suspect is tall and wearing a jacket."</em> If you find out this statement is false, what does that mean? It doesn't mean the suspect is short <em>and</em> not wearing a jacket. It simply means at least one of those attributes failed: either they are not tall, <em>or</em> they are not wearing a jacket.</p>
+<p>This brings us to <strong>De Morgan's Laws</strong>, which show us that when you distribute a negation <span class="arithmatex">\((\neg)\)</span> over a conjunction <span class="arithmatex">\((\land)\)</span>, it transforms into a disjunction <span class="arithmatex">\((\lor)\)</span>, and vice versa.</p>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: De Morgan's laws</p>
+<p></p><div id="claim-de-morgans-laws"></div>
+Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sentences then,<p></p>
+<ol>
+<li><span class="arithmatex">\(\neg\left(A\land B\right)\equiv\left(\neg A\right)\lor\left(\neg B\right)\)</span>.</li>
+<li><span class="arithmatex">\(\neg\left(A\lor B\right)\equiv\left(\neg A\right)\land\left(\neg B\right)\)</span>.</li>
+</ol>
+<details class="proof">
+<summary>Proof</summary>
+<p>We will show that the columns in the truth table match,</p>
+<p>1.</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(\neg\left(A\land B\right)\)</span></th>
+<th><span class="arithmatex">\(\left(\neg A\right)\lor\left(\neg B\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>2.</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(\neg\left(A\lor B\right)\)</span></th>
+<th><span class="arithmatex">\(\left(\neg A\right)\land\left(\neg B\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary>Exercise: Expressing Disjunction with NAND</summary>
+<p>Using only the NAND connective (<span class="arithmatex">\(\uparrow\)</span>), construct a formula that is logically equivalent to <span class="arithmatex">\(A \lor B\)</span>. </p>
+<p><em>Hint: You already proved that <span class="arithmatex">\(\neg X \equiv X \uparrow X\)</span>. Think about De Morgan's Laws!</em></p>
+<details class="solution">
+<summary>Solution</summary>
+<p>By De Morgan's Law, we know that an OR statement can be rewritten as a negated AND statement,</p>
+<div class="arithmatex">\[A \lor B \equiv \neg(\neg A \land \neg B)\]</div>
+<p>Notice that the NAND operator itself is literally a negated AND: <span class="arithmatex">\(X \uparrow Y \equiv \neg(X \land Y)\)</span>.
+So, <span class="arithmatex">\(\neg(\neg A \land \neg B)\)</span> is exactly the NAND of <span class="arithmatex">\(\neg A\)</span> and <span class="arithmatex">\(\neg B\)</span>,</p>
+<div class="arithmatex">\[(\neg A) \uparrow (\neg B)\]</div>
+<p>Since we are tasked with using <em>only</em> the NAND symbol, we replace the remaining negations using the rule <span class="arithmatex">\(\neg X \equiv X \uparrow X\)</span>, we get out final answer,</p>
+<div class="arithmatex">\[(A \uparrow A) \uparrow (B \uparrow B)\]</div>
+</details>
+</details>
+<h4 id="tautologies-and-contradictions">Tautologies and Contradictions<a class="headerlink" href="#tautologies-and-contradictions" title="Permanent link">🔗</a></h4>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Tautology</p>
+<p>Let <span class="arithmatex">\(A\)</span> be a sentence such that, for every truth assignment of the atomic sentences the following holds,</p>
+<div class="arithmatex">\[V\left(A\right) = \true\]</div>
+<p>then we call <span class="arithmatex">\(A\)</span> a tautology.</p>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Let <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> be sentences, then the following is a tautology,</p>
+<div class="arithmatex">\[\left(\left(A\implies\left(B\implies C\right)\right)\land B\right)\implies\left(A\implies C\right)\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<ul>
+<li>
+<p>If we assume that</p>
+<div class="arithmatex">\[V\left(\left(A\implies\left(B\implies C\right)\right)\land B\right) = \false\]</div>
+<p>then</p>
+<div class="arithmatex">\[V\left(\left(\left(A\implies\left(B\implies C\right)\right)\land B\right)\implies\left(A\implies C\right)\right) = \true\]</div>
+<p>as we wanted.</p>
+</li>
+<li>
+<p>Else we assume that</p>
+<div class="arithmatex">\[V\left(\left(A\implies\left(B\implies C\right)\right)\land B\right) = \true\]</div>
+<p>then from the truth table of conjunction we get that,</p>
+<div class="arithmatex">\[\left(V\left(A\implies\left(B\implies C\right)\right) = \true\right) \land \left(V\left(B\right) = \true\right)\]</div>
+<p>now let's split to cases based on the truth assignment of <span class="arithmatex">\(A\)</span>,</p>
+<ul>
+<li>
+<p>If we assume that <span class="arithmatex">\(V\left(A\right) = \false\)</span>, then <span class="arithmatex">\(V\left(A\implies C\right)=\true\)</span>, and hence</p>
+<div class="arithmatex">\[V\left(\left(\left(A\implies\left(B\implies C\right)\right)\land B\right)\implies\left(A\implies C\right)\right) = \true\]</div>
+<p>as we wanted.</p>
+</li>
+<li>
+<p>Else we assume that <span class="arithmatex">\(V\left(A\right) = \true\)</span>, then <span class="arithmatex">\(V\left(B\implies C\right) = \true\)</span>, and hence because we assume that <span class="arithmatex">\(V\left(B\right)=\true\)</span> we can infer that <span class="arithmatex">\(V\left(C\right)=\true\)</span>, from that we get that <span class="arithmatex">\(V\left(A\implies C\right)=\true\)</span>, and all in all we get that,</p>
+<div class="arithmatex">\[V\left(\left(\left(A\implies\left(B\implies C\right)\right)\land B\right)\implies\left(A\implies C\right)\right) = \true\]</div>
+<p>as we wanted.</p>
+</li>
+</ul>
+</li>
+</ul>
+</details>
+</div>
+<p>Modus Ponens is a deduction rule in mathematics, meaning a rule that can help us deduct certain information from a statement, and in fact it is the most famous one, "If <span class="arithmatex">\(P\)</span> implies <span class="arithmatex">\(Q\)</span>, and you know <span class="arithmatex">\(P\)</span> is true, then you can deduce <span class="arithmatex">\(Q\)</span> is true."</p>
+<details class="exercise" open="open">
+<summary>Exercise: Modus Ponens</summary>
+<p>Use a truth table to determine if the following sentence is a tautology:</p>
+<div class="arithmatex">\[((A \implies B) \land A) \implies B\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(B\)</span></th>
+<th><span class="arithmatex">\(A \implies B\)</span></th>
+<th><span class="arithmatex">\((A \implies B) \land A\)</span></th>
+<th><span class="arithmatex">\(((A \implies B) \land A) \implies B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Answer:</strong> Yes, the final column is entirely True under all circumstances. Therefore, it is a tautology.</p>
+</details>
+</details>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Contradiction</p>
+<p>Let <span class="arithmatex">\(A\)</span> be a sentence such that, for every truth assignment of the atomic sentences the following holds,</p>
+<div class="arithmatex">\[V\left(A\right) = \false\]</div>
+<p>then we call <span class="arithmatex">\(A\)</span> a contradiction.</p>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Tautologies and Contradictions are Opposites</summary>
+<p>Let <span class="arithmatex">\(A\)</span> be a sentence then,</p>
+<div class="arithmatex">\[\left(A \text{ is a tautology}\right)\iff \left(\neg A \text{ is a contradiction}\right)\]</div>
+</details>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em></p>
+<p>Let <span class="arithmatex">\(A\)</span> be a sentence, then the following are tautologies</p>
+<ol>
+<li><span class="arithmatex">\(A \implies A\)</span></li>
+<li><span class="arithmatex">\(A \lor \left(\neg A\right)\)</span></li>
+</ol>
+<details class="proof">
+<summary>Proof</summary>
+<p>We need to create the truth table for those sentences and show that they're always true.</p>
+<p>1.</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(A \implies A\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>2.</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(A \lor \left(\neg A\right)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<p>Modus Tollens is the twin of Modus Ponens: "If <span class="arithmatex">\(P\)</span> implies <span class="arithmatex">\(Q\)</span>, and <span class="arithmatex">\(Q\)</span> is false, then <span class="arithmatex">\(P\)</span> must be false.".</p>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Modus Tollens</summary>
+<p>Let <span class="arithmatex">\(p\)</span> be the proposition "It is snowing."
+Let <span class="arithmatex">\(q\)</span> be the proposition "I will study discrete math."</p>
+<p>Consider the following argument,</p>
+<p><strong>Premise 1:</strong> "If it is snowing, then I will study discrete math." (<span class="arithmatex">\(p \implies q\)</span>)</p>
+<p><strong>Premise 2:</strong> "I will not study discrete math." (<span class="arithmatex">\(\neg q\)</span>)</p>
+<p><strong>Conclusion:</strong> "Therefore, it is not snowing." (<span class="arithmatex">\(\neg p\)</span>)</p>
+<p>Prove that this argument form is a valid tautology by showing that <span class="arithmatex">\(((p \implies q) \land \neg q) \implies \neg p\)</span> is always true.</p>
+<details class="solution">
+<summary>Solution</summary>
+<p>We construct a truth table to evaluate the entire compound statement:</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(p\)</span></th>
+<th><span class="arithmatex">\(q\)</span></th>
+<th><span class="arithmatex">\(p \implies q\)</span></th>
+<th><span class="arithmatex">\(\neg q\)</span></th>
+<th><span class="arithmatex">\((p \implies q) \land \neg q\)</span></th>
+<th><span class="arithmatex">\(\neg p\)</span></th>
+<th><span class="arithmatex">\(((p \implies q) \land \neg q) \implies \neg p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Because the final column evaluates to <span class="arithmatex">\(\true\)</span> in every single possible scenario, the argument is a <strong>tautology</strong> and the reasoning is perfectly valid!</p>
+</details>
+</details>
+<p>In classical mathematics, every proposition must be either true or false; there is no "third" or "middle" option, and now that we understand how truth values work, we want to show that this is the case <strong>always</strong>.</p>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: The Law of Excluded Middle</summary>
+<p>Prove this foundational axiom by showing that <span class="arithmatex">\(A \lor \neg A\)</span> is a tautology.</p>
+<details class="solution">
+<summary>Solution</summary>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(A\)</span></th>
+<th><span class="arithmatex">\(\neg A\)</span></th>
+<th><span class="arithmatex">\(A \lor \neg A\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The result is entirely true, proving the principle.</p>
+</details>
+</details>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Peirce's Law</summary>
+<p>Show that the formula <span class="arithmatex">\(\left(\left(P \implies Q\right) \implies P\right) \implies P\)</span> is a tautology. </p>
+<details class="solution">
+<summary>Solution</summary>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(P\)</span></th>
+<th><span class="arithmatex">\(Q\)</span></th>
+<th><span class="arithmatex">\(P \implies Q\)</span></th>
+<th><span class="arithmatex">\((P \implies Q) \implies P\)</span></th>
+<th><span class="arithmatex">\(((P \implies Q) \implies P) \implies P\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+<td><span class="arithmatex">\(\false\)</span></td>
+<td><span class="arithmatex">\(\true\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="mnote">
+<summary><em>Note</em></summary>
+<p>This is famously true in classical logic, but interestingly, it is unprovable in "intuitionistic" logic, a niche branch of math that rejects the Law of Excluded Middle!</p>
+</details>
+</details>
+<h4 id="semantic-entailment">Semantic Entailment<a class="headerlink" href="#semantic-entailment" title="Permanent link">🔗</a></h4>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Semantically Entailment Sentence</p>
+<p>Let <span class="arithmatex">\(A_1,\ldots , A_n\)</span> be sentences and let <span class="arithmatex">\(B\)</span> be a sentence, such that the following holds,</p>
+<div class="arithmatex">\[\left(\text{For all $i$ in range $1$ to $n$ we have } V\left(A_i\right) = \true\right) \implies V\left(B\right) = \true\]</div>
+<p>then we call <span class="arithmatex">\(B\)</span> a semantically entailment sentence in <span class="arithmatex">\(A_1,\ldots , A_n\)</span>.</p>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Let <span class="arithmatex">\(\varphi\)</span> and <span class="arithmatex">\(\phi\)</span> be sentences, and define the following,</p>
+<div class="arithmatex">\[\begin{aligned}
+A_{1}&amp;=\neg\left(\varphi\implies\psi\right)&amp;A_{2}&amp;=\psi&amp;B&amp;=\varphi
+\end{aligned}\]</div>
+<p>then <span class="arithmatex">\(B\)</span> is a semantically entailment sentence in <span class="arithmatex">\(A_1, A_2\)</span>.</p>
+<details class="proof">
+<summary>Proof</summary>
+<p>Assume by contradiction that</p>
+<div class="arithmatex">\[\begin{aligned}
+V\left(A_{1}\right)&amp;=\true&amp;V\left(A_{2}\right)&amp;=\true
+\end{aligned}\]</div>
+<p>in particular we get that,</p>
+<div class="arithmatex">\[V\left(\neg\left(\varphi\implies\psi\right)\right)=\true\]</div>
+<p>and hence,</p>
+<div class="arithmatex">\[V\left(\varphi\implies\psi\right)=\false\]</div>
+<p>but as we assumed it is also true that <span class="arithmatex">\(V\left(\psi\right)=\true\)</span>, meaning it's impossible that <span class="arithmatex">\(V\left(\varphi\right)=\true\)</span> because if that was true then we would have gotten that,</p>
+<div class="arithmatex">\[V\left(\varphi\implies\psi\right)=\true\]</div>
+<p>Hence we get that <span class="arithmatex">\(V\left(\varphi\right)=\false\)</span> and particularly <span class="arithmatex">\(V\left(\neg\varphi\right)=\true\)</span>, meaning that <span class="arithmatex">\(V\left(B\right)=\true\)</span>, which is exactly the definition that, <span class="arithmatex">\(B\)</span> is a semantically entailment sentence in <span class="arithmatex">\(A_1, A_2\)</span>, as we wanted.</p>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Let <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> be sentences, determine wether the sentence <span class="arithmatex">\(B\implies C\)</span> is a semantically entailment sentence in both <span class="arithmatex">\(A\implies B\)</span> and <span class="arithmatex">\(A\implies C\)</span>.</p>
+</details>
+<h2 id="predicate-calculus">Predicate Calculus<a class="headerlink" href="#predicate-calculus" title="Permanent link">🔗</a></h2>
+<p>In Propositional Calculus, a sentence like <span class="arithmatex">\(A\)</span> has a fixed, unyielding truth value. But mathematics needs to express properties of numbers and objects dynamically. Consider the statement, <span class="arithmatex">\(\text{"}x \text{ is an even number"}\)</span>. Is this true or false? We cannot say until someone tells us what <span class="arithmatex">\(x\)</span> is. If <span class="arithmatex">\(x=4\)</span>, it is true; if <span class="arithmatex">\(x=7\)</span>, it is false. This "open sentence" is a <strong>Predicate</strong>.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Predicate</p>
+<p>A predicate in <span class="arithmatex">\(n\)</span> variables is a proposition in <span class="arithmatex">\(n\)</span> terms.</p>
+</div>
+<h3 id="quantifiers">Quantifiers<a class="headerlink" href="#quantifiers" title="Permanent link">🔗</a></h3>
+<p>To turn a predicate back into a concrete sentence that can be definitively evaluated as <span class="arithmatex">\(\true\)</span> or <span class="arithmatex">\(\false\)</span>, we have two choices:</p>
+<ol>
+<li>Plug in a specific element for <span class="arithmatex">\(x\)</span>.</li>
+<li>State <em>how many</em> elements in our universe satisfy the property using <strong>Quantifiers</strong>.</li>
+</ol>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Exists Quantifier</p>
+<p>Indicates that there exists an object that satisfies the predicate, and we notate that with <span class="arithmatex">\(\exists\)</span>.</p>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>The claim <span class="arithmatex">\(\exists x. x\ge 2\)</span> means that "There exists <span class="arithmatex">\(x\)</span> such that, x is greater equal to <span class="arithmatex">\(2\)</span>", note that it does not say whether the claim is true or false, only its meaning.</p>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Forall Quantifier</p>
+<p>Indicates that all objects satisfy the predicate, and we notate that with <span class="arithmatex">\(\forall\)</span>.</p>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>The claim <span class="arithmatex">\(\forall x. x\ge 2\)</span> means that "For all <span class="arithmatex">\(x\)</span>, x is greater equal to <span class="arithmatex">\(2\)</span>", note that it does not say whether the claim is true or false, only its meaning.</p>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>The claim <span class="arithmatex">\(\forall y.\exists x.x+x=y\)</span> means that "For all <span class="arithmatex">\(y\)</span>, there exists <span class="arithmatex">\(x\)</span> such that, <span class="arithmatex">\(x + x = y\)</span>", note that it does not say whether the claim is true or false, only its meaning.</p>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Formula</p>
+<p>A formula <span class="arithmatex">\(\varphi\)</span> is an expression of the form <span class="arithmatex">\(\exists x.P\left(x\right)\)</span> or <span class="arithmatex">\(\exists x.Q\left(x\right)\)</span> where <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(Q\)</span> are predicates in one variable or formulas themselves.</p>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>The following are formulas,</p>
+<ol>
+<li><span class="arithmatex">\(\forall x. x\ge 2\)</span></li>
+<li><span class="arithmatex">\(\forall y.\exists x.x+x=y\)</span></li>
+<li><span class="arithmatex">\(\exists x.\forall y.x&lt;y\)</span></li>
+<li><span class="arithmatex">\(\forall x.\forall y.\left(x&lt;y\right)\implies\left(x&lt;y\right)\)</span></li>
+</ol>
+</div>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em></p>
+<p>We saw that we can use the quantifiers <span class="arithmatex">\(\forall\)</span> and <span class="arithmatex">\(\exists\)</span> to form complex formulas, but sometimes the amount of quantifiers in a statement is huge, for that we use the following notation to reduce the amount of text written,</p>
+<p>Instead of writing <span class="arithmatex">\(\forall x. \forall y. P\left(x, y\right)\)</span> we can write <span class="arithmatex">\(\forall x,y. P\left(x, y\right)\)</span>.</p>
+<p>Likewise instead of writing <span class="arithmatex">\(\exists x. \exists y. P\left(x, y\right)\)</span> we can write <span class="arithmatex">\(\exists x,y. P\left(x, y\right)\)</span>.</p>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Translating English to Predicates</summary>
+<p>Let <span class="arithmatex">\(S(x)\)</span> be "<span class="arithmatex">\(x\)</span> is a student", <span class="arithmatex">\(C(y)\)</span> be "<span class="arithmatex">\(y\)</span> is a course", and <span class="arithmatex">\(L(x, y)\)</span> be "<span class="arithmatex">\(x\)</span> loves <span class="arithmatex">\(y\)</span>". Translate:</p>
+<ol>
+<li>Every student loves at least one course.</li>
+<li>There is a course that all students love.</li>
+<li>No student loves all courses.</li>
+</ol>
+<details class="solution">
+<summary>Solution</summary>
+<ol>
+<li><span class="arithmatex">\(\forall x. (S(x) \implies \exists y. (C(y) \land L(x,y)))\)</span></li>
+<li><span class="arithmatex">\(\exists y. (C(y) \land \forall x. (S(x) \implies L(x,y)))\)</span></li>
+<li>
+<p><span class="arithmatex">\(\neg \exists x. (S(x) \land \forall y. (C(y) \implies L(x,y)))\)</span></p>
+<p>Alternatively: <span class="arithmatex">\(\forall x. (S(x) \implies \exists y. (C(y) \land \neg L(x,y)))\)</span></p>
+</li>
+</ol>
+</details>
+</details>
+<h4 id="existence-and-uniqueness">Existence and Uniqueness<a class="headerlink" href="#existence-and-uniqueness" title="Permanent link">🔗</a></h4>
+<p>After talking about the base quantifiers we can define ourselves more complex quantifiers,</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Exists Unique Quantifier</p>
+<p>Indicates that there exists only one object that satisfies the predicate, and we notate that with <span class="arithmatex">\(\exists!\)</span>.</p>
+<p>Formally we can define this quantifier from the base quantifiers as follows,</p>
+<div class="arithmatex">\[\exists!x.\phi\left(x\right) = \left(\exists x.\phi\left(x\right)\right)\land\left(\forall x,y.\phi\left(x\right)\land\phi\left(y\right)\implies x=y\right)\]</div>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>We claim that "There exists a unique <span class="arithmatex">\(x\)</span> such that, for all <span class="arithmatex">\(y\)</span>, <span class="arithmatex">\(x + y = y\)</span>, we can write it formally as,</p>
+<div class="arithmatex">\[\exists! x. \forall y. x + y = y\]</div>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Iota Notation</p>
+<p>This notation is used to "select" the only object that satisfies an existence formula.</p>
+<p>Formally, given a predicate <span class="arithmatex">\(\varphi\)</span> such that <span class="arithmatex">\(\exists ! x.\varphi\left(x\right)\)</span> is a true formula, then we denote by</p>
+<div class="arithmatex">\[\iota x.\varphi\left(x\right)\]</div>
+<p>the unique object for which the following is a true formula,</p>
+<div class="arithmatex">\[\varphi\left(\iota x.\varphi\left(x\right)\right)\]</div>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<ul>
+<li>
+<p>In the formula</p>
+<div class="arithmatex">\[\exists! x. \forall y. x + y = y\]</div>
+<p>over the natural numbers we know that <span class="arithmatex">\(0\)</span> is the unique <span class="arithmatex">\(x\)</span> for which the formula is true, hence we can write,</p>
+<div class="arithmatex">\[0=\iota x.\left(\forall y.x+y=y\right)\]</div>
+</li>
+<li>
+<p>Likewise, this is a true formula over the natural numbers,</p>
+<div class="arithmatex">\[\left(\iota x.\left(x+1=7\right)\right)=6\]</div>
+</li>
+<li>
+<p>And this is also a true formula over the natural numbers,</p>
+<div class="arithmatex">\[\left(\iota x.x^{3}=27\right)=10\]</div>
+</li>
+<li>
+<p>But this is not a valid object over the whole numbers,</p>
+<div class="arithmatex">\[\iota x.x^{2}=9\]</div>
+<p>This is because we know that <span class="arithmatex">\(3^2 = 9\)</span> but also <span class="arithmatex">\(\left(-3\right)^2 = 9\)</span>.</p>
+</li>
+</ul>
+</div>
+<h3 id="domain-of-discourse">Domain of Discourse<a class="headerlink" href="#domain-of-discourse" title="Permanent link">🔗</a></h3>
+<p>The proposition "There exists <span class="arithmatex">\(x\)</span> such that <span class="arithmatex">\(x^2 = -1\)</span>" is a predicate in one variable, but on which domain does this defined? Does it even have meaning for all mathematical object? Likewise the proposition "For all <span class="arithmatex">\(x, y\)</span> holds that <span class="arithmatex">\(x &gt; y\)</span>" is a predicate in two variables, but again we don't know that is the domain of <span class="arithmatex">\(x, y\)</span>, are they numbers? Maybe they're some arbitrary objects? For that we will define the <strong>domain of discourse</strong>.</p>
+<p>We will define the domain of discourse to be the domain from which the variables come. But also, when it is clear what the domain is, we will not specify it (as in the formula <span class="arithmatex">\(\exists x.x=1\)</span> where it is clear that we are working over some number system that was disclosed beforehand).</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Domain of Discourse</p>
+<p>A set of objects that constitute the source for "plugin in" of variables.</p>
+<details class="mnote">
+<summary><em>Note</em></summary>
+<p>This is also may be called "Universe of Discourse" in some sources.</p>
+</details>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Interpretation of a Predicate</p>
+<p>Let <span class="arithmatex">\(D\)</span> be the domain of discourse, then a claim on the elements of <span class="arithmatex">\(D\)</span>.</p>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Soundness in Predicate Calculus</p>
+<p>Let <span class="arithmatex">\(D\)</span> be a domain of discourse,</p>
+<ul>
+<li>Let <span class="arithmatex">\(A\)</span> be a predicate or a formula, and let it's interpretation be <span class="arithmatex">\(\exists x.P\left(x\right)\)</span> over <span class="arithmatex">\(D\)</span>, then we say that <span class="arithmatex">\(A\)</span> is a true statement over the domain <span class="arithmatex">\(D\)</span> if there exists an object <span class="arithmatex">\(a\)</span> in <span class="arithmatex">\(D\)</span> such that <span class="arithmatex">\(P\left(a\right)\)</span> is true.</li>
+<li>Let <span class="arithmatex">\(B\)</span> be a predicate or a formula, and let it's interpretation be <span class="arithmatex">\(\forall x.Q\left(x\right)\)</span> over <span class="arithmatex">\(D\)</span>, then we say that <span class="arithmatex">\(B\)</span> is a true statement over the domain <span class="arithmatex">\(D\)</span> if for all objects <span class="arithmatex">\(a\)</span> in <span class="arithmatex">\(D\)</span> the statement <span class="arithmatex">\(P\left(a\right)\)</span> is true.</li>
+</ul>
+<p>In those cases we use the notation, <span class="arithmatex">\(D\models\exists x.P\left(x\right)\)</span> and <span class="arithmatex">\(D\models\forall x.Q\left(x\right)\)</span>.</p>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Let <span class="arithmatex">\(P\)</span> be a predicate, and let it's interpretation be <span class="arithmatex">\(\exists x. x = 1\)</span> over the natural numbers, then we see that this is a sound (true) statement over the natural numbers, hence we can write,</p>
+<div class="arithmatex">\[\text{"Natural Numbers"} \models A\]</div>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Formula Equivalence</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be formulas such that, for every domain of disclosure <span class="arithmatex">\(D\)</span>, and for every interpretation <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span> of <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> over <span class="arithmatex">\(D\)</span> respectively, the following holds,</p>
+<div class="arithmatex">\[D\models\left(A\iff B\right)\]</div>
+<p>then we call <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> equivalent formulas, and use the notation <span class="arithmatex">\(A \equiv B\)</span>.</p>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Show that the next formula isn't necessarily true (meaning find a domain of discourse and an interpretation for which this formula is false),</p>
+<div class="arithmatex">\[\left(\left(\forall x.\exists y.P\left(x,y\right)\right)\land\left(\forall y.\exists x.P\left(x,y\right)\right)\right)\implies\exists x.\exists y.\forall z.\left(P\left(x,z\right)\lor P\left(z,y\right)\right)\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>We define our domain of discourse <span class="arithmatex">\(D\)</span> to be all the strings over the characters "0" and "1" (not including the empty string), and we define the interpretation of <span class="arithmatex">\(P\left(x,y\right)\)</span> over <span class="arithmatex">\(D\)</span> to be <span class="arithmatex">\(x \text{ is a prefix of } y\)</span>.</p>
+<p>Now we want to show that the following isn't true,</p>
+<div class="arithmatex">\[\left(\left(\forall x.\exists y.\left(x\text{ is a prefix of }y\right)\right)\land\left(\forall y.\exists x.\left(x\text{ is a prefix of }y\right)\right)\right)\implies\exists x.\exists y.\forall z.\left(\left(x\text{ is a prefix of }z\right)\lor\left(z\text{ is a prefix of }y\right)\right)\]</div>
+<p>for that we need to show that the prefix of the formula is true yet the suffix isn't.</p>
+<p>Proving that the prefix of the formula is true,</p>
+<ul>
+<li>
+<p>Let <span class="arithmatex">\(x\)</span> be an element in <span class="arithmatex">\(D\)</span>, then we define <span class="arithmatex">\(y = x\)</span>, and we see that <span class="arithmatex">\(x\text{ is a prefix of }y\)</span>, hence we know that,</p>
+<div class="arithmatex">\[\forall x.\exists y.\left(x\text{ is a prefix of }y\right)\]</div>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(y\)</span> be an element in <span class="arithmatex">\(D\)</span>, then we define <span class="arithmatex">\(x = y\)</span>, and we see that <span class="arithmatex">\(x\text{ is a prefix of }y\)</span>, hence we know that,</p>
+<div class="arithmatex">\[\forall y.\exists x.\left(x\text{ is a prefix of }y\right)\]</div>
+</li>
+</ul>
+<p>All in all we get that,</p>
+<div class="arithmatex">\[\left(\left(\forall x.\exists y.\left(x\text{ is a prefix of }y\right)\right)\land\left(\forall y.\exists x.\left(x\text{ is a prefix of }y\right)\right)\right)\]</div>
+<p>is a true formula.</p>
+<p>Now to show that,</p>
+<div class="arithmatex">\[\exists x.\exists y.\forall z.\left(\left(x\text{ is a prefix of }z\right)\lor\left(z\text{ is a prefix of }y\right)\right)\]</div>
+<p>isn't a true formula, let's assume that it is true, then there are some <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> in the domain <span class="arithmatex">\(D\)</span> for which,</p>
+<div class="arithmatex">\[\forall z.\left(\left(x\text{ is a prefix of }z\right)\lor\left(z\text{ is a prefix of }y\right)\right)\]</div>
+<p>is a true statement, but then we can define <span class="arithmatex">\(z=\left(1-x\left[0\right]\right)y\)</span> where multiplying means concatenation, then we get the following,</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(x\)</span> isn't a prefix for <span class="arithmatex">\(z\)</span>, this is since</p>
+<div class="arithmatex">\[z\left[0\right]=1-x\left[0\right]\ne x\left[0\right]\]</div>
+</li>
+<li>
+<p><span class="arithmatex">\(z\)</span> isn't a prefix for <span class="arithmatex">\(y\)</span>, this is trivially true since the length of <span class="arithmatex">\(z\)</span> is one more than the one of <span class="arithmatex">\(y\)</span>.</p>
+</li>
+</ul>
+<p>meaning our assumption was wrong.</p>
+<p>Finally we get that the suffix of the original formula is false while the prefix is true, meaning that the original formula is false over <span class="arithmatex">\(D\)</span> as we wanted.</p>
+</details>
+</details>
+<h2 id="proofs">Proofs<a class="headerlink" href="#proofs" title="Permanent link">🔗</a></h2>
+<p>In propositional calculus we explained how sentences correlate one to each other through logical connectives. Likewise in predicate calculus we saw how formulas about objects are defined. And now, given all that, we want to be able to prove or disprove a formula.</p>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em>: Proof of Exists Formula</p>
+<p>Let <span class="arithmatex">\(D\)</span> be a domain of discourse, let <span class="arithmatex">\(P\left(x\right)\)</span> be a predicate, and let <span class="arithmatex">\(A\left(x\right)\)</span> be an interpretation for <span class="arithmatex">\(P\left(x\right)\)</span> over <span class="arithmatex">\(D\)</span>, then to prove the formula <span class="arithmatex">\(\exists x.P\left(x\right)\)</span> over <span class="arithmatex">\(D\)</span>, one would need to provide an element <span class="arithmatex">\(a\)</span> in <span class="arithmatex">\(D\)</span> such that <span class="arithmatex">\(A\left(a\right)\)</span> is true.</p>
+</div>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em>: Proof of Forall Formula</p>
+<p>Let <span class="arithmatex">\(D\)</span> be a domain of discourse, let <span class="arithmatex">\(P\left(x\right)\)</span> be a predicate, and let <span class="arithmatex">\(A\left(x\right)\)</span> be an interpretation for <span class="arithmatex">\(P\left(x\right)\)</span> over <span class="arithmatex">\(D\)</span>, then to prove the formula <span class="arithmatex">\(\forall x.P\left(x\right)\)</span> over <span class="arithmatex">\(D\)</span>, one would need to show that for an arbitrary element <span class="arithmatex">\(a\)</span> in <span class="arithmatex">\(D\)</span> it follows that <span class="arithmatex">\(A\left(a\right)\)</span> is true.</p>
+</div>
+<p>This sections contains a lot of formal proofs for mathematical facts, try firstly to prove them yourself for exercise.</p>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Forall and Exists are Inverses</p>
+<p></p><div id="claim-forall-and-exists-are-inverses"></div>
+Let <span class="arithmatex">\(\varphi\)</span> be a formula, then,<p></p>
+<ol>
+<li><span class="arithmatex">\(\neg\left(\exists x.\varphi\left(x\right)\right)\equiv\forall x.\neg\varphi\left(x\right)\)</span></li>
+<li><span class="arithmatex">\(\neg\left(\forall x.\varphi\left(x\right)\right)\equiv\exists x.\neg\varphi\left(x\right)\)</span></li>
+</ol>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let <span class="arithmatex">\(D\)</span> be a domain of discourse,</p>
+<ol>
+<li>
+<p>We have to prove that,</p>
+<div class="arithmatex">\[
+D \models \left(\left(\neg\left(\exists x.\varphi\left(x\right)\right)\right) \iff \left(\forall x.\neg\varphi\left(x\right)\right)\right)
+\]</div>
+<p>Let <span class="arithmatex">\(P\left(x\right)\)</span> be an interpretation of <span class="arithmatex">\(\varphi\left(x\right)\)</span> over <span class="arithmatex">\(D\)</span>, now to show that the formula is true we want to prove that,</p>
+<div class="arithmatex">\[
+\left(\neg\left(\exists x.P\left(x\right)\right)\right) \iff \left(\forall x.\neg P\left(x\right)\right)
+\]</div>
+<p>notice that this isn't the same thing since now we work with the interpretation over <span class="arithmatex">\(D\)</span> explicitly.</p>
+<p>Now we have to prove an iff implication, for that by definition we have to show two directional implications,</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\underline{\implies}\)</span>: We assume that the prefix is true (since if it's false the statement is true by definition of the implication connective), meaning that we know that,</p>
+<div class="arithmatex">\[
+\neg\left(\exists x.P\left(x\right)\right)
+\]</div>
+<p>Now let's assume by contradiction that the suffix isn't correct, meaning that, not for all <span class="arithmatex">\(a\)</span> in <span class="arithmatex">\(D\)</span> the statement <span class="arithmatex">\(\neg P\left(a\right)\)</span> is true, this means that there is some element <span class="arithmatex">\(a\)</span> in <span class="arithmatex">\(D\)</span> for which <span class="arithmatex">\(P\left(a\right)\)</span> must be true, but this is a contradiction on our assumption that there isn't such object.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\underline{\impliedby}\)</span>: We assume that the prefix is true, meaning that we know that,</p>
+<div class="arithmatex">\[
+\forall x.\neg P\left(x\right)
+\]</div>
+<p>Now let's assume by contradiction that the suffix isn't correct, meaning that, there exists an <span class="arithmatex">\(a\)</span> in <span class="arithmatex">\(D\)</span> such that <span class="arithmatex">\(P\left(a\right)\)</span> is true, but this means that <span class="arithmatex">\(\neg P\left(a\right)\)</span> is false, contradicting our assumption.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>We have to prove that,</p>
+<div class="arithmatex">\[
+D \models \left(\left(\neg\left(\forall x.\varphi\left(x\right)\right)\right)\equiv\left(\exists x.\neg\varphi\left(x\right)\right)\right)
+\]</div>
+<p>Let <span class="arithmatex">\(P\left(x\right)\)</span> be an interpretation of <span class="arithmatex">\(\varphi\left(x\right)\)</span> over <span class="arithmatex">\(D\)</span>, now to show that the formula is true we want to prove that,</p>
+<div class="arithmatex">\[
+\left(\neg\left(\forall x.P\left(x\right)\right)\right)\equiv\left(\exists x.\neg P\left(x\right)\right)
+\]</div>
+<p>notice that this isn't the same thing since now we work with the interpretation over <span class="arithmatex">\(D\)</span> explicitly.</p>
+<p>Now we have to prove an iff implication, for that by definition we have to show two directional implications,</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\underline{\implies}\)</span>: We assume that the prefix is true, meaning that we know that,</p>
+<div class="arithmatex">\[
+\neg\left(\forall x.P\left(x\right)\right)
+\]</div>
+<p>Now let's assume by contradiction that the suffix isn't correct, meaning that, there isn't an element <span class="arithmatex">\(x\)</span> in <span class="arithmatex">\(D\)</span> such that <span class="arithmatex">\(\neg P\left(x\right)\)</span> is true, hence if we pick an arbitrary element <span class="arithmatex">\(a\)</span> in <span class="arithmatex">\(D\)</span> it must satisfy <span class="arithmatex">\(P\left(a\right)\)</span>, but since this <span class="arithmatex">\(a\)</span> is arbitrary it must mean that it's true for all the elements in <span class="arithmatex">\(D\)</span> because <span class="arithmatex">\(a\)</span> can be any element from <span class="arithmatex">\(D\)</span>, that means that, for all <span class="arithmatex">\(x\)</span> in <span class="arithmatex">\(D\)</span> we know that <span class="arithmatex">\(P\left(x\right)\)</span> must be true, but this is a contradiction to the assumption.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\underline{\impliedby}\)</span>: We assume that the prefix is true, meaning that we know that,</p>
+<div class="arithmatex">\[
+\exists x.\neg P\left(x\right)
+\]</div>
+<p>Now let's assume by contradiction that the suffix isn't correct, meaning that, for all <span class="arithmatex">\(x\)</span> in <span class="arithmatex">\(D\)</span> we have that <span class="arithmatex">\(P \left(x\right)\)</span>, but from our assumption there is an element <span class="arithmatex">\(a\)</span> in <span class="arithmatex">\(D\)</span> such that <span class="arithmatex">\(\neg P\left(a\right)\)</span> is true, meaning that \neg P\left(a\right)$ is false and <span class="arithmatex">\(P\left(a\right)\)</span> is true, which is a contradiction.</p>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+</div>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Forall Quantifiers are Interchangeable</p>
+<p></p><div id="claim-forall-quantifiers-are-interchangeable"></div>
+Let <span class="arithmatex">\(\varphi\)</span> be a formula, then,<p></p>
+<div class="arithmatex">\[\forall x.\forall y.\varphi\left(x,y\right)\equiv\forall y.\forall x.\varphi\left(x,y\right)\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let <span class="arithmatex">\(D\)</span> be a domain of discourse, and let <span class="arithmatex">\(P(x,y)\)</span> be an interpretation of <span class="arithmatex">\(\varphi(x,y)\)</span> over <span class="arithmatex">\(D\)</span>.</p>
+<p>We must show that the statement <span class="arithmatex">\(\forall x.\forall y.P(x,y)\)</span> evaluates to <span class="arithmatex">\(\true\)</span> if and only if <span class="arithmatex">\(\forall y.\forall x.P(x,y)\)</span> evaluates to <span class="arithmatex">\(\true\)</span>.</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\underline{\implies}\)</span>: We assume that the prefix is true, meaning that we know,</p>
+<div class="arithmatex">\[\forall x.\forall y.P(x,y)\]</div>
+<p>By the semantic definition of the universal quantifier <span class="arithmatex">\(\forall x\)</span>, this means that for every single element <span class="arithmatex">\(a \in D\)</span>, the remaining formula <span class="arithmatex">\(\forall y.P(a,y)\)</span> must evaluate to <span class="arithmatex">\(\true\)</span>.</p>
+<p>In turn, if <span class="arithmatex">\(\forall y.P(a,y)\)</span> is <span class="arithmatex">\(\true\)</span> for a given <span class="arithmatex">\(a\)</span>, then by the semantic definition of <span class="arithmatex">\(\forall y\)</span>, the statement <span class="arithmatex">\(P(a,b)\)</span> evaluates to <span class="arithmatex">\(\true\)</span> for every single element <span class="arithmatex">\(b \in D\)</span>. </p>
+<p>Since this holds across the selections, let us fix an arbitrary element <span class="arithmatex">\(b_0 \in D\)</span>. We observe that for every element <span class="arithmatex">\(a \in D\)</span>, the condition <span class="arithmatex">\(P(a,b_0)\)</span> holds. This implies that the statement <span class="arithmatex">\(\forall x.P(x,b_0)\)</span> is <span class="arithmatex">\(\true\)</span>. </p>
+<p>Since <span class="arithmatex">\(b_0\)</span> was an arbitrarily selected member of <span class="arithmatex">\(D\)</span>, it must follow that for every element <span class="arithmatex">\(y \in D\)</span>, the statement <span class="arithmatex">\(\forall x.P(x,y)\)</span> is <span class="arithmatex">\(\true\)</span>. Thus, by definition, <span class="arithmatex">\(\forall y.\forall x.P(x,y)\)</span> is <span class="arithmatex">\(\true\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\underline{\impliedby}\)</span>: We assume that the prefix is true, meaning that we know,</p>
+<div class="arithmatex">\[\forall y.\forall x.P(x,y)\]</div>
+<p>By the semantic definition of <span class="arithmatex">\(\forall y\)</span>, this means that for every single element <span class="arithmatex">\(b \in D\)</span>, the statement <span class="arithmatex">\(\forall x.P(x,b)\)</span> evaluates to <span class="arithmatex">\(\true\)</span>. </p>
+<p>If <span class="arithmatex">\(\forall x.P(x,b)\)</span> is <span class="arithmatex">\(\true\)</span> for a given <span class="arithmatex">\(b\)</span>, then by the definition of <span class="arithmatex">\(\forall x\)</span>, the statement <span class="arithmatex">\(P(a,b)\)</span> evaluates to <span class="arithmatex">\(\true\)</span> for every single element <span class="arithmatex">\(a \in D\)</span>.</p>
+<p>Now, let us fix an arbitrary element <span class="arithmatex">\(a_0 \in D\)</span>. We look across all possible elements of <span class="arithmatex">\(D\)</span> and notice that for every element <span class="arithmatex">\(b \in D\)</span>, the condition <span class="arithmatex">\(P(a_0,b)\)</span> holds. This means that the statement <span class="arithmatex">\(\forall y.P(a_0,y)\)</span> is <span class="arithmatex">\(\true\)</span>. </p>
+<p>Since <span class="arithmatex">\(a_0\)</span> was chosen arbitrarily from <span class="arithmatex">\(D\)</span>, it must hold for all elements in the domain, meaning that for every element <span class="arithmatex">\(x \in D\)</span>, the statement <span class="arithmatex">\(\forall y.P(x,y)\)</span> is <span class="arithmatex">\(\true\)</span>. Thus, by definition, <span class="arithmatex">\(\forall x.\forall y.P(x,y)\)</span> is <span class="arithmatex">\(\true\)</span>.</p>
+</li>
+</ul>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Exists Quantifiers are Interchangeable</summary>
+<p>Let <span class="arithmatex">\(\varphi\)</span> be a formula, then,</p>
+<div class="arithmatex">\[\exists x.\exists y.\varphi\left(x,y\right)\equiv\exists y.\exists x.\varphi\left(x,y\right)\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>By the <a href="#claim-forall-and-exists-are-inverses">forall and exists are inverses claim</a>, we know that <span class="arithmatex">\(\exists z.\psi(z) \equiv \neg\forall z.\neg\psi(z)\)</span>. Applying this to our formula,</p>
+<div class="arithmatex">\[\begin{align*}
+\exists x.\exists y.\varphi\left(x,y\right) &amp; \equiv \neg\forall x.\neg\left(\exists y.\varphi\left(x,y\right)\right) \\
+&amp; \equiv \neg\forall x.\left(\forall y.\neg\varphi\left(x,y\right)\right) \\
+&amp; \equiv \neg\left(\forall x.\forall y.\neg\varphi\left(x,y\right)\right)
+\end{align*}\]</div>
+<p>Now, we apply the <a href="#claim-forall-quantifiers-are-interchangeable">forall quantifiers are interchangeable claim</a> to swap the order of the universal quantifiers,</p>
+<div class="arithmatex">\[\neg\left(\forall x.\forall y.\neg\varphi\left(x,y\right)\right) \equiv \neg\left(\forall y.\forall x.\neg\varphi\left(x,y\right)\right)\]</div>
+<p>Finally, we use the forall and exists are inverses claim again to convert the universal quantifiers back into existential ones,</p>
+<div class="arithmatex">\[\begin{align*}
+\neg\left(\forall y.\forall x.\neg\varphi\left(x,y\right)\right) &amp; \equiv \neg\forall y.\left(\forall x.\neg\varphi\left(x,y\right)\right) \\
+&amp; \equiv \exists y.\neg\left(\forall x.\neg\varphi\left(x,y\right)\right) \\
+&amp; \equiv \exists y.\exists x.\varphi\left(x,y\right)
+\end{align*}\]</div>
+<p>Thus, we have shown that <span class="arithmatex">\(\exists x.\exists y.\varphi\left(x,y\right) \equiv \exists y.\exists x.\varphi\left(x,y\right)\)</span>.</p>
+</details>
+</details>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Forall Quantifier is Distributive Over Conjunction</p>
+<p>Let <span class="arithmatex">\(\varphi\)</span> and <span class="arithmatex">\(\psi\)</span> be formulas, then,</p>
+<div class="arithmatex">\[\forall x.\left(\varphi\left(x\right)\land\psi\left(x\right)\right)\equiv\left(\forall x.\varphi\left(x\right)\right)\land\left(\forall y.\psi\left(y\right)\right)\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let <span class="arithmatex">\(D\)</span> be a domain of discourse, and let <span class="arithmatex">\(P(x)\)</span> and <span class="arithmatex">\(Q(x)\)</span> be interpretations of <span class="arithmatex">\(\varphi(x)\)</span> and <span class="arithmatex">\(\psi(x)\)</span> over <span class="arithmatex">\(D\)</span> respectively.</p>
+<ul>
+<li><span class="arithmatex">\(\underline{\implies}\)</span>: Assume that <span class="arithmatex">\(\forall x.\left(P(x) \land Q(x)\right)\)</span> is true. Let <span class="arithmatex">\(a \in D\)</span> be an arbitrary element. By our assumption, <span class="arithmatex">\(P(a) \land Q(a)\)</span> is true, which implies that both <span class="arithmatex">\(P(a)\)</span> and <span class="arithmatex">\(Q(a)\)</span> are true. Since <span class="arithmatex">\(a\)</span> was arbitrary, we can conclude that <span class="arithmatex">\(\forall x.P(x)\)</span> is true and <span class="arithmatex">\(\forall y.Q(y)\)</span> is true. Thus, their conjunction <span class="arithmatex">\(\left(\forall x.P(x)\right) \land \left(\forall y.Q(y)\right)\)</span> is true.</li>
+<li><span class="arithmatex">\(\underline{\impliedby}\)</span>: Assume that <span class="arithmatex">\(\left(\forall x.P(x)\right) \land \left(\forall y.Q(y)\right)\)</span> is true. This means that both <span class="arithmatex">\(\forall x.P(x)\)</span> and <span class="arithmatex">\(\forall y.Q(y)\)</span> are true. Let <span class="arithmatex">\(a \in D\)</span> be an arbitrary element. From the first part of our assumption, <span class="arithmatex">\(P(a)\)</span> is true. From the second part, <span class="arithmatex">\(Q(a)\)</span> is true. Thus, <span class="arithmatex">\(P(a) \land Q(a)\)</span> is true. Since <span class="arithmatex">\(a\)</span> was arbitrary, we conclude that <span class="arithmatex">\(\forall x.\left(P(x) \land Q(x)\right)\)</span> is true.</li>
+</ul>
+<p>Having shown both directions, we conclude that the formulas are equivalent.</p>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Exists Quantifier is Distributive Over Disjunction</summary>
+<p>Let <span class="arithmatex">\(\varphi\)</span> and <span class="arithmatex">\(\psi\)</span> be formulas, then,</p>
+<div class="arithmatex">\[\exists x.\left(\varphi\left(x\right)\lor\psi\left(x\right)\right)\equiv\left(\exists x.\varphi\left(x\right)\right)\lor\left(\exists y.\psi\left(y\right)\right)\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>We can prove this result by applying the <a href="#claim-forall-and-exists-are-inverses">forall and exists are inverses claim</a> and the previously proven <a href="#claim-forall-quantifier-is-distributive-over-conjunction">distribution of forall over conjunction</a>.</p>
+<div class="arithmatex">\[\begin{align*}
+\exists x.\left(\varphi\left(x\right)\lor\psi\left(x\right)\right) &amp; \equiv \neg\forall x.\neg\left(\varphi\left(x\right)\lor\psi\left(x\right)\right) \\
+&amp; \equiv \neg\forall x.\left(\neg\varphi\left(x\right)\land\neg\psi\left(x\right)\right) &amp;&amp; \text{(De Morgan's Laws)} \\
+&amp; \equiv \neg\left(\left(\forall x.\neg\varphi\left(x\right)\right)\land\left(\forall y.\neg\psi\left(y\right)\right)\right) &amp;&amp; \text{(Distribution of } \forall \text{ over } \land\text{)} \\
+&amp; \equiv \neg\left(\forall x.\neg\varphi\left(x\right)\right)\lor\neg\left(\forall y.\neg\psi\left(y\right)\right) &amp;&amp; \text{(De Morgan's Laws)} \\
+&amp; \equiv \left(\exists x.\varphi\left(x\right)\right)\lor\left(\exists y.\psi\left(y\right)\right) &amp;&amp; \text{(Inverse relation)}
+\end{align*}\]</div>
+</details>
+</details>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Exists and Forall Quantifiers are Not Interchangeable</p>
+<p>There exists a formula <span class="arithmatex">\(\varphi\)</span> for which,</p>
+<div class="arithmatex">\[\exists x.\forall y.\varphi\left(x,y\right)\not\equiv\forall y.\exists x.\varphi\left(x,y\right)\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>To prove that the formulas are not equivalent, we provide a counter-example using a specific domain of discourse and interpretation.</p>
+<p>Let the domain of discourse <span class="arithmatex">\(D\)</span> be the natural numbers, and let <span class="arithmatex">\(\varphi(x, y)\)</span> be the predicate <span class="arithmatex">\(x &gt; y\)</span>.</p>
+<ol>
+<li>Consider the formula <span class="arithmatex">\(\forall y. \exists x. (x &gt; y)\)</span>. This statement says "For every real number <span class="arithmatex">\(y\)</span>, there exists a real number <span class="arithmatex">\(x\)</span> that is greater than <span class="arithmatex">\(y\)</span>." This is <strong>true</strong> (for any <span class="arithmatex">\(y\)</span>, we can choose <span class="arithmatex">\(x = y + 1\)</span>).</li>
+<li>Consider the formula <span class="arithmatex">\(\exists x. \forall y. (x &gt; y)\)</span>. This statement says "There exists a real number <span class="arithmatex">\(x\)</span> that is greater than every real number <span class="arithmatex">\(y\)</span>." This is <strong>false</strong> (no such "maximum" real number exists, as for any <span class="arithmatex">\(x\)</span>, the statement <span class="arithmatex">\(x &gt; x\)</span> is false).</li>
+</ol>
+<p>Since we found a domain and an interpretation where one formula is true and the other is false, they are not equivalent.</p>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Write a formula equivalent to the following one without any negation symbols,</p>
+<div class="arithmatex">\[\neg\left(\exists\varepsilon&gt;0.\forall\delta&gt;0.\exists x&gt;0.\exists y&gt;0.\left(\left|x-y\right|&lt;\delta\land\left|x-y\right|&gt;\varepsilon\right)\right)\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>To solve this exercise we need to use two previous results, the first onw being <a href="#claim-forall-and-exists-are-inverses">forall and exists are inverses</a>, and the second one is <a href="#claim-de-morgans-laws">De Morgan's laws</a>,</p>
+<div class="arithmatex">\[\begin{align*}
+\neg\left(\exists\varepsilon&gt;0.\forall\delta&gt;0.\exists x&gt;0.\exists y&gt;0.\left(\left|x-y\right|&lt;\delta\land\left|x-y\right|&gt;\varepsilon\right)\right) &amp; \equiv\forall\varepsilon&gt;0.\neg\left(\forall\delta&gt;0.\exists x&gt;0.\exists y&gt;0.\left(\left|x-y\right|&lt;\delta\land\left|x-y\right|&gt;\varepsilon\right)\right)\\
+&amp; \equiv\forall\varepsilon&gt;0.\exists\delta&gt;0.\neg\left(\exists x&gt;0.\exists y&gt;0.\left(\left|x-y\right|&lt;\delta\land\left|x-y\right|&gt;\varepsilon\right)\right)\\
+&amp; \equiv\forall\varepsilon&gt;0.\exists\delta&gt;0.\forall x&gt;0.\neg\left(\exists y&gt;0.\left(\left|x-y\right|&lt;\delta\land\left|x-y\right|&gt;\varepsilon\right)\right)\\
+&amp; \equiv\forall\varepsilon&gt;0.\exists\delta&gt;0.\forall x&gt;0.\forall y&gt;0.\neg\left(\left|x-y\right|&lt;\delta\land\left|x-y\right|&gt;\varepsilon\right)\\
+&amp; \equiv\forall\varepsilon&gt;0.\exists\delta&gt;0.\forall x&gt;0.\forall y&gt;0.\left(\left(\neg\left(\left|x-y\right|&lt;\delta\right)\right)\lor\left(\neg\left(\left|x-y\right|&gt;\varepsilon\right)\right)\right)\\
+&amp; \equiv\forall\varepsilon&gt;0.\exists\delta&gt;0.\forall x&gt;0.\forall y&gt;0.\left(\left(\left|x-y\right|\ge\delta\right)\lor\left(\left|x-y\right|\le\varepsilon\right)\right)
+\end{align*}\]</div>
+</details>
+</details>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="עדכון אחרון">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 29, 2026 14:57:28 UTC">May 29, 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="נוצר">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 29, 2026 14:57:28 UTC">May 29, 2026</span>
+  </span>
+
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="תורמים">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"></path></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:mikhelman.ron@gmail.com">yeahBOYYYYY</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  חזרה למעלה
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2024 - 2026 Ron Mikhelman
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/yeahBOYYYYY" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.share", "header.autohide"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

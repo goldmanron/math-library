@@ -1,0 +1,3644 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A documentation site for my project.">
+      
+      
+        <meta name="author" content="Ron Mikhelman">
+      
+      
+        <link rel="canonical" href="https://yeahBOYYYYY.github.io/math-library/mathematics_bachelor/discrete_mathematics/introduction_to_set_theory/">
+      
+      
+        <link rel="prev" href="../introduction_to_logic/">
+      
+      
+        <link rel="next" href="../introduction_to_combinatorics/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../../../he/mathematics_bachelor/discrete_mathematics/introduction_to_set_theory/" hreflang="he">
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Introduction to Set Theory - Math Library</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/admonitions.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Math Library" class="md-header__button md-logo" aria-label="Math Library" data-md-component="logo">
+      
+  <img src="../../../assets/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Math Library
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to Set Theory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to system preference" type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 2c-1.05 0-2.05.16-3 .46 4.06 1.27 7 5.04 7 9.54s-2.94 8.27-7 9.54c.95.3 1.95.46 3 .46a10 10 0 0 0 10-10A10 10 0 0 0 9 2"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../he/mathematics_bachelor/discrete_mathematics/introduction_to_set_theory/" hreflang="he" class="md-select__link">
+              Hebrew
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yeahBOYYYYY/math-library/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    yeahBOYYYYY/math-library
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Mathematics Bachelor
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../computer_science_bachelor/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Computer Science Bachelor
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Math Library" class="md-nav__button md-logo" aria-label="Math Library" data-md-component="logo">
+      
+  <img src="../../../assets/favicon.ico" alt="logo">
+
+    </a>
+    Math Library
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yeahBOYYYYY/math-library/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    yeahBOYYYYY/math-library
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mathematics Bachelor
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mathematics Bachelor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discrete Mathematics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Discrete Mathematics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction_to_logic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Logic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Set Theory
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Set Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-construction-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set Construction Schemes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set Construction Schemes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listing-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listing Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-of-separation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema of Separation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-of-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema of Replacement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-construction-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set Construction Conventions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set Construction Conventions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-of-all-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set of All Sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finite-cardinality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finite Cardinality
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Sets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#empty-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empty Set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integer Numbers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integer Numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#induction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Induction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rational-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rational Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real Numbers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real Numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intervals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intervals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complex Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#containment-and-equality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Containment and Equality
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Containment and Equality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#containment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Containment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Equality
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations-on-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operations on Sets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operations on Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intersection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Intersection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generalized-intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generalized Intersection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disjoint-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disjoint Sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#union" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Union
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Union">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generalized-union" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generalized Union
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disjoint-union" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disjoint Union
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Difference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Difference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symmetric Difference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power Set
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ordered-pairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordered Pairs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordered Pairs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cartesian-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cartesian Product
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction_to_combinatorics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Combinatorics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction_to_graph_theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Graph Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../analysis/real_analysis_1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../computer_science_bachelor/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Science Bachelor
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-construction-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set Construction Schemes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set Construction Schemes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listing-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listing Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-of-separation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema of Separation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-of-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema of Replacement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-construction-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set Construction Conventions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set Construction Conventions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-of-all-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set of All Sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finite-cardinality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finite Cardinality
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Sets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#empty-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empty Set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integer Numbers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integer Numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#induction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Induction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rational-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rational Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real Numbers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real Numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intervals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intervals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complex Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#containment-and-equality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Containment and Equality
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Containment and Equality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#containment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Containment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Equality
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations-on-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operations on Sets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operations on Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intersection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Intersection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generalized-intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generalized Intersection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disjoint-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disjoint Sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#union" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Union
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Union">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generalized-union" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generalized Union
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disjoint-union" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disjoint Union
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Difference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Difference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symmetric Difference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power Set
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ordered-pairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordered Pairs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordered Pairs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cartesian-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cartesian Product
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Mathematics Bachelor
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../introduction_to_logic/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Discrete Mathematics
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Introduction to Set Theory</h1>
+
+<div class="admonition warning">
+<p class="admonition-title">This page is still under construction</p>
+</div>
+<p>In set theory, the central object we study is (surprisingly) sets. Despite being the central object in the field, this course will not give formal definitions of this object. This is because mathematics, like any branch, is based on definitions and axioms that we agree are correct and from there we progress. Therefore, here we will use sets naively and intuitively without delving into the axioms according to which they behave. (But this is no excuse for non-formalism! Everything will still be formal and precise.)</p>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em>: Domain of Discourse in Set Theory</p>
+<p>In this field and in most of mathematics the domain of discourse is "Set Theory" itself, meaning all objects we talk about are sets, hence we will not include the domain of discourse in proofs anymore.</p>
+</div>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em>: Base Assumptions</p>
+<p>All logic in this chapter is based on a system of axioms called <span class="arithmatex">\(\mathrm{ZF}\)</span>, beyond this chapter we will always use the axiom system <span class="arithmatex">\(\mathrm{ZFC}\)</span> (we assume the axiom of choice in this course).</p>
+</div>
+<h2 id="sets">Sets<a class="headerlink" href="#sets" title="Permanent link">🔗</a></h2>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Set (Non formal)</p>
+<p>A set is a collection of elements without importance for order and without repetitions, it is commonly denoted by curly brackets <span class="arithmatex">\(\{\}\)</span> between which are all the elements belonging to the set, or if all the elements cannot be listed, a certain rule for creating the elements.</p>
+</div>
+<h3 id="set-construction-schemes">Set Construction Schemes<a class="headerlink" href="#set-construction-schemes" title="Permanent link">🔗</a></h3>
+<p>Now given what a set <strong>is</strong>, we want to understand how to construct sets.</p>
+<p>There are three ways to define/build a set in set theory, the "Listing Method", the "Schema of Separation" and the "Set-Builder Notation using a Formula".</p>
+<h4 id="listing-method">Listing Method<a class="headerlink" href="#listing-method" title="Permanent link">🔗</a></h4>
+<p>The first method is the most straight-forward one, and just consist of defining a list of elements.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Listing Method</p>
+<p>Let <span class="arithmatex">\(a_1, \ldots, a_n\)</span> be objects, then we can build a set as,</p>
+<div class="arithmatex">\[\{a_1, \ldots, a_n\}\]</div>
+<details class="mnote">
+<summary><em>Note</em></summary>
+<p>The "listing form" may also be called "roster form", "tabular form" or "extensional definition".</p>
+</details>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>We can build the following sets,</p>
+<ul>
+<li><span class="arithmatex">\(\left\{1, \ldots, 100\right\}\)</span> (Note that the use of ellipses in the definition of a set is prohibited unless the pattern is clear!)</li>
+<li><span class="arithmatex">\(\left\{ \left\{ 1\right\} ,\left\{ 2\right\} \right\}\)</span></li>
+</ul>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Singleton</p>
+<p>A singleton is a set with only one element.</p>
+<p>Formally, let <span class="arithmatex">\(a\)</span> be an object, then the set <span class="arithmatex">\(\{a\}\)</span> is called a singleton.</p>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Element Belongs to a Set Constructed Using the Listing Method</p>
+<p>Let <span class="arithmatex">\(a_1, \ldots, a_n\)</span> be objects, and let <span class="arithmatex">\(a\)</span> be an object, such that,</p>
+<div class="arithmatex">\[\exists i.a=a_{i}\]</div>
+<p>then we say that "<span class="arithmatex">\(a\)</span> belongs to <span class="arithmatex">\(\{a_1, \ldots, a_n\}\)</span>", and notate it using <span class="arithmatex">\(a \in \{a_1, \ldots, a_n\}\)</span>.</p>
+<details class="mnote">
+<summary><em>Note</em></summary>
+<p>We also use this equivalent phrases,</p>
+<ul>
+<li><span class="arithmatex">\(a\)</span> is in <span class="arithmatex">\(\{a_1, \ldots, a_n\}\)</span>.</li>
+<li><span class="arithmatex">\(a\)</span> is a member of <span class="arithmatex">\(\{a_1, \ldots, a_n\}\)</span>.</li>
+</ul>
+</details>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Those are some examples on "belonging to a set",</p>
+<ul>
+<li><span class="arithmatex">\(1 \in \{1\}\)</span></li>
+<li><span class="arithmatex">\(\left\{ 1\right\} \in\left\{ \left\{ 1\right\} ,\left\{ 2\right\} ,1,2\right\}\)</span></li>
+<li><span class="arithmatex">\(\left\{ 2,2\right\} \in\left\{ \left\{ 2\right\} \right\}\)</span></li>
+</ul>
+</div>
+<h4 id="schema-of-separation">Schema of Separation<a class="headerlink" href="#schema-of-separation" title="Permanent link">🔗</a></h4>
+<p>The second method is actually an axiom in the <span class="arithmatex">\(\mathrm{ZF}\)</span> axioms, and it what allows us to create sets from existing sets using a rule.</p>
+<div class="admonition axiom">
+<p class="admonition-title"><em>Axiom</em>: Schema of Separation</p>
+<p></p><div id="definition-schema-of-separation"></div>
+Let <span class="arithmatex">\(A\)</span> be a set, and let <span class="arithmatex">\(\varphi\)</span> be a predicate over <span class="arithmatex">\(A\)</span>, then we can build a set as,<p></p>
+<div class="arithmatex">\[\{x\in A\mid \varphi\left(x\right)\}\]</div>
+<details class="mnote">
+<summary><em>Note</em></summary>
+<p>The "schema of separation" may also be called "schema of specification", "schema of restricted comprehension" or "set-builder notation".</p>
+</details>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Element Belongs to a Set Constructed Using the Schema of Separation</p>
+<p></p><div id="definition-element-belongs-to-a-set-constructed-using-the-schema-of-separation"></div>
+Let <span class="arithmatex">\(A\)</span> be a set, let <span class="arithmatex">\(\varphi\)</span> be a predicate over <span class="arithmatex">\(A\)</span>, and let <span class="arithmatex">\(a\)</span> be an object, such that,<p></p>
+<div class="arithmatex">\[\left(a\in A\right)\land\phi\left(a\right)\]</div>
+<p>then we say that "<span class="arithmatex">\(a\)</span> belongs to <span class="arithmatex">\(\left\{ x\in A\mid\phi\left(x\right)\right\}\)</span>", and notate it using <span class="arithmatex">\(a \in \left\{ x\in A\mid\phi\left(x\right)\right\}\)</span>.</p>
+<details class="mnote">
+<summary><em>Note</em></summary>
+<p>We also use this equivalent phrases,</p>
+<ul>
+<li><span class="arithmatex">\(a\)</span> is in <span class="arithmatex">\(\left\{ x\in A\mid\phi\left(x\right)\right\}\)</span>.</li>
+<li><span class="arithmatex">\(a\)</span> is a member of <span class="arithmatex">\(\left\{ x\in A\mid\phi\left(x\right)\right\}\)</span>.</li>
+</ul>
+</details>
+</div>
+<h4 id="schema-of-replacement">Schema of Replacement<a class="headerlink" href="#schema-of-replacement" title="Permanent link">🔗</a></h4>
+<p>The third method is also an axiom in the <span class="arithmatex">\(\mathrm{ZF}\)</span> axioms, and it what allows us to create sets by altering elements from an existing set.</p>
+<div class="admonition axiom">
+<p class="admonition-title"><em>Axiom</em>: Schema of Replacement</p>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, and let <span class="arithmatex">\(f\)</span> be an action on the elements of <span class="arithmatex">\(A\)</span>, then we can build a set as,</p>
+<div class="arithmatex">\[\{f\left(x\right)\mid x\in A\}\]</div>
+<details class="mnote">
+<summary><em>Note</em></summary>
+<p>The "schema of replacement" may also be called "set-builder notation".</p>
+</details>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Element Belongs to a Set Constructed Using the Schema of Replacement</p>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, let <span class="arithmatex">\(f\)</span> be an action on the elements of <span class="arithmatex">\(A\)</span>, and let <span class="arithmatex">\(a\)</span> be an object, such that,</p>
+<div class="arithmatex">\[\exists b\in A.f\left(b\right)=a\]</div>
+<p>then we say that "<span class="arithmatex">\(a\)</span> belongs to <span class="arithmatex">\(\{f\left(x\right)\mid x\in A\}\)</span>", and notate it using <span class="arithmatex">\(a \in \{f\left(x\right)\mid x\in A\}\)</span>.</p>
+<details class="mnote">
+<summary><em>Note</em></summary>
+<p>We also use this equivalent phrases,</p>
+<ul>
+<li><span class="arithmatex">\(a\)</span> is in <span class="arithmatex">\(\{f\left(x\right)\mid x\in A\}\)</span>.</li>
+<li><span class="arithmatex">\(a\)</span> is a member of <span class="arithmatex">\(\{f\left(x\right)\mid x\in A\}\)</span>.</li>
+</ul>
+</details>
+</div>
+<h4 id="set-construction-conventions">Set Construction Conventions<a class="headerlink" href="#set-construction-conventions" title="Permanent link">🔗</a></h4>
+<p>Now that we know how to construct a set, and what does it mean for an object to be a member of a set, we can set a few conventions, and prove some things.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Element Doesn't Belongs to a Set</p>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, and let <span class="arithmatex">\(a\)</span> be an object, such that,</p>
+<div class="arithmatex">\[\neg\left(a \in A\right)\]</div>
+<p>then we say that "<span class="arithmatex">\(a\)</span> doesn't belong to <span class="arithmatex">\(A\)</span>", and notate it using <span class="arithmatex">\(a \notin A\)</span>.</p>
+<details class="mnote">
+<summary><em>Note</em></summary>
+<p>We also use this equivalent phrases,</p>
+<ul>
+<li><span class="arithmatex">\(a\)</span> is not in <span class="arithmatex">\(A\)</span>.</li>
+<li><span class="arithmatex">\(a\)</span> is not a member of <span class="arithmatex">\(A\)</span>.</li>
+</ul>
+</details>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Those are some examples on "not belonging to a set",</p>
+<ul>
+<li><span class="arithmatex">\(\left\{ 3\right\} \notin\left\{ 1,2,3\right\}\)</span>.</li>
+<li><span class="arithmatex">\(4 \notin \{0, 1, 2, 3\}\)</span>.</li>
+<li><span class="arithmatex">\(5\notin \{x + 1\mid x \in \{5, 6, 7\}\}\)</span>.</li>
+</ul>
+</div>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em></p>
+<p>Let <span class="arithmatex">\(\varphi\)</span> be a formula or a predicate, and let <span class="arithmatex">\(A\)</span> be a set, then we will use the following notation,</p>
+<div class="arithmatex">\[\forall x \in A. \varphi\left(x\right)\]</div>
+<p>to say that the object <span class="arithmatex">\(x\)</span> comes from the set <span class="arithmatex">\(A\)</span>, and formally this is equivalent to the following,</p>
+<div class="arithmatex">\[\forall x.\left(x\in A\right)\implies\varphi\left(x\right)\]</div>
+</div>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em></p>
+<p>Let <span class="arithmatex">\(\varphi\)</span> be a formula or a predicate, and let <span class="arithmatex">\(A\)</span> be a set, then we will use the following notation,</p>
+<div class="arithmatex">\[\exists x \in A. \varphi\left(x\right)\]</div>
+<p>to say that the object <span class="arithmatex">\(x\)</span> comes from the set <span class="arithmatex">\(A\)</span>, and formally this is equivalent to the following,</p>
+<div class="arithmatex">\[\exists x.\left(x\in A\right)\land\varphi\left(x\right)\]</div>
+</div>
+<h5 id="set-of-all-sets">Set of All Sets<a class="headerlink" href="#set-of-all-sets" title="Permanent link">🔗</a></h5>
+<p>In the start of Set Theory the set construction schemes discussed above were not established, and it was accepted that <strong>any</strong> class of objects that can be expressed using a rule is a set, but that changed after an English mathematician named Bertrand Russell showed that there are paradoxes that arise from this assumption.</p>
+<div class="admonition thm">
+<p class="admonition-title"><em>Theorem</em> [Russell 1901]: Russell's Paradox</p>
+<p></p><div id="theorem-russells-paradox"></div>
+There exists a predicate <span class="arithmatex">\(\varphi\left(x\right)\)</span> such that <span class="arithmatex">\(\{x \mid \varphi\left(x\right)\}\)</span> isn't a set.<p></p>
+<details class="proof">
+<summary>Proof</summary>
+<p>We define the predicate as,</p>
+<div class="arithmatex">\[\varphi\left(x\right) = \left(x\notin x\right)\]</div>
+<p>and now want to prove that <span class="arithmatex">\(A = \{x \mid \varphi\left(x\right)\}\)</span> isn't a set.</p>
+<p>For that we first note that either <span class="arithmatex">\(A \in A\)</span> or <span class="arithmatex">\(A \notin A\)</span>, but we will now show that both cases are impossible,</p>
+<ul>
+<li>If <span class="arithmatex">\(A \in A\)</span>, then by the definition of <a href="#definition-element-belongs-to-a-set-constructed-using-the-schema-of-separation">element belongs to a set constructed using the schema of separation</a> we know that <span class="arithmatex">\(\varphi\left(A\right)\)</span> must be true, hence we know that <span class="arithmatex">\(A \notin A\)</span>, which is a contradiction to our assumption.</li>
+<li>If <span class="arithmatex">\(A \notin A\)</span>, then by the definition of <a href="#definition-element-belongs-to-a-set-constructed-using-the-schema-of-separation">element belongs to a set constructed using the schema of separation</a> we know that <span class="arithmatex">\(\varphi\left(A\right)\)</span> must be false, hence we know that <span class="arithmatex">\(A \in A\)</span>, which is again a contradiction to our assumption.</li>
+</ul>
+<p>all in all we get that no matter what the set <span class="arithmatex">\(A\)</span> can't exists since it creates a paradox.</p>
+</details>
+</div>
+<div class="admonition corollary">
+<p class="admonition-title"><em>Corollary</em>: Set of All Sets</p>
+<p>The set of all sets does't exists.</p>
+<p>Formally, this means that there isn't a set <span class="arithmatex">\(\mathbb{S}\)</span> such that,</p>
+<div class="arithmatex">\[\forall A. A\in\mathbb{S}\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>We assume by contradiction that there is a set of all sets, meaning that there is a set <span class="arithmatex">\(\mathbb{S}\)</span> such that,</p>
+<div class="arithmatex">\[\forall A. A\in\mathbb{S}\]</div>
+<p>then for every predicate <span class="arithmatex">\(\varphi\)</span>, we can define a set by the <a href="#definition-schema-of-separation">schema of separation</a> like so,</p>
+<div class="arithmatex">\[\mathcal{A}_{\varphi} = \{ x\in\mathbb{S}\mid \varphi\left(x\right)\}\]</div>
+<p>but this is a contradiction to <a href="#theorem-russells-paradox">Russell's paradox</a>.</p>
+</details>
+</div>
+<h5 id="finite-cardinality">Finite Cardinality<a class="headerlink" href="#finite-cardinality" title="Permanent link">🔗</a></h5>
+<p>There is another quantity that can be useful to know for sets, their cardinality, or informally their "size".</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Finite Cardinality (Non formal)</p>
+<p>Let <span class="arithmatex">\(a_1, \ldots, a_n\)</span> be objects, then we define,</p>
+<div class="arithmatex">\[\left|\{a_1, \ldots, a_n\}\right| = n\]</div>
+</div>
+<p>While this definition seems trivial and non-helpful, it will be a major topic in the end of the course.</p>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>The following statements are true,</p>
+<ul>
+<li><span class="arithmatex">\(\left|\{0, 1, 2\}\right| = 3\)</span></li>
+<li><span class="arithmatex">\(\left|\{1, 2, 1, 2, 1\}\right| = 2\)</span></li>
+<li><span class="arithmatex">\(\left|\{0.5, 0.6, 0.7, 0.8, 0.9, 1\}\right| = 6\)</span></li>
+</ul>
+</div>
+<h3 id="common-sets">Common Sets<a class="headerlink" href="#common-sets" title="Permanent link">🔗</a></h3>
+<p>This are some base sets that are used everywhere in mathematics.</p>
+<h4 id="empty-set">Empty Set<a class="headerlink" href="#empty-set" title="Permanent link">🔗</a></h4>
+<p>The empty set is the trivially "empty" set, this set has no elements by construction, and while this set sounds as boring as a set can get, it actually has some unique properties we will explore later on.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Empty Set</p>
+<p>Let <span class="arithmatex">\(\mathcal{E}\)</span> be a set such that,</p>
+<div class="arithmatex">\[\forall a. a\notin \mathcal{E}\]</div>
+<p>then we call <span class="arithmatex">\(\mathcal{E}\)</span> an empty set.</p>
+</div>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em>: Cardinality of an Empty Set</p>
+<p>Let <span class="arithmatex">\(\mathcal{E}\)</span> be an empty set, then,</p>
+<div class="arithmatex">\[\left|\mathcal{E}\right| = 0\]</div>
+</div>
+<h4 id="integer-numbers">Integer Numbers<a class="headerlink" href="#integer-numbers" title="Permanent link">🔗</a></h4>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Natural Numbers (Non formal)</p>
+<p>A natural number is a positive whole number, and we use the following notation,</p>
+<div class="arithmatex">\[\mathbb{N} = \{0, 1, 2, 3, \ldots\}\]</div>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Positive Integers</p>
+<div class="arithmatex">\[\mathbb{N}_{+} = \{n\in\mathbb{N} \mid n \ge 1\}\]</div>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Even Numbers</p>
+<div class="arithmatex">\[\mathbb{N}_{\mathrm{even}} = \{2n \mid n \in\mathbb{N}\}\]</div>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Odd Numbers</p>
+<div class="arithmatex">\[\mathbb{N}_{\mathrm{odd}} = \{2n + 1 \mid n \in\mathbb{N}\}\]</div>
+</div>
+<!-- !!! def "_Definition_: Prime Numbers"
+
+    $$\mathbb{P} = \{p \in\mathbb{N} \mid p \text{ is prime}\}$$ -->
+
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Integers (Non formal)</p>
+<p>An integer is a whole number, and we use the following notation,</p>
+<div class="arithmatex">\[\mathbb{Z} = \{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}\]</div>
+</div>
+<h5 id="induction">Induction<a class="headerlink" href="#induction" title="Permanent link">🔗</a></h5>
+<div class="admonition thm">
+<p class="admonition-title">Induction on Natural Numbers</p>
+<p></p><div id="theorem-induction-over-natural-numbers"></div>
+Let <span class="arithmatex">\(P\)</span> be a predicate over <span class="arithmatex">\(\bbn\)</span>, such that, <span class="arithmatex">\(P\left(0\right)\)</span> is true, and, forall <span class="arithmatex">\(n\in\bbn\)</span> if <span class="arithmatex">\(P\left(n\right)\)</span> is true then <span class="arithmatex">\(P\left(n + 1\right)\)</span> is true, then we can infer that,<p></p>
+<div class="arithmatex">\[\forall n\in\bbn. P\left(n\right)\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Formally we are trying to prove the following claim,</p>
+<div class="arithmatex">\[\left(P\left(0\right)\land\left(\forall n\in\bbn.P\left(n\right)\implies P\left(n+1\right)\right)\right)\implies\left(\forall n\in\bbn.P\left(n\right)\right)\]</div>
+<p>for that, we assume the prefix, and now try to prove the suffix.</p>
+<p>Let's assume by contradiction that the suffix is not true, meaning that,</p>
+<div class="arithmatex">\[\exists n\in\bbn.\left(\neg P\left(n\right)\right)\]</div>
+<p>now since we know that such an <span class="arithmatex">\(n\)</span> exists, we can choose <span class="arithmatex">\(k \in \bbn\)</span> to be the minimal natural number for which <span class="arithmatex">\(\neg P\left(n\right)\)</span> is true.</p>
+<p>Now because we know that <span class="arithmatex">\(P\left(0\right)\)</span> is true, we get that <span class="arithmatex">\(k \ge 1\)</span>, and hence <span class="arithmatex">\(k - 1 \in \bbn\)</span>. Then from the minimality of <span class="arithmatex">\(k\)</span> we get that <span class="arithmatex">\(P\left(k - 1\right)\)</span> is true, and from our assumption we get that</p>
+<div class="arithmatex">\[P\left(k - 1\right) \implies P\left(k\right)\]</div>
+<p>meaning that <span class="arithmatex">\(P\left(k\right)\)</span> is true, which is a contradiction to the choosing of <span class="arithmatex">\(k\)</span>.</p>
+</details>
+</div>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em></p>
+<p>Let <span class="arithmatex">\(n\in\bbn\)</span>, then</p>
+<div class="arithmatex">\[0 + 1 + 2 + \ldots + n = \frac{n\cdot \left(n - 1\right)}{2}\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>We define a predicate <span class="arithmatex">\(P\left(n\right)\)</span> to be the truth value of the equation,</p>
+<div class="arithmatex">\[0 + 1 + 2 + \ldots + n = \frac{n\cdot \left(n + 1\right)}{2}\]</div>
+<p>Now we see that,</p>
+<div class="arithmatex">\[0 = \frac{0\cdot \left(0 + 1\right)}{2}\]</div>
+<p>and hence <span class="arithmatex">\(P\left(0\right)\)</span> is true.</p>
+<p>Also, let <span class="arithmatex">\(k\in\bbn\)</span> such that <span class="arithmatex">\(P\left(k\right)\)</span>, then we get that,</p>
+<div class="arithmatex">\[\begin{align*}
+0+1+2+\ldots+\left(k+1\right) &amp; =\left(0+1+2+\ldots+k\right)+\left(k+1\right)\\
+&amp; =\frac{k\cdot\left(k+1\right)}{2}+\left(k+1\right)\\
+&amp; =\frac{\left(k+1\right)\cdot k}{2}+\frac{2\left(k+1\right)}{2}\\
+&amp; =\frac{\left(k+1\right)\cdot k+2\left(k+1\right)}{2}\\
+&amp; =\frac{\left(k+1\right)\cdot\left(k+2\right)}{2}
+\end{align*}\]</div>
+<p>And finally from the <a href="#theorem-induction-over-natural-numbers">induction theorem</a> we get that <span class="arithmatex">\(\forall n\in \bbn. P\left(n\right)\)</span>, meaning that our original claim is true.</p>
+</details>
+</div>
+<h5 id="rational-numbers">Rational Numbers<a class="headerlink" href="#rational-numbers" title="Permanent link">🔗</a></h5>
+<p>Rational numbers are just fractions, a whole number divided by another whole number.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Rational Numbers</p>
+<div class="arithmatex">\[\mathbb{Q} = \left\{\frac{m}{n} \bmid m\in\mathbb{Z} \land n\in\mathbb{N}_{+}\right\}\]</div>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>The following numbers are rational,</p>
+<ul>
+<li><span class="arithmatex">\(0.5 = \frac{1}{2}\)</span></li>
+<li><span class="arithmatex">\(-0.75 = \frac{-3}{4}\)</span></li>
+<li><span class="arithmatex">\(\frac{1}{2} = \frac{4}{8}\)</span></li>
+<li><span class="arithmatex">\(0.333\ldots = \frac{1}{3}\)</span></li>
+<li><span class="arithmatex">\(1 = \frac{1}{1}\)</span></li>
+<li><span class="arithmatex">\(-5 = \frac{-5}{1}\)</span></li>
+</ul>
+</div>
+<h4 id="real-numbers">Real Numbers<a class="headerlink" href="#real-numbers" title="Permanent link">🔗</a></h4>
+<p>The real numbers are way more difficult to define or give an intuitive meaning to.</p>
+<p>The real numbers are all the numbers that lay on that "real line", which is the continuous version of the rational numbers line.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Real Numbers (Non formal)</p>
+<div class="arithmatex">\[\mathbb{R} = \left\{\ldots, -7.1357, \pi, 0, 1, \frac{1}{3}, 67, \ldots\right\}\]</div>
+</div>
+<p>And we can also define the positive real numbers,</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Positive Real Numbers</p>
+<div class="arithmatex">\[\bbr_+ = \left\{x\in\bbr\mid x&gt;0\right\}\]</div>
+</div>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em> [Bernoulli 1689]: Bernoulli's Inequality</p>
+<p>Let <span class="arithmatex">\(r\in\bbn\)</span>, and let <span class="arithmatex">\(x\in\bbr\)</span> such that <span class="arithmatex">\(x\ge -1\)</span>, then,</p>
+<div class="arithmatex">\[\left(1 + x\right)^{r} \ge 1 + rx\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>We want to prove this claim using induction on <span class="arithmatex">\(r\)</span>.</p>
+<p>Let <span class="arithmatex">\(r = 0\)</span>, then we get that,</p>
+<div class="arithmatex">\[\left(1+x\right)^{r} = \left(1+x\right)^{0} = 1 = 1 + 0\cdot x = 1+rx\]</div>
+<p>as required.</p>
+<p>Now let's assume that the claim holds for some <span class="arithmatex">\(r\in\bbn\)</span>, and try to prove the claim for <span class="arithmatex">\(r+1\)</span>, this can be done as follows,</p>
+<div class="arithmatex">\[\begin{align*}
+\left(1+x\right)^{r+1}=&amp;\left(1+x\right)^{r}\left(1+x\right)\ge\left(1+rx\right)\left(1+x\right)\\=&amp;1+rx+x+rx^{2}\ge1+rx+x\\=&amp;1+\left(r+1\right)x
+\end{align*}\]</div>
+<p>And hence we get from the <a href="#theorem-induction-over-natural-numbers">induction theorem</a> that the claim is true.</p>
+</details>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Floor Value</p>
+<p>Let <span class="arithmatex">\(x\in\bbr\)</span>, then we define,</p>
+<div class="arithmatex">\[\floor{x} = \max\left\{ n\in\bbz \mid n \le x \right\}\]</div>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Ceiling Value</p>
+<p>Let <span class="arithmatex">\(x\in\bbr\)</span>, then we define,</p>
+<div class="arithmatex">\[\ceil{x} = \min\left\{ n\in\bbz \mid n \ge x \right\}\]</div>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>The following are examples for the ceil and floor values,</p>
+<ul>
+<li><span class="arithmatex">\(\floor{1.1} = 1\)</span></li>
+<li><span class="arithmatex">\(\ceil{1.1} = 2\)</span></li>
+<li><span class="arithmatex">\(\floor{10.0} = 10\)</span></li>
+<li><span class="arithmatex">\(\ceil{-5.4} = -5\)</span></li>
+<li><span class="arithmatex">\(\ceil{0} = 0\)</span></li>
+<li><span class="arithmatex">\(\floor{-0.5} = -1\)</span></li>
+</ul>
+</div>
+<h5 id="intervals">Intervals<a class="headerlink" href="#intervals" title="Permanent link">🔗</a></h5>
+<p>An interval in a broad sense is a continuous section of the real numbers.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Open Interval</p>
+<p>Let <span class="arithmatex">\(a, b\in\bbr\)</span>, then we define,</p>
+<div class="arithmatex">\[\left(a,b\right)=\left\{ x\in\bbr\mid a&lt;x&lt;b\right\}\]</div>
+<p>We also define,</p>
+<div class="arithmatex">\[\left(a,\infty\right)=\left\{ x\in\bbr\bmid a&lt;x\right\}\]</div>
+<p>and,</p>
+<div class="arithmatex">\[\left(-\infty,b\right)=\left\{ x\in\bbr\bmid x&lt;b\right\}\]</div>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Open-Closed Interval</p>
+<p>Let <span class="arithmatex">\(a, b\in\bbr\)</span>, then we define,</p>
+<div class="arithmatex">\[\left(a,b\right]=\left\{ x\in\bbr\mid a&lt;x\le b\right\}\]</div>
+<p>We also define,</p>
+<div class="arithmatex">\[\left(-\infty,b\right]=\left\{ x\in\bbr\bmid x\le b\right\}\]</div>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Closed-Open Interval</p>
+<p>Let <span class="arithmatex">\(a, b\in\bbr\)</span>, then we define,</p>
+<div class="arithmatex">\[\left[a,b\right)=\left\{ x\in\bbr\mid a\le x &lt; b\right\}\]</div>
+<p>We also define,</p>
+<div class="arithmatex">\[\left[a,\infty\right)=\left\{ x\in\bbr\bmid a\le x\right\}\]</div>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Closed Interval</p>
+<p>Let <span class="arithmatex">\(a, b\in\bbr\)</span>, then we define,</p>
+<div class="arithmatex">\[\left[a,b\right] = \left\{ x\in\bbr\mid a\le x \le b\right\}\]</div>
+</div>
+<h5 id="complex-numbers">Complex Numbers<a class="headerlink" href="#complex-numbers" title="Permanent link">🔗</a></h5>
+<p>We will not define the complex numbers formally in this course since this is not needed, but for those who know what they are, this is the set notation and definition of them.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Complex Numbers</p>
+<div class="arithmatex">\[\bbc = \left\{a + ib \bmid a,b\in\bbr\right\}\]</div>
+</div>
+<h3 id="containment-and-equality">Containment and Equality<a class="headerlink" href="#containment-and-equality" title="Permanent link">🔗</a></h3>
+<p>The main thing we do with any object, is to compare it to other objects, for that we need to have a notion of "equality" between those objects.</p>
+<h4 id="containment">Containment<a class="headerlink" href="#containment" title="Permanent link">🔗</a></h4>
+<p>Informally, a set is contained in another set, if it contains only part of the elements of that set.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Containment</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, such that,</p>
+<div class="arithmatex">\[\forall x\left(x\in A\implies x\in B\right)\]</div>
+<p>then we say that "<span class="arithmatex">\(A\)</span> is contained in <span class="arithmatex">\(B\)</span>", and notate it using <span class="arithmatex">\(A\subseteq B\)</span> or <span class="arithmatex">\(B \supseteq A\)</span>.</p>
+<p>Moreover, we call <span class="arithmatex">\(A\)</span> a <strong>subset</strong> of <span class="arithmatex">\(B\)</span>, and we call <span class="arithmatex">\(B\)</span> a <strong>superset</strong> of <span class="arithmatex">\(A\)</span>.</p>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Not Contained</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> se sets, such that,</p>
+<div class="arithmatex">\[\neg \left(A\subseteq B\right)\]</div>
+<p>then we say that "<span class="arithmatex">\(A\)</span> is not contained in <span class="arithmatex">\(B\)</span>", and notate it using <span class="arithmatex">\(A\nsubseteq B\)</span> or <span class="arithmatex">\(B \nsupseteq A\)</span>.</p>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Proper Containment</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> se sets, such that,</p>
+<div class="arithmatex">\[\left(A\subseteq B\right)\land\left(B\nsubseteq A\right)\]</div>
+<p>then we say that "<span class="arithmatex">\(A\)</span> is proper contained in <span class="arithmatex">\(B\)</span>", and notate it using <span class="arithmatex">\(A\subset B\)</span> or <span class="arithmatex">\(B \supset A\)</span>.</p>
+<p>Moreover, we call <span class="arithmatex">\(A\)</span> a <strong>proper subset</strong> of <span class="arithmatex">\(B\)</span>, and we call <span class="arithmatex">\(B\)</span> a <strong>proper superset</strong> of <span class="arithmatex">\(A\)</span>.</p>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>The following are correct,</p>
+<ul>
+<li><span class="arithmatex">\(\left\{ 1\right\} \nsubseteq\left\{ \left\{ 1\right\} \right\}\)</span></li>
+<li><span class="arithmatex">\(\left\{ 1\right\} \subset\left\{ 1,2\right\}\)</span></li>
+<li><span class="arithmatex">\(\left\{ 0\right\} \nsubseteq\left\{ 6, \bbn,\left\{8\right\}\right\}\)</span></li>
+</ul>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Prove the following results,</p>
+<ul>
+<li><span class="arithmatex">\(\bbn_+ \subseteq \bbn\)</span></li>
+<li><span class="arithmatex">\(\bbz \subseteq \bbq\)</span></li>
+<li><span class="arithmatex">\(\bbr \subseteq \bbc\)</span></li>
+</ul>
+<details class="solution">
+<summary>Solution</summary>
+<p>We prove each containment by showing that any element of the first set is necessarily an element of the second.</p>
+<ul>
+<li>Let <span class="arithmatex">\(n \in \bbn_+\)</span>, by the definition of <span class="arithmatex">\(\bbn_+\)</span>, we know that <span class="arithmatex">\(n \in \bbn\)</span> and <span class="arithmatex">\(n \ge 1\)</span>. In particular, <span class="arithmatex">\(n \in \bbn\)</span>, thus, <span class="arithmatex">\(\bbn_+ \subseteq \bbn\)</span>.</li>
+<li>Let <span class="arithmatex">\(z \in \bbz\)</span>, we can write <span class="arithmatex">\(z\)</span> as the fraction <span class="arithmatex">\(\frac{z}{1}\)</span>. Since <span class="arithmatex">\(z \in \bbz\)</span> and <span class="arithmatex">\(1 \in \bbn_+\)</span>, by the definition of rational numbers, <span class="arithmatex">\(\frac{z}{1} \in \bbq\)</span>. Thus, <span class="arithmatex">\(z \in \bbq\)</span>, which implies <span class="arithmatex">\(\bbz \subseteq \bbq\)</span>.</li>
+<li>Let <span class="arithmatex">\(r \in \bbr\)</span>, we can write <span class="arithmatex">\(r\)</span> in the complex form <span class="arithmatex">\(r + i \cdot 0\)</span>. Since <span class="arithmatex">\(r, 0 \in \bbr\)</span>, by the definition of complex numbers, <span class="arithmatex">\(r + i \cdot 0 \in \bbc\)</span>. Thus, <span class="arithmatex">\(r \in \bbc\)</span>, which implies <span class="arithmatex">\(\bbr \subseteq \bbc\)</span>.</li>
+</ul>
+</details>
+</details>
+<div class="admonition thm">
+<p class="admonition-title"><em>Theorem</em>: Empty Set is a Subset of Every Set</p>
+<p></p><div id="theorem-empty-set-is-a-subset-of-every-set"></div>
+Let <span class="arithmatex">\(\mathcal{E}\)</span> be an empty set, and let <span class="arithmatex">\(A\)</span> be a set, then <span class="arithmatex">\(\mathcal{E} \subseteq A\)</span>.<p></p>
+<details class="proof">
+<summary>Proof</summary>
+<p>By the definition of a subset, to prove that <span class="arithmatex">\(\mathcal{E} \subseteq A\)</span> we need to prove the following,</p>
+<div class="arithmatex">\[\forall x.\left(x \in \mathcal{E} \implies x \in A\right)\]</div>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, then we want to prove that,</p>
+<div class="arithmatex">\[x \in \mathcal{E} \implies x \in A\]</div>
+<p>Now, notice that by the definition of an empty set it follows that <span class="arithmatex">\(x \notin \mathcal{E}\)</span>, hence the prefix in the implication is false, and by the definition of the implication connective we get that the original claim is true as required.</p>
+</details>
+</div>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Containment is Transitive</p>
+<p></p><div id="claim-containment-is-transitive"></div>
+Let <span class="arithmatex">\(A, B\)</span> and <span class="arithmatex">\(C\)</span> be sets, then,<p></p>
+<div class="arithmatex">\[\left(A\subseteq B\land B\subseteq C\right)\implies\left(A\subseteq C\right)\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>We assume that,</p>
+<div class="arithmatex">\[\left(A\subseteq B\right)\land \left(B\subseteq C\right)\]</div>
+<p>meaning that from the definition of containment we know that,</p>
+<div class="arithmatex">\[\forall x.\left(x\in A\implies x\in B\right)\]</div>
+<p>and,</p>
+<div class="arithmatex">\[\forall x.\left(x\in B\implies x\in C\right)\]</div>
+<p>Now from the definition of containment we have to prove that,</p>
+<div class="arithmatex">\[\forall x.\left(x\in A\implies x\in C\right)\]</div>
+<p>Let <span class="arithmatex">\(x\)</span> be an object such that <span class="arithmatex">\(x \in A\)</span>, then from our assumption we get that, <span class="arithmatex">\(x \in B\)</span>, and again from our assumption we get that <span class="arithmatex">\(x \in C\)</span>, as required.</p>
+</details>
+</div>
+<h4 id="equality">Equality<a class="headerlink" href="#equality" title="Permanent link">🔗</a></h4>
+<p>Now that we know what it means for a set to be contained in another set we can talk about sets being equal, this is because equality of sets means that both sets share the same elements, or formally that they are contained in each other.</p>
+<p>Moreover, since this is a basic and useful definition, this is actually an axiom of our mathematical theory.</p>
+<div class="admonition axiom">
+<p class="admonition-title"><em>Axiom</em>: Axiom of Extensionality</p>
+<p></p><div id="axiom-axiom-of-extensionality"></div>
+Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, such that,<p></p>
+<div class="arithmatex">\[\forall x.\left(x\in A\iff x\in B\right)\]</div>
+<p>then we say that <span class="arithmatex">\(A\)</span> is equal to <span class="arithmatex">\(B\)</span>, and notate it using <span class="arithmatex">\(A = B\)</span>.</p>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, then,</p>
+<div class="arithmatex">\[\left(A = B\right) \iff \left(\left(A\subseteq B\right) \land \left(B \subseteq A\right)\right)\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>We prove the equivalence by showing both directions of the implication:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\underline{\implies}\)</span>: Assume <span class="arithmatex">\(A = B\)</span>, by the <a href="#axiom-axiom-of-extensionality">axiom of extensionality</a>, we know that</p>
+<div class="arithmatex">\[\forall x.(x \in A \iff x \in B)\]</div>
+<p>This implies both</p>
+<div class="arithmatex">\[\forall x.(x \in A \implies x \in B)\]</div>
+<p>and,</p>
+<div class="arithmatex">\[\forall x.(x \in B \implies x \in A)\]</div>
+<p>Thus, by the definition of containment, <span class="arithmatex">\(A \subseteq B\)</span> and <span class="arithmatex">\(B \subseteq A\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\underline{\impliedby}\)</span>: Assume <span class="arithmatex">\(A \subseteq B\)</span> and <span class="arithmatex">\(B \subseteq A\)</span>, by the definition of containment, this means that, </p>
+<div class="arithmatex">\[\forall x.(x \in A \implies x \in B)\]</div>
+<p>and,</p>
+<div class="arithmatex">\[\forall x.(x \in B \implies x \in A)\]</div>
+<p>Combining these gives by the definition of iff,</p>
+<div class="arithmatex">\[\forall x.(x \in A \iff x \in B)\]</div>
+<p>Therefore, by the <a href="#axiom-axiom-of-extensionality">axiom of extensionality</a>, <span class="arithmatex">\(A = B\)</span>.</p>
+</li>
+</ul>
+</details>
+</details>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Uniqueness of the Empty Set</p>
+<p></p><div id="claim-uniqueness-of-the-empty-set"></div>
+Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be empty sets, then <span class="arithmatex">\(A = B\)</span>.<p></p>
+<details class="proof">
+<summary>Proof</summary>
+<p>We need to prove that <span class="arithmatex">\(A = B\)</span>, from the last exercise it suffices to prove that,</p>
+<div class="arithmatex">\[\left(A\subseteq B\right) \land \left(B \subseteq A\right)\]</div>
+<p>Now by the <a href="#theorem-empty-set-is-a-subset-of-every-set">theorem that an empty set is a subset of every set</a> we get that <span class="arithmatex">\(A \subseteq B\)</span> and <span class="arithmatex">\(B \subseteq A\)</span> since both are empty sets (we applied the theorem on both) as required.</p>
+</details>
+</div>
+<p>After proving that all empty sets are equal, we can define a singular universal empty set.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: The Empty Set</p>
+<p>We notate the only empty set using <span class="arithmatex">\(\emptyset\)</span>.</p>
+<details class="mnote">
+<summary><em>Note</em></summary>
+<p>It is also common to see the notation <span class="arithmatex">\(\{\}\)</span> for the empty set.</p>
+</details>
+</div>
+<h2 id="operations-on-sets">Operations on Sets<a class="headerlink" href="#operations-on-sets" title="Permanent link">🔗</a></h2>
+<p>We talked about sets as if they are singular in their world, but now we want to start talking about different operations we can do on sets.</p>
+<p>First of all we want to have a way to visualize all those operations,</p>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em>: Venn Diagram</p>
+<p>A Venn diagram is a diagram with the sole purpose of showing the relations between different sets. We will draw a set as a circle in the diagram, an element of a set as a point, and we will use color for the topic of the diagram.</p>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em>: Venn Diagram of Containment</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, such that <span class="arithmatex">\(B\subseteq A\)</span>, then we can draw for them the following diagram,</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../introduction_to_set_theory_svgs/containment_venn_diagram.svg" data-title="Venn Diagram of Containment" data-desc-position="bottom"><img alt="Venn Diagram of Containment" loading="lazy" src="../introduction_to_set_theory_svgs/containment_venn_diagram.svg" width="200px"></a></p>
+<figcaption>
+<p>Venn Diagram of Containment</p>
+</figcaption>
+</figure>
+</div>
+<h3 id="intersection">Intersection<a class="headerlink" href="#intersection" title="Permanent link">🔗</a></h3>
+<p>The first operation we define on sets is the intersection operation that acts like an "and" on two sets.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Intersection</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, then,</p>
+<div class="arithmatex">\[A\cap B = \left\{x\in A\mid x\in B\right\}\]</div>
+<p>And as a Venn diagram,</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../introduction_to_set_theory_svgs/intersection_venn_diagram.svg" data-title="Venn Diagram of Intersection" data-desc-position="bottom"><img alt="Venn Diagram of Intersection" loading="lazy" src="../introduction_to_set_theory_svgs/intersection_venn_diagram.svg" width="200px"></a></p>
+<figcaption>
+<p>Venn Diagram of Intersection</p>
+</figcaption>
+</figure>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Try to understand why the following are correct,</p>
+<ul>
+<li><span class="arithmatex">\(\left\{ 1,2,3\right\} \cap\left\{ 3,4,5,6\right\} =\left\{ 3\right\}\)</span></li>
+<li><span class="arithmatex">\(\left\{ \left\{ 1\right\} \right\} \cap\left\{ 1\right\} =\emptyset\)</span></li>
+<li><span class="arithmatex">\(\left\{ 3,4\right\} \cap\left\{ 3,4,5\right\} =\left\{ 3,4\right\}\)</span></li>
+<li><span class="arithmatex">\(\bbn \cap \bbz = \bbn\)</span></li>
+</ul>
+</div>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Intersection is Associative</p>
+<p>Let <span class="arithmatex">\(A, B\)</span> and <span class="arithmatex">\(C\)</span> be sets, then,</p>
+<div class="arithmatex">\[\left(A\cap B\right)\cap C=A\cap\left(B\cap C\right)\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, then, to prove this, we use the definition of the intersection, and the fact that the conjunction connective is associative,</p>
+<div class="arithmatex">\[\begin{align*}
+x \in (A \cap B) \cap C &amp; \iff (x \in A \land x \in B) \land x \in C \\
+&amp; \iff x \in A \land (x \in B \land x \in C) &amp;&amp; \text{(Associativity of } \land\text{)} \\
+&amp; \iff x \in A \cap (B \cap C)
+\end{align*}\]</div>
+<p>And from the definition of equality we get that the sets are equal.</p>
+</details>
+</div>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em>: Without Loss of Generality</p>
+<p>In the proof above and in a lot of proofs across mathematics, we see a lot of inner repetitions, in those cases we allow ourselves to use a "symmetry argument" or "without los of generality argument" (WLoG), these allow us to assume that some parts of the proof are skippable since they are identical to things we've already proofed. Note that using those arguments requires training and will become simpler with time, and from now on we will use those in the proofs to make them shorter and easier to read but also to allow the reader to familiarize himself with this technic.</p>
+</div>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Intersection is Commutative</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, then,</p>
+<div class="arithmatex">\[A\cap B=B\cap A\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, then, to prove this, we use the definition of the intersection, and the fact that the conjunction connective is commutative,</p>
+<div class="arithmatex">\[\begin{align*}
+x \in A \cap B &amp; \iff x \in A \land x \in B \\
+&amp; \iff x \in B \land x \in A &amp;&amp; \text{(Commutativity of } \land\text{)} \\
+&amp; \iff x \in B \cap A
+\end{align*}\]</div>
+<p>And from the definition of equality we get that the sets are equal.</p>
+</details>
+</div>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Intersection is Idempotent</p>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, then,</p>
+<div class="arithmatex">\[A\cap A = A\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, to prove this, we use the definition of the intersection, and the fact that the conjunction connective is idempotent,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in A \cap A &amp; \iff x \in A \land x \in A \\
+&amp; \iff x \in A &amp;&amp; \text{(Idempotency of } \land\text{)}
+\end{align*}
+\]</div>
+<p>And from the definition of equality we get that the sets are equal.</p>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, then,</p>
+<div class="arithmatex">\[A\cap \emptyset =\emptyset\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>Let <span class="arithmatex">\(x \in A \cap \emptyset\)</span>. Then <span class="arithmatex">\(x \in A \land x \in \emptyset\)</span>. Since <span class="arithmatex">\(x \in \emptyset\)</span> is false for all <span class="arithmatex">\(x\)</span>, the conjunction is always false.</p>
+<p>Thus, <span class="arithmatex">\(A \cap \emptyset\)</span> contains no elements, and from the <a href="#claim-uniqueness-of-the-empty-set">uniqueness of the empty set</a> we get that <span class="arithmatex">\(A \cap \emptyset = \emptyset\)</span>.</p>
+</details>
+</details>
+<h4 id="generalized-intersection">Generalized Intersection<a class="headerlink" href="#generalized-intersection" title="Permanent link">🔗</a></h4>
+<p>We also want to be able to take the intersection of many sets at once, for that we can use the generalized intersection.</p>
+<p>But first we have to define the object on which we take the generalized intersection,</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Family of Sets</p>
+<p>A set <span class="arithmatex">\(\mathcal{F}\)</span> is called a "family of sets", if for all <span class="arithmatex">\(X \in \mathcal{F}\)</span> we have that <span class="arithmatex">\(X\)</span> is a set.</p>
+</div>
+<p>Now we can define non formally the generalized intersection as,</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Generalized Intersection (Non formal)</p>
+<p>Let <span class="arithmatex">\(\mathcal{F}\)</span> be a family of sets, then,</p>
+<div class="arithmatex">\[\bigcap \mathcal{F} = \left\{x\mid \forall X\in\mathcal{F}.x\in X\right\}\]</div>
+</div>
+<p>The problem we have is that the set on the right of the definition doesn't adhere to our set construction schemes, so to define this properly we have to somehow pick a set from which all the <span class="arithmatex">\(x\)</span>s are from, for that we can try to just pick an arbitrary set and see where it gets us.</p>
+<div class="admonition thm">
+<p class="admonition-title"><em>Theorem</em>: Generalized Intersection is Well Defined</p>
+<p>Let <span class="arithmatex">\(\mathcal{F}\)</span> be a family of sets, and let <span class="arithmatex">\(A, B\in\mathcal{F}\)</span>, then,</p>
+<div class="arithmatex">\[\left\{x\in A\mid \forall X\in\mathcal{F}.x\in X\right\} = \left\{x\in B\mid \forall X\in\mathcal{F}.x\in X\right\}\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>We show that any element in the first set must be in the second, and vice versa:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\underline{\subseteq}\)</span>: Let</p>
+<div class="arithmatex">\[x \in \{x \in A \mid \forall X \in \mathcal{F}. x \in X\}\]</div>
+<p>Then <span class="arithmatex">\(x \in A\)</span> and for all <span class="arithmatex">\(X \in \mathcal{F}\)</span> we know that <span class="arithmatex">\(x \in X\)</span>.</p>
+<p>Since <span class="arithmatex">\(B \in \mathcal{F}\)</span>, it follows that <span class="arithmatex">\(x \in B\)</span>, thus, <span class="arithmatex">\(x\)</span> satisfies the conditions for,</p>
+<div class="arithmatex">\[\{x \in B \mid \forall X \in \mathcal{F}. x \in X\}\]</div>
+</li>
+<li>
+<p><span class="arithmatex">\(\underline{\supseteq}\)</span>: By symmetry (WLoG), swapping <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> in the argument above shows that any element in the second set is also in the first.</p>
+</li>
+</ul>
+<p>Since both sets contain the same elements, they are equal.</p>
+</details>
+</div>
+<p>Now that we've cleared that the choice of set from the family isn't important we can give the full formal definition,</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Generalized Intersection</p>
+<p>Let <span class="arithmatex">\(\mathcal{F}\)</span> be a family of sets, and let <span class="arithmatex">\(A\in\mathcal{F}\)</span>, then,</p>
+<div class="arithmatex">\[\bigcap \mathcal{F} = \left\{x\in A\mid \forall X\in\mathcal{F}.x\in X\right\}\]</div>
+<p>We also allow for sugar-syntax,</p>
+<ul>
+<li>
+<p>Let <span class="arithmatex">\(I\)</span> be a set, and let <span class="arithmatex">\(\left\{A_\lambda \mid \lambda \in I\right\}\)</span> be a family of sets, then,</p>
+<div class="arithmatex">\[\bigcap_{\lambda \in I}A_\lambda = \bigcap\left\{A_\lambda \mid \lambda \in I\right\}\]</div>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(\left\{A_i \mid i\in\bbn\right\}\)</span> be a family of sets, then,</p>
+<div class="arithmatex">\[\bigcap_{i = 0}^{\infty} A_i = \bigcap_{i \in \bbn} A_i\]</div>
+</li>
+</ul>
+</div>
+<p>Because we know that the generalized intersection is well defined, we will omit the set <span class="arithmatex">\(A\)</span> from now on, because it doesn't provide us with any information.</p>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Try to understand why the following is true,</p>
+<ul>
+<li><span class="arithmatex">\(\bigcap_{i=0}^{\infty}\left\{ n\in\bbn\mid n\ge i\right\} =\emptyset\)</span></li>
+<li><span class="arithmatex">\(\bigcap_{\varepsilon\in\bbr_{+}}\left[0,\varepsilon\right)=\left\{ 0\right\}\)</span></li>
+<li><span class="arithmatex">\(\bigcap_{n=1}^{\infty}\left(-\frac{1}{n},\frac{1}{n}\right)=\left\{ 0\right\}\)</span></li>
+</ul>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Let <span class="arithmatex">\(B\)</span> be a set, and let <span class="arithmatex">\(\mathcal{F}\)</span> be a family of sets, then,</p>
+<div class="arithmatex">\[\left(B\subseteq\bigcap\mathcal{F}\right) \iff \left(\forall X\in\mathcal{F}. B\subseteq X\right)\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>We prove the equivalence as follows,</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\underline{\implies}\)</span>: Assume the prefix, meaning that, <span class="arithmatex">\(B \subseteq \bigcap \mathcal{F}\)</span>.</p>
+<p>Let <span class="arithmatex">\(X \in \mathcal{F}\)</span> be an arbitrary set. Since <span class="arithmatex">\(\bigcap \mathcal{F} \subseteq X\)</span> by definition, and because <a href="#claim-containment-is-transitive">containment is transitive</a> we get that <span class="arithmatex">\(B \subseteq X\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\underline{\impliedby}\)</span>: Assume that for all <span class="arithmatex">\(X \in \mathcal{F}\)</span>, we have that, <span class="arithmatex">\(B \subseteq X\)</span>.</p>
+<p>Now let <span class="arithmatex">\(b \in B\)</span>, then for all <span class="arithmatex">\(X \in \mathcal{F}\)</span>, we have <span class="arithmatex">\(b \in X\)</span> (since <span class="arithmatex">\(B \subseteq X\)</span>). By the definition of generalized intersection, <span class="arithmatex">\(b \in \bigcap \mathcal{F}\)</span>. Thus, <span class="arithmatex">\(B \subseteq \bigcap \mathcal{F}\)</span>.</p>
+</li>
+</ul>
+</details>
+</details>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em></p>
+<p>Let <span class="arithmatex">\(\mathcal{F}\)</span> be a family of sets, and let <span class="arithmatex">\(A\in\mathcal{F}\)</span>, then,</p>
+<div class="arithmatex">\[\bigcap\mathcal{F}\subseteq A\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let <span class="arithmatex">\(x\in \bigcap\mathcal{F}\)</span>, by the definition of containment, we have to prove that <span class="arithmatex">\(x\in A\)</span>.</p>
+<p>By the definition of the generalized intersection, we know that <span class="arithmatex">\(\forall X\in\mathcal{F}. x\in X\)</span>, hence it also follows for our set <span class="arithmatex">\(A\)</span>, meaning that <span class="arithmatex">\(x\in A\)</span> as required.</p>
+</details>
+</div>
+<h4 id="disjoint-sets">Disjoint Sets<a class="headerlink" href="#disjoint-sets" title="Permanent link">🔗</a></h4>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Disjoint Sets</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, such that,</p>
+<div class="arithmatex">\[A\cap B = \emptyset\]</div>
+<p>then, <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are called <strong>disjoint sets</strong>.</p>
+<p>And as a Venn diagram,</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../introduction_to_set_theory_svgs/disjoint_sets_venn_diagram.svg" data-title="Venn Diagram of Disjoint Sets" data-desc-position="bottom"><img alt="Venn Diagram of Disjoint Sets" loading="lazy" src="../introduction_to_set_theory_svgs/disjoint_sets_venn_diagram.svg" width="300px"></a></p>
+<figcaption>
+<p>Venn Diagram of Disjoint Sets</p>
+</figcaption>
+</figure>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Family of Disjoint Sets</p>
+<p>Let <span class="arithmatex">\(\mathcal{F}\)</span> be a family of sets, such that,</p>
+<div class="arithmatex">\[\bigcap\mathcal{F} = \emptyset\]</div>
+<p>then, <span class="arithmatex">\(\mathcal{F}\)</span> is called a <strong>family of disjoint sets</strong>.</p>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Family of Pairwise Disjoint Sets</p>
+<p>Let <span class="arithmatex">\(\mathcal{F}\)</span> be a family of sets, such that,</p>
+<div class="arithmatex">\[\forall A, B \in \mathcal{F}. \left(\left(A \ne B\right)\implies \left(A \cap B = \emptyset\right)\right)\]</div>
+<p>then, <span class="arithmatex">\(\mathcal{F}\)</span> is called a <strong>family of pairwise disjoint sets</strong>.</p>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Pairwise Disjoint Implies Disjoint</summary>
+<p>Let <span class="arithmatex">\(\mathcal{F}\)</span> be a family of pairwise disjoint sets, such that there exists sets <span class="arithmatex">\(A, B\in\mathcal{F}\)</span> for which <span class="arithmatex">\(A\ne B\)</span>, then, <span class="arithmatex">\(\mathcal{F}\)</span> is a family of disjoint sets.</p>
+<details class="solution">
+<summary>Solution</summary>
+<p>Assume <span class="arithmatex">\(\mathcal{F}\)</span> is a family of pairwise disjoint sets.</p>
+<p>By the definition of pairwise disjoint sets, <span class="arithmatex">\(A \cap B = \emptyset\)</span>. We know that <span class="arithmatex">\(\mathcal{F}\subseteq A\)</span> and also <span class="arithmatex">\(\mathcal{F}\subseteq B\)</span>, hence we get that <span class="arithmatex">\(\mathcal{F}\subseteq A\cap B\)</span>, meaning that <span class="arithmatex">\(\mathcal{F}\subseteq\emptyset\)</span>. Moreover, by the <a href="#theorem-empty-set-is-a-subset-of-every-set">theorem that the empty set is a subset of every set</a>, we get that <span class="arithmatex">\(\bigcap \mathcal{F} = \emptyset\)</span>, meaning that <span class="arithmatex">\(\mathcal{F}\)</span> is a family of disjoint sets.</p>
+</details>
+</details>
+<h3 id="union">Union<a class="headerlink" href="#union" title="Permanent link">🔗</a></h3>
+<p>This operation on sets is the union operation, and it acts like a "or" on two sets.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Union (Non formal)</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, then,</p>
+<div class="arithmatex">\[A\cup B = \left\{x\mid \left(x\in A\right)\lor\left(x\in B\right)\right\}\]</div>
+</div>
+<p>But this definition doesn't adhere to our set construction schemes, hence we need to somehow know in the definition from which set are all the <span class="arithmatex">\(x\)</span>s come from, but this is cyclic problem since the union is exactly the set from which we would have wanted to draw the <span class="arithmatex">\(x\)</span>s from. Because of that, to define this operation in our theory we have to an axiom that allows us to use the union operation,</p>
+<div class="admonition axiom">
+<p class="admonition-title"><em>Axiom</em>: Axiom of Union</p>
+<p>Let <span class="arithmatex">\(\mathcal{F}\)</span> be a family of sets, then there exists a set <span class="arithmatex">\(\mathcal{U}\)</span>, such that,</p>
+<div class="arithmatex">\[\forall X.\forall x.\left(\left(\left(x \in X\right)\land \left(X \in \mathcal{F}\right)\right) \implies \left(x \in \mathcal{U}\right)\right)\]</div>
+<p>and we call such a set <span class="arithmatex">\(\mathcal{U}\)</span> a world of <span class="arithmatex">\(\mathcal{F}\)</span>.</p>
+</div>
+<p>Before we define the union operator we want to show that it will be well defined,</p>
+<div class="admonition thm">
+<p class="admonition-title"><em>Theorem</em>: Union is Well Defined</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, and let <span class="arithmatex">\(\mathcal{U}, \mathcal{V}\)</span> be worlds of <span class="arithmatex">\(\left\{A, B\right\}\)</span>, then,</p>
+<div class="arithmatex">\[\left\{x\in \mathcal{U}\mid \left(x\in A\right)\lor\left(x\in B\right)\right\} = \left\{x\in \mathcal{V}\mid \left(x\in A\right)\lor\left(x\in B\right)\right\}\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let</p>
+<div class="arithmatex">\[y \in \{x \in \mathcal{U} \mid (x \in A) \lor (x \in B)\}\]</div>
+<p>This means <span class="arithmatex">\((y \in A) \lor (y \in B)\)</span>. Since <span class="arithmatex">\(\mathcal{V}\)</span> is a world of <span class="arithmatex">\(\{A, B\}\)</span>, if <span class="arithmatex">\(y \in A\)</span> then <span class="arithmatex">\(y \in \mathcal{V}\)</span>, and if <span class="arithmatex">\(y \in B\)</span> then we get that <span class="arithmatex">\(y \in \mathcal{V}\)</span>. In either case, <span class="arithmatex">\(y \in \mathcal{V}\)</span>. Thus,</p>
+<div class="arithmatex">\[y \in \{x \in \mathcal{V} \mid (x \in A) \lor (x \in B)\}\]</div>
+<p>By swapping the roles of <span class="arithmatex">\(\mathcal{U}\)</span> and <span class="arithmatex">\(\mathcal{V}\)</span>, we get the reverse containment. Therefore, the union is well defined.</p>
+</details>
+</div>
+<p>And now we can define union formally,</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Union</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, and let <span class="arithmatex">\(\mathcal{U}\)</span> be a world of <span class="arithmatex">\(\left\{A, B\right\}\)</span>, then,</p>
+<div class="arithmatex">\[A\cup B = \left\{x\in \mathcal{U}\mid \left(x\in A\right)\lor\left(x\in B\right)\right\}\]</div>
+<p>And as a Venn diagram,</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../introduction_to_set_theory_svgs/union_venn_diagram.svg" data-title="Venn Diagram of Union" data-desc-position="bottom"><img alt="Venn Diagram of Union" loading="lazy" src="../introduction_to_set_theory_svgs/union_venn_diagram.svg" width="200px"></a></p>
+<figcaption>
+<p>Venn Diagram of Union</p>
+</figcaption>
+</figure>
+</div>
+<p>Because we know that the union is well defined, we will omit the world <span class="arithmatex">\(\mathcal{U}\)</span> from now on, because it doesn't provide us with any information.</p>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Try to understand why the following are correct,</p>
+<ul>
+<li><span class="arithmatex">\(\left\{ 1,2,3\right\} \cup\left\{ 3,4,5,6\right\} =\left\{ 1,2,3,4,5,6\right\}\)</span></li>
+<li><span class="arithmatex">\(\left\{ \left\{ 1\right\} \right\} \cup\left\{ 1\right\} =\left\{ 1,\left\{ 1\right\} \right\}\)</span></li>
+<li><span class="arithmatex">\(\bbn\cup\bbr=\bbr\)</span></li>
+<li><span class="arithmatex">\(\bbn_{\even}\cup\bbn_{\odd}=\bbn\)</span></li>
+</ul>
+</div>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Union is Associative</p>
+<p>Let <span class="arithmatex">\(A, B\)</span> and <span class="arithmatex">\(C\)</span> be sets, then,</p>
+<div class="arithmatex">\[\left(A\cup B\right)\cup C=A\cup\left(B\cup C\right)\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, to prove this, we use the definition of the union, and the fact that the disjunction connective is associative,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in (A \cup B) \cup C &amp; \iff (x \in A \lor x \in B) \lor x \in C \\
+&amp; \iff x \in A \lor (x \in B \lor x \in C) &amp;&amp; \text{(Associativity of } \lor\text{)} \\
+&amp; \iff x \in A \cup (B \cup C)
+\end{align*}
+\]</div>
+<p>And from the definition of equality we get that the sets are equal.</p>
+</details>
+</div>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Union is Commutative</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, then,</p>
+<div class="arithmatex">\[A\cup B=B\cup A\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, to prove this, we use the definition of the union, and the fact that the disjunction connective is commutative,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in A \cup B &amp; \iff x \in A \lor x \in B \\
+&amp; \iff x \in B \lor x \in A &amp;&amp; \text{(Commutativity of } \lor\text{)} \\
+&amp; \iff x \in B \cup A
+\end{align*}
+\]</div>
+<p>And from the definition of equality we get that the sets are equal.</p>
+</details>
+</div>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Union is Idempotent</p>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, then,</p>
+<div class="arithmatex">\[A\cup A = A\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, to prove this, we use the definition of the union, and the fact that the disjunction connective is idempotent,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in A \cup A &amp; \iff x \in A \lor x \in A \\
+&amp; \iff x \in A &amp;&amp; \text{(Idempotency of } \lor\text{)}
+\end{align*}
+\]</div>
+<p>And from the definition of equality we get that the sets are equal.</p>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, then,</p>
+<div class="arithmatex">\[A\cup \emptyset = A\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, to prove this, we use the definition of the union, and the fact that the empty set is empty,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in A \cup \emptyset &amp; \iff x \in A \lor x \in \emptyset \\
+&amp; \iff x \in A \lor \false &amp;&amp; \text{(Definition of } \emptyset\text{)} \\
+&amp; \iff x \in A
+\end{align*}
+\]</div>
+<p>Thus, <span class="arithmatex">\(A \cup \emptyset = A\)</span>.</p>
+</details>
+</details>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Union is Distributive Over Intersection</p>
+<p>Let <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> be sets, then,</p>
+<div class="arithmatex">\[A\cup\left(B\cap C\right)=\left(A\cup B\right)\cap\left(A\cup C\right)\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, to prove this, we use the definition of the union and intersection, and the fact that that the disjunction connective is distributive over the conjunction connective,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in A \cup (B \cap C) &amp; \iff x \in A \lor (x \in B \land x \in C) \\
+&amp; \iff (x \in A \lor x \in B) \land (x \in A \lor x \in C) &amp;&amp; \text{(Distribution of } \lor \text{ over } \land\text{)} \\
+&amp; \iff x \in (A \cup B) \cap (A \cup C)
+\end{align*}
+\]</div>
+<p>Since the truth conditions are identical, the sets are equal.</p>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Intersection is Distributive Over Union</summary>
+<p>Let <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> be sets, then,</p>
+<div class="arithmatex">\[A\cap\left(B\cup C\right)=\left(A\cap B\right)\cup\left(A\cap C\right)\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, to prove this, we use the definition of the union and intersection, and the fact that that the conjunction connective is distributive over the disjunction connective,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in A \cap (B \cup C) &amp; \iff x \in A \land (x \in B \lor x \in C) \\
+&amp; \iff (x \in A \land x \in B) \lor (x \in A \land x \in C) &amp;&amp; \text{(Distribution of } \land \text{ over } \lor\text{)} \\
+&amp; \iff x \in (A \cap B) \cup (A \cap C)
+\end{align*}
+\]</div>
+<p>Since the truth conditions are identical, the sets are equal.</p>
+</details>
+</details>
+<h4 id="generalized-union">Generalized Union<a class="headerlink" href="#generalized-union" title="Permanent link">🔗</a></h4>
+<p>We also want to be able to take the union of many sets at once, for that we can use the generalized union.</p>
+<p>Non formally we can define the generalized union as,</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Generalized Union (Non formal)</p>
+<p>Let <span class="arithmatex">\(\mathcal{F}\)</span> be a family of sets, then,</p>
+<div class="arithmatex">\[\bigcup \mathcal{F} = \left\{x\mid \exists X\in\mathcal{F}.x\in X\right\}\]</div>
+</div>
+<p>But we already saw this problem earlier with the union operator, hence we can solve it here the same way,</p>
+<div class="admonition thm">
+<p class="admonition-title"><em>Theorem</em>: Generalized Union is Well Defined</p>
+<p>Let <span class="arithmatex">\(\mathcal{F}\)</span> be a family of sets, and let <span class="arithmatex">\(\mathcal{U}, \mathcal{V}\)</span> be worlds of <span class="arithmatex">\(\mathcal{F}\)</span>, then,</p>
+<div class="arithmatex">\[\left\{x\in\mathcal{U}\mid \exists X\in\mathcal{F}.x\in X\right\} = \left\{x\in\mathcal{V}\mid \exists X\in\mathcal{F}.x\in X\right\}\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let <span class="arithmatex">\(x \in \{x \in \mathcal{U} \mid \exists X \in \mathcal{F}. x \in X\}\)</span>. Then there exists some <span class="arithmatex">\(X \in \mathcal{F}\)</span> such that <span class="arithmatex">\(x \in X\)</span>. By the definition of a world <span class="arithmatex">\(\mathcal{V}\)</span> for <span class="arithmatex">\(\mathcal{F}\)</span>, since <span class="arithmatex">\(X \in \mathcal{F}\)</span>, we must have <span class="arithmatex">\(X \subseteq \mathcal{V}\)</span>, and therefore <span class="arithmatex">\(x \in \mathcal{V}\)</span>.</p>
+<p>This shows <span class="arithmatex">\(x \in \{x \in \mathcal{V} \mid \exists X \in \mathcal{F}. x \in X\}\)</span>. The reverse direction is identical by swapping <span class="arithmatex">\(\mathcal{U}\)</span> and <span class="arithmatex">\(\mathcal{V}\)</span>.</p>
+<p>Therefore, the generalized union is well defined.</p>
+</details>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Generalized Union</p>
+<p>Let <span class="arithmatex">\(\mathcal{F}\)</span> be a family of sets, and let <span class="arithmatex">\(\mathcal{U}\)</span> be a world of <span class="arithmatex">\(\mathcal{F}\)</span>, then,</p>
+<div class="arithmatex">\[\bigcup \mathcal{F} = \left\{x\in\mathcal{U}\mid \exists X\in\mathcal{F}.x\in X\right\}\]</div>
+<p>We also allow for sugar-syntax,</p>
+<ul>
+<li>
+<p>Let <span class="arithmatex">\(I\)</span> be a set, and let <span class="arithmatex">\(\left\{A_\lambda \mid \lambda \in I\right\}\)</span> be a family of sets, then,</p>
+<div class="arithmatex">\[\bigcup_{\lambda \in I}A_\lambda = \bigcup\left\{A_\lambda \mid \lambda \in I\right\}\]</div>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(\left\{A_i \mid i\in\bbn\right\}\)</span> be a family of sets, then,</p>
+<div class="arithmatex">\[\bigcup_{i = 0}^{\infty} A_i = \bigcup_{i \in \bbn} A_i\]</div>
+</li>
+</ul>
+</div>
+<p>Because we know that the generalized union is well defined, we will omit the world <span class="arithmatex">\(\mathcal{U}\)</span> from now on, because it doesn't provide us with any information.</p>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Try to understand why the following is true,</p>
+<ul>
+<li><span class="arithmatex">\(\bigcup_{i=0}^{\infty}\left\{ i\right\} =\bbn\)</span></li>
+<li><span class="arithmatex">\(\bigcup_{i=0}^{\infty}\left(i,i+1\right)=\bbr_{+}\backslash\bbn\)</span></li>
+<li>Let <span class="arithmatex">\(\e \in \bbr_+\)</span> then, <span class="arithmatex">\(\bigcup_{q\in\bbq}\left(q-\e,q+\e\right)=\bbr\)</span></li>
+</ul>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Let <span class="arithmatex">\(B\)</span> be a set, and let <span class="arithmatex">\(\mathcal{F}\)</span> be a family of sets, then,</p>
+<div class="arithmatex">\[\left(\bigcup\mathcal{F}\subseteq B\right) \iff \left(\forall X\in\mathcal{F}. X\subseteq B\right)\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>We prove the equivalence as follows:</p>
+<ul>
+<li><span class="arithmatex">\(\underline{\implies}\)</span>: Assume <span class="arithmatex">\(\bigcup \mathcal{F} \subseteq B\)</span>. Let <span class="arithmatex">\(X \in \mathcal{F}\)</span> be an arbitrary set. Since <span class="arithmatex">\(X \subseteq \bigcup \mathcal{F}\)</span> by definition, transitivity of containment implies <span class="arithmatex">\(X \subseteq B\)</span>.</li>
+<li><span class="arithmatex">\(\underline{\impliedby}\)</span>: Assume that for all <span class="arithmatex">\(X \in \mathcal{F}\)</span>, we have that, <span class="arithmatex">\(X \subseteq B\)</span>. Let <span class="arithmatex">\(x \in \bigcup \mathcal{F}\)</span>, then there exists some <span class="arithmatex">\(X_0 \in \mathcal{F}\)</span> such that <span class="arithmatex">\(x \in X_0\)</span>. By our assumption, <span class="arithmatex">\(X_0 \subseteq B\)</span>, so <span class="arithmatex">\(x \in B\)</span>. Thus, <span class="arithmatex">\(\bigcup \mathcal{F} \subseteq B\)</span>.</li>
+</ul>
+</details>
+</details>
+<p>The following exercise is very challenging, and hence it's marked with "⭐". This exercise requires understanding of the real numbers and it's relation to the rational numbers.</p>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>⭐</summary>
+<p>Prove the following two results,</p>
+<ol>
+<li><span class="arithmatex">\(\bigcap_{n\in\bbn_{+}}\left(\bigcup_{q\in\bbq}\left(q-\frac{1}{n},q+\frac{1}{n}\right)\right)=\bbr\)</span></li>
+<li><span class="arithmatex">\(\bigcup_{q\in\bbq}\left(\bigcap_{n\in\bbn_{+}}\left(q-\frac{1}{n},q+\frac{1}{n}\right)\right)=\bbq\)</span></li>
+</ol>
+<details class="solution">
+<summary>Solution</summary>
+<ol>
+<li>
+<p>To prove that,</p>
+<div class="arithmatex">\[\bigcap_{n\in\bbn_{+}}\left(\bigcup_{q\in\bbq}\left(q-\frac{1}{n},q+\frac{1}{n}\right)\right)=\bbr\]</div>
+<p>we will use the definition of equality as bidirectional containment,</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\underline{\subseteq}\)</span>: Let <span class="arithmatex">\(n_0 \in \bbn_+\)</span>, and let <span class="arithmatex">\(q_0 \in \bbq\)</span>, then from the definition of an interval we get that,</p>
+<div class="arithmatex">\[\left(q-\frac{1}{n},q+\frac{1}{n}\right)\subseteq \bbr\]</div>
+<p>And since it's correct for all <span class="arithmatex">\(q_0\in\bbq\)</span>, we get that,</p>
+<div class="arithmatex">\[\bigcup_{q\in\bbq}\left(q-\frac{1}{n},q+\frac{1}{n}\right) \subseteq \bbr\]</div>
+<p>Now since it also true for all <span class="arithmatex">\(n_0\in\bbn_+\)</span>, we get that,</p>
+<div class="arithmatex">\[\bigcap_{n\in\bbn_{+}}\left(\bigcup_{q\in\bbq}\left(q-\frac{1}{n},q+\frac{1}{n}\right)\right)\subseteq\bbr\]</div>
+</li>
+<li>
+<p><span class="arithmatex">\(\underline{\supseteq}\)</span>: Let <span class="arithmatex">\(x \in \bbr\)</span>. We need to show that,</p>
+<div class="arithmatex">\[x \in \bigcup_{q\in\bbq}\left(q-\frac{1}{n}, q+\frac{1}{n}\right)\]</div>
+<p>for any <span class="arithmatex">\(n \in \bbn_+\)</span>.</p>
+<p>Let <span class="arithmatex">\(n \in \bbn_+\)</span>, and define <span class="arithmatex">\(q_0 = \frac{\floor{nx}}{n}\)</span>, now since, <span class="arithmatex">\(\floor{nx} \in \bbz\)</span>, we get that, <span class="arithmatex">\(q_0 \in \bbq\)</span>. And from the properties of the floor function,</p>
+<div class="arithmatex">\[\floor{nx} \le nx &lt; \floor{nx} + 1\]</div>
+<p>Meaning that,</p>
+<div class="arithmatex">\[q_0 \le x &lt; q_0 + \frac{1}{n}\]</div>
+<p>This implies that,</p>
+<div class="arithmatex">\[|x - q_0| &lt; \frac{1}{n}\]</div>
+<p>Thus,</p>
+<div class="arithmatex">\[x \in \left(q_0 - \frac{1}{n}, q_0 + \frac{1}{n}\right)\]</div>
+<p>And since <span class="arithmatex">\(q_0 \in \bbq\)</span>, we have that,</p>
+<div class="arithmatex">\[x\in \bigcup_{q\in\bbq}\left(q-\frac{1}{n}, q+\frac{1}{n}\right)\]</div>
+<p>as required.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>To prove that,  </p>
+<div class="arithmatex">\[\bigcup_{q\in\bbq}\left(\bigcap_{n\in\bbn_{+}}\left(q-\frac{1}{n},q+\frac{1}{n}\right)\right)=\bbq\]</div>
+<p>we will prove a stronger statement, let <span class="arithmatex">\(q_0 \in \bbq\)</span>, then,</p>
+<div class="arithmatex">\[\bigcap_{n\in\bbn_{+}}\left(q_0-\frac{1}{n},q_0+\frac{1}{n}\right) = \left\{q_0\right\}\]</div>
+<p>and for that we will use the definition of equality as bidirectional containment,</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\underline{\subseteq}\)</span>: Let</p>
+<div class="arithmatex">\[x\in\bigcap_{n\in\bbn_{+}}\left(q_0-\frac{1}{n},q_0+\frac{1}{n}\right)\]</div>
+<p>and assume by contradiction that <span class="arithmatex">\(x \ne q_0\)</span>. Then we define <span class="arithmatex">\(]\delta = \left|x - q_0\right|\)</span>, and notice that there exists <span class="arithmatex">\(n_0\in\bbn_+\)</span> such that,</p>
+<div class="arithmatex">\[\frac{1}{n} &lt; \delta\]</div>
+<p>meaning that,</p>
+<div class="arithmatex">\[x\notin \left(q_0-\frac{1}{n_0},q_0+\frac{1}{n_0}\right)\]</div>
+<p>Hence, by the definition of the generalized intersection we get that,</p>
+<div class="arithmatex">\[x\notin \bigcap_{n\in\bbn_{+}}\left(q_0-\frac{1}{n},q_0+\frac{1}{n}\right)\]</div>
+<p>which is a contradiction to our assumption, meaning that <span class="arithmatex">\(x = q_0\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\underline{\supseteq}\)</span>: We want to prove that,</p>
+<div class="arithmatex">\[\bigcap_{n\in\bbn_{+}}\left(q_0-\frac{1}{n},q_0+\frac{1}{n}\right) \supseteq \left\{q_0\right\}\]</div>
+<p>meaning that,</p>
+<div class="arithmatex">\[q_0 \in \bigcap_{n\in\bbn_{+}}\left(q_0-\frac{1}{n},q_0+\frac{1}{n}\right)\]</div>
+<p>For that, let <span class="arithmatex">\(n_0 \in \bbn_+\)</span>, then we need to show that,</p>
+<div class="arithmatex">\[q_0 \in \left(q_0-\frac{1}{n},q_0+\frac{1}{n}\right)\]</div>
+<p>but this is true since,</p>
+<div class="arithmatex">\[q_0 - \frac{1}{n} &lt; q_0 &lt; q_0 + \frac{1}{n}\]</div>
+<p>as required.</p>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+</details>
+<h4 id="disjoint-union">Disjoint Union<a class="headerlink" href="#disjoint-union" title="Permanent link">🔗</a></h4>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Disjoint Union</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be disjoint sets, then,</p>
+<div class="arithmatex">\[A\uplus B = A\cup B\]</div>
+<p>And as a Venn diagram,</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../introduction_to_set_theory_svgs/disjoint_union_venn_diagram.svg" data-title="Venn Diagram of Disjoint Union" data-desc-position="bottom"><img alt="Venn Diagram of Disjoint Union" loading="lazy" src="../introduction_to_set_theory_svgs/disjoint_union_venn_diagram.svg" width="300px"></a></p>
+<figcaption>
+<p>Venn Diagram of Disjoint Union</p>
+</figcaption>
+</figure>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Generalized Disjoint Union</p>
+<p>Let <span class="arithmatex">\(\mathcal{F}\)</span> be a family of pairwise disjoint sets, then,</p>
+<div class="arithmatex">\[\biguplus\mathcal{F} = \bigcup\mathcal{F}\]</div>
+<p>We also allow for sugar-syntax,</p>
+<ul>
+<li>
+<p>Let <span class="arithmatex">\(I\)</span> be a set, and let <span class="arithmatex">\(\left\{A_\lambda \mid \lambda \in I\right\}\)</span> be a family of pairwise disjoint sets, then,</p>
+<div class="arithmatex">\[\biguplus_{\lambda \in I}A_\lambda = \biguplus\left\{A_\lambda \mid \lambda \in I\right\}\]</div>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(\left\{A_i \mid i\in\bbn\right\}\)</span> be a family of pairwise disjoint sets, then,</p>
+<div class="arithmatex">\[\biguplus_{i = 0}^{\infty} A_i = \biguplus_{i \in \bbn} A_i\]</div>
+</li>
+</ul>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Try to understand why the following is true,</p>
+<ul>
+<li><span class="arithmatex">\(\biguplus_{z\in\bbz}\left(z,z+1\right)=\bbr\backslash\bbz\)</span></li>
+<li><span class="arithmatex">\(\left\{ 1\right\} \uplus\left\{ 2\right\} =\left\{ 1,2\right\}\)</span></li>
+<li><span class="arithmatex">\(\left\{ \left\{ 1\right\} \right\} \uplus\left\{ 1\right\} =\left\{ 1,\left\{ 1\right\} \right\}\)</span></li>
+</ul>
+</div>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em></p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be finite disjoint sets, then,</p>
+<div class="arithmatex">\[\left|A\uplus B\right| = \left|A\right| + \left|B\right|\]</div>
+</div>
+<h3 id="difference">Difference<a class="headerlink" href="#difference" title="Permanent link">🔗</a></h3>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Difference</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, then,</p>
+<div class="arithmatex">\[A \backslash B = \left\{x\in A\mid x\notin B\right\}\]</div>
+<p>And as a Venn diagram,</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../introduction_to_set_theory_svgs/difference_venn_diagram.svg" data-title="Venn Diagram of Difference" data-desc-position="bottom"><img alt="Venn Diagram of Difference" loading="lazy" src="../introduction_to_set_theory_svgs/difference_venn_diagram.svg" width="200px"></a></p>
+<figcaption>
+<p>Venn Diagram of Difference</p>
+</figcaption>
+</figure>
+<details class="mnote">
+<summary><em>Note</em></summary>
+<p>The "difference" operation may also be called "relative complement".</p>
+<p>And the notation <span class="arithmatex">\(A - B\)</span> may be used instead of <span class="arithmatex">\(A\backslash B\)</span>.</p>
+</details>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Try to understand why the following is true,</p>
+<ul>
+<li><span class="arithmatex">\(\left\{ 1,2,3\right\} \backslash\left\{ 3,4,5,6\right\} =\left\{ 1,2\right\}\)</span></li>
+<li><span class="arithmatex">\(\left\{ \left\{ 1\right\} \right\} \backslash\left\{ 1\right\} =\left\{ \left\{ 1\right\} \right\}\)</span></li>
+<li><span class="arithmatex">\(\left\{ 3,4\right\} \backslash\left\{ 3,4,5\right\} =\emptyset\)</span></li>
+<li><span class="arithmatex">\(\bbn\backslash\bbn_{+}=\left\{ 0\right\}\)</span></li>
+</ul>
+</div>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Irrational Numbers</p>
+<p>We define the <strong>irrational numbers</strong> to be the following set, <span class="arithmatex">\(\bbr \backslash \bbq\)</span>.</p>
+</div>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em></p>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, then,</p>
+<div class="arithmatex">\[A\backslash A = \emptyset\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, to prove this, we use the definition of the difference,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in A \backslash A &amp; \iff x \in A \land x \notin A \\
+&amp; \iff \false
+\end{align*}
+\]</div>
+<p>Thus, by the <a href="#claim-uniqueness-of-the-empty-set">uniqueness of the empty set</a> <span class="arithmatex">\(A \backslash A = \emptyset\)</span>.</p>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, then,</p>
+<div class="arithmatex">\[A\backslash \emptyset = A\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, to prove this, we use the definition of the difference, and the definition of the empty set,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in A \backslash \emptyset &amp; \iff x \in A \land x \notin \emptyset \\
+&amp; \iff x \in A \land \true \\
+&amp; \iff x \in A
+\end{align*}
+\]</div>
+<p>Thus, <span class="arithmatex">\(A \backslash\emptyset = A\)</span>.</p>
+</details>
+</details>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em></p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, then, the following are equivalent (TFAE),</p>
+<ol>
+<li><span class="arithmatex">\(A\subseteq B\)</span></li>
+<li><span class="arithmatex">\(A\cap B = A\)</span></li>
+<li><span class="arithmatex">\(A\backslash B = \emptyset\)</span></li>
+<li><span class="arithmatex">\(A\cup B = B\)</span></li>
+</ol>
+<details class="proof">
+<summary>Proof</summary>
+<p>We prove the equivalence by following a cycle of implications,</p>
+<div class="arithmatex">\[1\implies 2\implies 3\implies 4\implies 1\]</div>
+<p>as follows,</p>
+<ul>
+<li><span class="arithmatex">\(\underline{1 \implies 2}\)</span>: We assume the prefix, meaning that <span class="arithmatex">\(A\subseteq B\)</span>,<ul>
+<li><span class="arithmatex">\(\underline{\supseteq}\)</span>: Let <span class="arithmatex">\(x \in A\)</span>. Since <span class="arithmatex">\(A \subseteq B\)</span>, we know that, <span class="arithmatex">\(x \in B\)</span>. Thus <span class="arithmatex">\(x \in A \cap B\)</span>.</li>
+<li><span class="arithmatex">\(\underline{\subseteq}\)</span>: From a previous result we have that <span class="arithmatex">\(A \cap B \subseteq A\)</span> is always true.</li>
+</ul>
+</li>
+<li><span class="arithmatex">\(\underline{2 \implies 3}\)</span>: We assume that <span class="arithmatex">\(A \cap B = A\)</span>. If <span class="arithmatex">\(A\backslash B\)</span> is not the empty set, there must be an element in it, let's call it <span class="arithmatex">\(x \in A \backslash B\)</span>, then <span class="arithmatex">\(x \in A\)</span> and <span class="arithmatex">\(x \notin B\)</span>. But <span class="arithmatex">\(x \in A\)</span> implies <span class="arithmatex">\(x \in A \cap B\)</span>, so <span class="arithmatex">\(x \in B\)</span>, a contradiction.</li>
+<li><span class="arithmatex">\(\underline{3 \implies 4}\)</span>: We assume that <span class="arithmatex">\(A \backslash B = \emptyset\)</span>,<ul>
+<li><span class="arithmatex">\(\underline{\subseteq}\)</span>: Let <span class="arithmatex">\(x \in A \cup B\)</span>. If <span class="arithmatex">\(x \in B\)</span>, we are done. If <span class="arithmatex">\(x \in A\)</span>, then since <span class="arithmatex">\(A \backslash B = \emptyset\)</span>, <span class="arithmatex">\(x\)</span> cannot be in <span class="arithmatex">\(A\)</span> without being in <span class="arithmatex">\(B\)</span> (because if it was then <span class="arithmatex">\(x\in A\backslash B\)</span> meaning that <span class="arithmatex">\(x \in \emptyset\)</span>), so <span class="arithmatex">\(x \in B\)</span>. Hence no matter what we get that <span class="arithmatex">\(x\in B\)</span>, meaning that <span class="arithmatex">\(A\cup B \subseteq B\)</span>.</li>
+<li><span class="arithmatex">\(\underline{\supseteq}\)</span>: Let <span class="arithmatex">\(x\in B\)</span>, then <span class="arithmatex">\(x\in A\cup B\)</span> by the definition of union, hence <span class="arithmatex">\(B\subseteq A\cup B\)</span>.</li>
+</ul>
+</li>
+<li><span class="arithmatex">\(\underline{4 \implies 1}\)</span>: We assume that <span class="arithmatex">\(A\cup B = B\)</span>. Let <span class="arithmatex">\(x \in A\)</span>, then <span class="arithmatex">\(x \in A \cup B\)</span>, and since <span class="arithmatex">\(A \cup B = B\)</span>, it follows that <span class="arithmatex">\(x \in B\)</span>. Hence <span class="arithmatex">\(A \subseteq B\)</span>.</li>
+</ul>
+</details>
+</div>
+<div class="admonition mnote">
+<p class="admonition-title"><em>Note</em></p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be finite sets, such that <span class="arithmatex">\(B\subseteq A\)</span>, then,</p>
+<div class="arithmatex">\[\left|A\backslash B\right| = \left|A\right| - \left|B\right|\]</div>
+</div>
+<h4 id="complement">Complement<a class="headerlink" href="#complement" title="Permanent link">🔗</a></h4>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Complement</p>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, and let <span class="arithmatex">\(\mathcal{U}\)</span> be a world of <span class="arithmatex">\(\left\{A\right\}\)</span>, then,</p>
+<div class="arithmatex">\[A^{{\mathcal C}}={\mathcal U}\backslash A\]</div>
+<p>And as a Venn diagram,</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../introduction_to_set_theory_svgs/complement_venn_diagram.svg" data-title="Venn Diagram of Complement" data-desc-position="bottom"><img alt="Venn Diagram of Complement" loading="lazy" src="../introduction_to_set_theory_svgs/complement_venn_diagram.svg" width="200px"></a></p>
+<figcaption>
+<p>Venn Diagram of Complement</p>
+</figcaption>
+</figure>
+</div>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: De Morgan's laws</p>
+<p></p><div id="claim-de-morgans-laws"></div>
+Let <span class="arithmatex">\(A, B\)</span> and <span class="arithmatex">\(C\)</span> be sets, and let <span class="arithmatex">\(\mathcal{U}\)</span> be a world of <span class="arithmatex">\(\left\{A, B\right\}\)</span>, then,<p></p>
+<ul>
+<li><span class="arithmatex">\(\left(A\cup B\right)^{{\cal C}}=A^{{\cal C}}\cap B^{{\cal C}}\)</span></li>
+<li><span class="arithmatex">\(\left(A\cap B\right)^{{\cal C}}=A^{{\cal C}}\cup B^{{\cal C}}\)</span></li>
+<li><span class="arithmatex">\(A\backslash\left(B\cup C\right)=\left(A\backslash B\right)\cap\left(A\backslash C\right)\)</span></li>
+<li><span class="arithmatex">\(A\backslash\left(B\cap C\right)=\left(A\backslash B\right)\cup\left(A\backslash C\right)\)</span></li>
+</ul>
+<details class="proof">
+<summary>Proof</summary>
+<ul>
+<li>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, to prove this, we use the definition of the complement, and De Morgan's laws for logical connectives,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in (A \cup B)^{\mathcal{C}} &amp; \iff x \in \mathcal{U} \land x \notin (A \cup B) \\
+&amp; \iff x \in \mathcal{U} \land \neg(x \in A \lor x \in B) \\
+&amp; \iff x \in \mathcal{U} \land (x \notin A \land x \notin B) &amp;&amp; \text{(Logical De Morgan)} \\
+&amp; \iff (x \in \mathcal{U} \land x \notin A) \land (x \in \mathcal{U} \land x \notin B) \\
+&amp; \iff x \in A^{\mathcal{C}} \land x \in B^{\mathcal{C}} \\
+&amp; \iff x \in A^{\mathcal{C}} \cap B^{\mathcal{C}}
+\end{align*}
+\]</div>
+<p>Thus, <span class="arithmatex">\(\left(A\cup B\right)^{{\cal C}}=A^{{\cal C}}\cap B^{{\cal C}}\)</span>.</p>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, to prove this, we use the definition of the complement, and De Morgan's laws for logical connectives,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in (A \cap B)^{\mathcal{C}} &amp; \iff x \in \mathcal{U} \land x \notin (A \cap B) \\
+&amp; \iff x \in \mathcal{U} \land \neg(x \in A \land x \in B) \\
+&amp; \iff x \in \mathcal{U} \land (x \notin A \lor x \notin B) &amp;&amp; \text{(Logical De Morgan)} \\
+&amp; \iff (x \in \mathcal{U} \land x \notin A) \lor (x \in \mathcal{U} \land x \notin B) &amp;&amp; \text{(Distributivity)} \\
+&amp; \iff x \in A^{\mathcal{C}} \lor x \in B^{\mathcal{C}} \\
+&amp; \iff x \in A^{\mathcal{C}} \cup B^{\mathcal{C}}
+\end{align*}
+\]</div>
+<p>Thus, <span class="arithmatex">\(\left(A\cap B\right)^{{\cal C}}=A^{{\cal C}}\cup B^{{\cal C}}\)</span>.</p>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, then,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in A \setminus (B \cup C) &amp; \iff x \in A \land x \notin (B \cup C) \\
+&amp; \iff x \in A \land \neg(x \in B \lor x \in C) \\
+&amp; \iff x \in A \land (x \notin B \land x \notin C) &amp;&amp; \text{(Logical De Morgan)} \\
+&amp; \iff (x \in A \land x \notin B) \land (x \in A \land x \notin C) &amp;&amp; \text{(Idempotency)} \\
+&amp; \iff x \in (A \setminus B) \land x \in (A \setminus C) \\
+&amp; \iff x \in (A \setminus B) \cap (A \setminus C)
+\end{align*}
+\]</div>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(x\)</span> be an object, then,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in A \setminus (B \cap C) &amp; \iff x \in A \land x \notin (B \cap C) \\
+&amp; \iff x \in A \land \neg(x \in B \land x \in C) \\
+&amp; \iff x \in A \land (x \notin B \lor x \notin C) &amp;&amp; \text{(Logical De Morgan)} \\
+&amp; \iff (x \in A \land x \notin B) \lor (x \in A \land x \notin C) &amp;&amp; \text{(Distributivity)} \\
+&amp; \iff x \in (A \setminus B) \lor x \in (A \setminus C) \\
+&amp; \iff x \in (A \setminus B) \cup (A \setminus C)
+\end{align*}
+\]</div>
+</li>
+</ul>
+</details>
+</div>
+<h4 id="symmetric-difference">Symmetric Difference<a class="headerlink" href="#symmetric-difference" title="Permanent link">🔗</a></h4>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Symmetric Difference</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, then,</p>
+<div class="arithmatex">\[A\triangle B = \left\{x\in A\cup B\mid \left(x\in A\right)\oplus\left(x\in B\right)\right\}\]</div>
+<p>And as a Venn diagram,</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../introduction_to_set_theory_svgs/symmetric_difference_venn_diagram.svg" data-title="Venn Diagram of Symmetric Difference" data-desc-position="bottom"><img alt="Venn Diagram of Symmetric Difference" loading="lazy" src="../introduction_to_set_theory_svgs/symmetric_difference_venn_diagram.svg" width="200px"></a></p>
+<figcaption>
+<p>Venn Diagram of Symmetric Difference</p>
+</figcaption>
+</figure>
+</div>
+<p>There are a lot of variations to the definition of the symmetric difference, hence we will prove that they are all equivalent, and from now on won't worry about the specific definition we use in each instance.</p>
+<div class="admonition thm">
+<p class="admonition-title"><em>Theorem</em>: Alternative Definitions of the Symmetric Difference</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, and let <span class="arithmatex">\(\mathcal{U}\)</span> be a world of <span class="arithmatex">\(\left\{A, B\right\}\)</span>, then,</p>
+<ol>
+<li><span class="arithmatex">\(A\triangle B=\left(A\backslash B\right)\cup\left(B\backslash A\right)\)</span></li>
+<li><span class="arithmatex">\(A\triangle B = \left(A\cup B\right)\backslash\left(A\cap B\right)\)</span></li>
+<li><span class="arithmatex">\(A\triangle B = \left(A \cap B^\mathcal{C}\right) \cup \left(A^\mathcal{C} \cap B\right)\)</span></li>
+<li><span class="arithmatex">\(A\triangle B = \left(A\cup B\right)\cap\left(A^\mathcal{C}\cup B^\mathcal{C}\right)\)</span></li>
+</ol>
+<details class="proof">
+<summary>Proof</summary>
+<p>We will prove these identities by showing that the membership conditions for each set are logically equivalent to the definition of the symmetric difference,</p>
+<div class="arithmatex">\[x \in A \triangle B \iff x \in A \cup B \land \left(\left(x \in A\right) \oplus \left(x \in B\right)\right)\]</div>
+<ol>
+<li>
+<p>Let <span class="arithmatex">\(x\)</span> be an object. By the definition of union and difference,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in \left(A \setminus B\right) \cup \left(B \setminus A\right) &amp; \iff \left(x \in A \land x \notin B\right) \lor \left(x \in B \land x \notin A\right) \\
+&amp; \iff \left(x \in A\right) \oplus \left(x \in B\right)
+\end{align*}
+\]</div>
+<p>Since <span class="arithmatex">\(\left(x \in A\right) \oplus \left(x \in B\right)\)</span> implies that either <span class="arithmatex">\(x \in A\)</span> or <span class="arithmatex">\(x \in B\)</span>, the condition <span class="arithmatex">\(x \in A \cup B\)</span> is automatically satisfied. Thus, the identity holds.</p>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(x\)</span> be an object. By the definition of difference,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in \left(A \cup B\right) \setminus \left(A \cap B\right) &amp; \iff x \in \left(A \cup B\right) \land x \notin \left(A \cap B\right) \\
+&amp; \iff \left(x \in A \lor x \in B\right) \land \neg\left(x \in A \land x \in B\right)
+\end{align*}
+\]</div>
+<p>From propositional logic, we know that the condition is equivalent to <span class="arithmatex">\(\left(x \in A\right) \oplus \left(x \in B\right)\)</span>, and hence <span class="arithmatex">\(x \in A \cup B\)</span>, which is the definition of <span class="arithmatex">\(A \triangle B\)</span>.</p>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(x\)</span> be an object. Since <span class="arithmatex">\(\mathcal{U}\)</span> is a world of <span class="arithmatex">\(\{A, B\}\)</span>, we have <span class="arithmatex">\(A \subseteq \mathcal{U}\)</span> and <span class="arithmatex">\(B \subseteq \mathcal{U}\)</span>. Using the definition of intersection and complement,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in \left(A \cap B^{\mathcal{C}}\right) \cup \left(A^{\mathcal{C}} \cap B\right) &amp; \iff \left(x \in A \land x \in B^{\mathcal{C}}\right) \lor \left(x \in A^{\mathcal{C}} \land x \in B\right) \\
+&amp; \iff \left(x \in A \land x \notin B\right) \lor \left(x \notin A \land x \in B\right)
+\end{align*}
+\]</div>
+<p>This is identical to the logic in part 1, which we already showed is equivalent to <span class="arithmatex">\(A \triangle B\)</span>.</p>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(x\)</span> be an object. By the <a href="#claim-de-morgans-laws">De Morgan's laws</a> for sets, we know that <span class="arithmatex">\(A^{\mathcal{C}} \cup B^{\mathcal{C}} = \left(A \cap B\right)^{\mathcal{C}}\)</span>. Substituting this into the expression,</p>
+<div class="arithmatex">\[
+\begin{align*}
+x \in \left(A \cup B\right) \cap \left(A^{\mathcal{C}} \cup B^{\mathcal{C}}\right) &amp; \iff x \in \left(A \cup B\right) \cap \left(A \cap B\right)^{\mathcal{C}} \\
+&amp; \iff x \in \left(A \cup B\right) \setminus \left(A \cap B\right)
+\end{align*}
+\]</div>
+<p>This is identical to the logic in part 2, which we already showed is equivalent to <span class="arithmatex">\(A \triangle B\)</span>.</p>
+</li>
+</ol>
+<p>Since the membership conditions for all four expressions are equivalent to the definition of the symmetric difference, the theorem is proved.</p>
+</details>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Try to understand why the following is true,</p>
+<ul>
+<li><span class="arithmatex">\(\left\{ 1,2,3\right\} \triangle\left\{ 3,4,5,6\right\} =\left\{ 1,2,5,6\right\}\)</span></li>
+<li><span class="arithmatex">\(\left\{ \left\{ 1\right\} \right\} \triangle\left\{ 1\right\} =\left\{ \left\{ 1\right\} ,1\right\}\)</span></li>
+<li><span class="arithmatex">\(\left\{ 3,4\right\} \triangle\left\{ 3,4,5\right\} =\left\{ 5\right\}\)</span></li>
+</ul>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Symmetric Difference is Associative</summary>
+<p>Let <span class="arithmatex">\(A, B\)</span> and <span class="arithmatex">\(C\)</span> be sets, then,</p>
+<div class="arithmatex">\[\left(A\triangle B\right)\triangle C=A\triangle\left(B\triangle C\right)\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>From the definition of the set construction schemes, and from the definition of the symmetric difference, we get that,</p>
+<div class="arithmatex">\[
+\begin{align*}
+\left(A\triangle B\right)\triangle C &amp; =\left\{ x\in\left(A\triangle B\right)\cup C\mid\left(x\in A\triangle B\right)\oplus\left(x\in C\right)\right\} \\
+&amp; = \left\{ x\in\left(A\cup B\right)\cup C\mid\left(\left(x\in A\right)\oplus\left(x\in B\right)\right)\oplus\left(x\in C\right)\right\} \\
+&amp; = \left\{ x\in A\cup\left(B\cup C\right)\mid\left(\left(x\in A\right)\oplus\left(x\in B\right)\right)\oplus\left(x\in C\right)\right\} \\
+&amp; = \left\{ x\in A\cup\left(B\cup C\right)\mid\left(x\in A\right)\oplus\left(\left(x\in B\right)\oplus\left(x\in C\right)\right)\right\} \\
+&amp; = \left\{ x\in A\cup\left(B\triangle C\right)\mid\left(x\in A\right)\oplus\left(x\in B\triangle C\right)\right\} \\
+&amp; = A\triangle\left(B\triangle C\right)
+\end{align*}
+\]</div>
+<p>and note that we used the fact that union and xor are associative.</p>
+<!-- $$
+\begin{align*}
+\left(A\triangle B\right)\triangle C & =\left(\left(A\triangle B\right)\cap C^{\mathcal{C}}\right)\cup\left(\left(A\triangle B\right)^{\mathcal{C}}\cap C\right) &  & \text{(...)}\\
+& =\left(\left(\left(A\cap B^{\mathcal{C}}\right)\cup\left(A^{\mathcal{C}}\cap B\right)\right)\cap C^{\mathcal{C}}\right)\cup\left(\left(A\triangle B\right)^{\mathcal{C}}\cap C\right) &  & \text{(...)}\\
+& =\left(\left(\left(A\cap B^{\mathcal{C}}\right)\cap C^{\mathcal{C}}\right)\cup\left(\left(A^{\mathcal{C}}\cap B\right)\cap C^{\mathcal{C}}\right)\right)\cup\left(\left(A\triangle B\right)^{\mathcal{C}}\cap C\right) &  & \text{(Intersection is Distributive Over Union)}\\
+& =\left(\left(\left(A\cap B^{\mathcal{C}}\right)\cap C^{\mathcal{C}}\right)\cup\left(\left(A^{\mathcal{C}}\cap B\right)\cap C^{\mathcal{C}}\right)\right)\cup\left(\left(\left(A\cup B\right)\cap\left(A^{\mathcal{C}}\cup B^{\mathcal{C}}\right)\right)^{\mathcal{C}}\cap C\right) &  & \text{(...)}\\
+& =\left(\left(\left(A\cap B^{\mathcal{C}}\right)\cap C^{\mathcal{C}}\right)\cup\left(\left(A^{\mathcal{C}}\cap B\right)\cap C^{\mathcal{C}}\right)\right)\cup\left(\left(\left(A\cup B\right)^{\mathcal{C}}\cup\left(A^{\mathcal{C}}\cup B^{\mathcal{C}}\right)^{\mathcal{C}}\right)\cap C\right) &  & \text{(De Morgan's Laws)}\\
+& =\left(\left(\left(A\cap B^{\mathcal{C}}\right)\cap C^{\mathcal{C}}\right)\cup\left(\left(A^{\mathcal{C}}\cap B\right)\cap C^{\mathcal{C}}\right)\right)\cup\left(\left(\left(A^{\mathcal{C}}\cap B^{\mathcal{C}}\right)\cup\left(A\cap B\right)\right)\cap C\right) &  & \text{(De Morgan's Laws)}\\
+& =\left(\left(\left(A\cap B^{\mathcal{C}}\right)\cap C^{\mathcal{C}}\right)\cup\left(\left(A^{\mathcal{C}}\cap B\right)\cap C^{\mathcal{C}}\right)\right)\cup\left(\left(\left(A^{\mathcal{C}}\cap B^{\mathcal{C}}\right)\cap C\right)\cup\left(\left(A\cap B\right)\cap C\right)\right) &  & \text{(Intersection is Distributive Over Union)}\\
+& =\left(\left(A\cap\left(B^{\mathcal{C}}\cap C^{\mathcal{C}}\right)\right)\cup\left(A^{\mathcal{C}}\cap\left(B\cap C^{\mathcal{C}}\right)\right)\right)\cup\left(\left(A^{\mathcal{C}}\cap\left(B^{\mathcal{C}}\cap C\right)\right)\cup\left(A\cap\left(B\cap C\right)\right)\right) &  & \text{(Intersection is Associative)}\\
+& =\left(\left(A\cap\left(B^{\mathcal{C}}\cap C^{\mathcal{C}}\right)\right)\cup\left(A\cap\left(B\cap C\right)\right)\right)\cup\left(\left(A^{\mathcal{C}}\cap\left(B\cap C^{\mathcal{C}}\right)\right)\cup\left(A^{\mathcal{C}}\cap\left(B^{\mathcal{C}}\cap C\right)\right)\right) &  & \text{(Union is Associative)}\\
+& =\left(A\cap\left(\left(B^{\mathcal{C}}\cap C^{\mathcal{C}}\right)\cup\left(B\cap C\right)\right)\right)\cup\left(\left(A^{\mathcal{C}}\cap\left(B\cap C^{\mathcal{C}}\right)\right)\cup\left(A^{\mathcal{C}}\cap\left(B^{\mathcal{C}}\cap C\right)\right)\right) &  & \text{(Intersection is Distributive Over Union)}\\
+& =\left(A\cap\left(\left(B\cup C\right)^{\mathcal{C}}\cup\left(B^{\mathcal{C}}\cup C^{\mathcal{C}}\right)^{\mathcal{C}}\right)\right)\cup\left(\left(A^{\mathcal{C}}\cap\left(B\cap C^{\mathcal{C}}\right)\right)\cup\left(A^{\mathcal{C}}\cap\left(B^{\mathcal{C}}\cap C\right)\right)\right) &  & \text{(De Morgan's Laws)}\\
+& =\left(A\cap\left(\left(B\cup C\right)\cap\left(B^{\mathcal{C}}\cup C^{\mathcal{C}}\right)\right)^{\mathcal{C}}\right)\cup\left(\left(A^{\mathcal{C}}\cap\left(B\cap C^{\mathcal{C}}\right)\right)\cup\left(A^{\mathcal{C}}\cap\left(B^{\mathcal{C}}\cap C\right)\right)\right) &  & \text{(De Morgan's Laws)}\\
+& =\left(A\cap\left(B\triangle C\right)^{\mathcal{C}}\right)\cup\left(\left(A^{\mathcal{C}}\cap\left(B\cap C^{\mathcal{C}}\right)\right)\cup\left(A^{\mathcal{C}}\cap\left(B^{\mathcal{C}}\cap C\right)\right)\right) &  & \text{(...)}\\
+& =\left(A\cap\left(B\triangle C\right)^{\mathcal{C}}\right)\cup\left(A^{\mathcal{C}}\cap\left(\left(B\cap C^{\mathcal{C}}\right)\cup\left(B^{\mathcal{C}}\cap C\right)\right)\right) &  & \text{(Intersection is Distributive Over Union)}\\
+& =\left(A\cap\left(B\triangle C\right)^{\mathcal{C}}\right)\cup\left(A^{\mathcal{C}}\cap\left(B\triangle C\right)\right) &  & \text{(...)}\\
+& =A\triangle\left(B\triangle C\right) &  & \text{(...)}
+\end{align*}
+$$ -->
+</details>
+</details>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Symmetric Difference is Commutative</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, then,</p>
+<div class="arithmatex">\[A\triangle B=B\triangle A\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<div class="arithmatex">\[
+\begin{align*}
+A\triangle B &amp;= (A \setminus B) \cup (B \setminus A) \\
+&amp;= (B \setminus A) \cup (A \setminus B) &amp;&amp; \text{(Union is Commutative)} \\
+&amp;= B \triangle A
+\end{align*}
+\]</div>
+</details>
+</div>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em></p>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, then,</p>
+<div class="arithmatex">\[A\triangle A=\emptyset\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<div class="arithmatex">\[
+\begin{align*}
+A \triangle A &amp; = (A \setminus A) \cup (A \setminus A) \\
+&amp; = \emptyset \cup \emptyset \\
+&amp; = \emptyset
+\end{align*}
+\]</div>
+<p>Thus, <span class="arithmatex">\(A \triangle A = \emptyset\)</span>.</p>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, then,</p>
+<div class="arithmatex">\[A\triangle\emptyset=A\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<div class="arithmatex">\[
+\begin{align*}
+A \triangle \emptyset &amp; = (A \setminus \emptyset) \cup (\emptyset \setminus A) \\
+&amp; = A \cup \emptyset \\
+&amp; = A
+\end{align*}
+\]</div>
+<p>Thus, <span class="arithmatex">\(A \triangle \emptyset = A\)</span>.</p>
+</details>
+</details>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Let <span class="arithmatex">\(A, B\)</span> and <span class="arithmatex">\(C\)</span> be sets, then,</p>
+<div class="arithmatex">\[\left(A\triangle B=B\triangle C\right)\implies \left(A=C\right)\]</div>
+<details class="solution">
+<summary>Solution</summary>
+<p>We assume that <span class="arithmatex">\(A \triangle B = B \triangle C\)</span>. then we get that,</p>
+<div class="arithmatex">\[\left(A\triangle B\right)\triangle B = \left(B\triangle C\right)\triangle B\]</div>
+<p>Now by the commutativity of the symmetric difference,</p>
+<div class="arithmatex">\[\left(A\triangle B\right)\triangle B=\left(C\triangle B\right)\triangle B\]</div>
+<p>And by the associativity of the symmetric difference,</p>
+<div class="arithmatex">\[A\triangle\left(B\triangle B\right)=C\triangle\left(B\triangle B\right)\]</div>
+<p>Then by the last claim we saw, we get that,</p>
+<div class="arithmatex">\[A\triangle\emptyset=C\triangle\emptyset\]</div>
+<p>And by the last exercise we saw, we get that,</p>
+<div class="arithmatex">\[A = C\]</div>
+<p>as required.</p>
+</details>
+</details>
+<h3 id="power-set">Power Set<a class="headerlink" href="#power-set" title="Permanent link">🔗</a></h3>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Power Set (Non formal)</p>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, then,</p>
+<div class="arithmatex">\[\mathcal{P}\left(A\right)=\left\{ B\mid B\subseteq A\right\}\]</div>
+</div>
+<p>But this definition doesn't adhere to our set construction schemes, hence we need to somehow know in the definition from which set are all the <span class="arithmatex">\(B\)</span>s come from, but this is cyclic problem since the power set is exactly the set from which we would have wanted to draw the <span class="arithmatex">\(B\)</span>s from. Because of that, to define this operation in our theory we have to an axiom that allows us to use the power set,</p>
+<div class="admonition axiom">
+<p class="admonition-title"><em>Axiom</em>: Axiom of Power Set</p>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, then there exists a set <span class="arithmatex">\(\mathcal{Q}\)</span>, such that,</p>
+<div class="arithmatex">\[\forall X. \left(\left(X\subseteq A\right)\implies\left(X\in\mathcal{Q}\right)\right)\]</div>
+<p>and we call such a set <span class="arithmatex">\(\mathcal{Q}\)</span> a power set world of <span class="arithmatex">\(A\)</span>.</p>
+</div>
+<p>Before we define the power set we want to show that it will be well defined,</p>
+<div class="admonition thm">
+<p class="admonition-title"><em>Theorem</em>: Power Set is Well Defined</p>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, and let <span class="arithmatex">\(\mathcal{Q}, \mathcal{R}\)</span> be power set worlds of <span class="arithmatex">\(A\)</span>, then,</p>
+<div class="arithmatex">\[\left\{ B\in \mathcal{Q}\mid B\subseteq A\right\} = \left\{ B\in \mathcal{R}\mid B\subseteq A\right\}\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let</p>
+<div class="arithmatex">\[X \in \left\{ B\in \mathcal{Q}\mid B\subseteq A\right\}\]</div>
+<p>this means <span class="arithmatex">\(X \in \mathcal{Q}\)</span> and <span class="arithmatex">\(X \subseteq A\)</span>.</p>
+<p>Since <span class="arithmatex">\(X \subseteq A\)</span>, by the definition of the power set world <span class="arithmatex">\(\mathcal{R}\)</span>, we must have <span class="arithmatex">\(X \in \mathcal{R}\)</span>. Thus,</p>
+<div class="arithmatex">\[X\in \left\{ B\in \mathcal{R}\mid B\subseteq A\right\}\]</div>
+<p>And the reverse containment holds by symmetry and WLoG by swapping <span class="arithmatex">\(\mathcal{Q}\)</span> and <span class="arithmatex">\(\mathcal{R}\)</span>. Therefore, the power set is well defined.</p>
+</details>
+</div>
+<p>And now we can define the power set formally,</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Power Set</p>
+<p>Let <span class="arithmatex">\(A\)</span> be a set, and let <span class="arithmatex">\(\mathcal{Q}\)</span> be a power set world of <span class="arithmatex">\(A\)</span>, then,</p>
+<div class="arithmatex">\[\mathcal{P}\left(A\right) = \left\{ B\in \mathcal{Q}\mid B\subseteq A\right\}\]</div>
+</div>
+<p>Because we know that the union is well defined, we will omit the power set world <span class="arithmatex">\(\mathcal{Q}\)</span> from now on, because it doesn't provide us with any information.</p>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Try to understand why the following is true,</p>
+<ul>
+<li><span class="arithmatex">\(\mathcal{P}\left(\emptyset\right)=\left\{ \emptyset\right\}\)</span></li>
+<li><span class="arithmatex">\(\mathcal{P}\left(\left\{ 1,2\right\} \right)=\left\{ \emptyset,\left\{ 1\right\} ,\left\{ 2\right\} ,\left\{ 1,2\right\} \right\}\)</span></li>
+</ul>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, then,</p>
+<div class="arithmatex">\[\left(A\subseteq B\right)\iff\left(\mathcal{P}\left(A\right)\subseteq\mathcal{P}\left(B\right)\right)\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>We'll prove this exercise using two-directional implication,</p>
+<ul>
+<li><span class="arithmatex">\(\underline{\implies}\)</span>: We assume that <span class="arithmatex">\(A \subseteq B\)</span>. Let <span class="arithmatex">\(X \in \mathcal{P}(A)\)</span>, then <span class="arithmatex">\(X \subseteq A\)</span>, and by transitivity, <span class="arithmatex">\(X \subseteq B\)</span>, so <span class="arithmatex">\(X \in \mathcal{P}(B)\)</span>. Thus <span class="arithmatex">\(\mathcal{P}(A) \subseteq \mathcal{P}(B)\)</span>.</li>
+<li><span class="arithmatex">\(\underline{\impliedby}\)</span>: We assume that <span class="arithmatex">\(\mathcal{P}(A) \subseteq \mathcal{P}(B)\)</span>. Since <span class="arithmatex">\(A \subseteq A\)</span>, we have <span class="arithmatex">\(A \in \mathcal{P}(A)\)</span>, and by our assumption, <span class="arithmatex">\(A \in \mathcal{P}(B)\)</span>, which means <span class="arithmatex">\(A \subseteq B\)</span>.</li>
+</ul>
+</details>
+</details>
+<div class="admonition thm">
+<p class="admonition-title"><em>Theorem</em> (Not formal)</p>
+<p>Let <span class="arithmatex">\(A\)</span> be a finite set, then,</p>
+<div class="arithmatex">\[\left|\mathcal{P}\left(A\right)\right| = 2^{\left|A\right|}\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>Let <span class="arithmatex">\(A\)</span> be a finite set, then we will denote <span class="arithmatex">\(\left|A\right|=n\in\mathbb{N}\)</span> and therefore it holds that <span class="arithmatex">\(A=\left\{ a_{1}\ldots a_{n}\right\}\)</span>. Let us notice that every subset of <span class="arithmatex">\(A\)</span> can be described in the following way: "every element in <span class="arithmatex">\(A\)</span> will tell us whether it is located in the subset or not", for example the set <span class="arithmatex">\(\emptyset\)</span> describes the case in which no element of <span class="arithmatex">\(A\)</span> enters the set, on the other hand <span class="arithmatex">\(\left\{ a_{2},a_{7}\right\}\)</span> describes the case in which <span class="arithmatex">\(a_{2},a_{7}\)</span> entered the set and the rest of the elements did not (verify that you understand why this process returns all the subsets of <span class="arithmatex">\(A\)</span>), now let us notice that in every such subset, for every element there are two possibilities, to choose to enter or not, and therefore the amount of subsets is <span class="arithmatex">\(\underbrace{2\cdot2\cdot\ldots\cdot2}_{n\text{ elements}}=2^{n}\)</span>. In particular we will get that <span class="arithmatex">\(\left|\mathcal{P}\left(A\right)\right|=2^{\left|A\right|}\)</span>.</p>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em></summary>
+<p>Compute the following sets (meaning find a canonical way to write them without the power set),</p>
+<ul>
+<li><span class="arithmatex">\(\left\{ X\backslash\left\{ 0\right\} \mid X\in\mathcal{P}\left(\bbn\right)\right\}\)</span></li>
+<li><span class="arithmatex">\(\left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\}\)</span></li>
+<li>Let <span class="arithmatex">\(A\)</span> be a set, what is <span class="arithmatex">\(\bigcup\mathcal{P}\left(A\right)\)</span>?</li>
+<li>Let <span class="arithmatex">\(A\)</span> be a set, what is <span class="arithmatex">\(\bigcap\mathcal{P}\left(A\right)\)</span>?</li>
+</ul>
+<details class="solution">
+<summary>Solution</summary>
+<ol>
+<li>
+<p>We want to show that,</p>
+<div class="arithmatex">\[\left\{ X\backslash\left\{ 0\right\} \mid X\in\mathcal{P}\left(\bbn\right)\right\} = \mathcal{P}(\bbn \backslash \{0\})\]</div>
+<ul>
+<li>
+<p><span class="arithmatex">\(\underline{\subseteq}\)</span>: Let</p>
+<div class="arithmatex">\[Y \in \{ X \setminus \{0\} \mid X \in \mathcal{P}(\bbn) \}\]</div>
+<p>Then there exists a set <span class="arithmatex">\(X\subseteq \bbn\)</span> such that <span class="arithmatex">\(Y = X \setminus \{0\}\)</span>.</p>
+<p>Meaning that, <span class="arithmatex">\(Y \subseteq \bbn\)</span> and <span class="arithmatex">\(0 \notin Y\)</span>, so <span class="arithmatex">\(Y \subseteq \bbn \setminus \{0\}\)</span>, hence,</p>
+<div class="arithmatex">\[Y \in \mathcal{P}(\bbn \backslash \{0\})\]</div>
+</li>
+<li>
+<p><span class="arithmatex">\(\underline{\supseteq}\)</span>: Let <span class="arithmatex">\(Y \in \mathcal{P}(\bbn \backslash \{0\})\)</span>, then <span class="arithmatex">\(Y \subseteq \bbn \setminus \{0\}\)</span>. Since <span class="arithmatex">\(Y \subseteq \bbn\)</span> and <span class="arithmatex">\(Y = Y \setminus \{0\}\)</span>, we get that,</p>
+<div class="arithmatex">\[Y\in \left\{ X\backslash\left\{ 0\right\} \mid X\in\mathcal{P}\left(\bbn\right)\right\}\]</div>
+</li>
+</ul>
+</li>
+<li>
+<p>We want to show that,</p>
+<div class="arithmatex">\[\left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\} = \left\{\emptyset, \left\{0\right\}\right\}\]</div>
+<ul>
+<li>
+<p><span class="arithmatex">\(\underline{\subseteq}\)</span>: Let</p>
+<div class="arithmatex">\[Y\in \left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\}\]</div>
+<p>Then, there exists a set <span class="arithmatex">\(X\in\mathcal{P}\)</span> such that, <span class="arithmatex">\(Y = \left\{0\right\}\backslash X\)</span>, then by the definition of difference, we get that <span class="arithmatex">\(Y\subseteq\left\{0\right\}\)</span>, hence,</p>
+<div class="arithmatex">\[Y \in \mathcal{P}\left(\left\{0\right\}\right) = \left\{\emptyset, \left\{0\right\}\right\}\]</div>
+</li>
+<li>
+<p><span class="arithmatex">\(\underline{\supseteq}\)</span>: We want to show that,</p>
+<div class="arithmatex">\[\left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\} \supseteq \left\{\emptyset, \left\{0\right\}\right\}\]</div>
+<p>meaning that we want to show that,</p>
+<div class="arithmatex">\[\left(\emptyset\in\left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\} \right)\land\left(\left\{ 0\right\} \in\left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\} \right)\]</div>
+<p>For that, we will prove those two things separately,</p>
+<ol>
+<li>
+<p>We want to show that,</p>
+<div class="arithmatex">\[\emptyset\in\left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\}\]</div>
+<p>We define, <span class="arithmatex">\(X_0 \in \mathcal{P}\)</span> as <span class="arithmatex">\(X_0 = \left\{0\right\}\)</span>, and note that,</p>
+<div class="arithmatex">\[\left\{0\right\} \backslash X_0 = \left\{0\right\} \backslash \left\{0\right\} = \emptyset\]</div>
+</li>
+<li>
+<p>We want to show that,</p>
+<div class="arithmatex">\[\left\{0\right\}\in\left\{ \left\{ 0\right\} \backslash X\mid X\in\mathcal{P}\left(\bbn\right)\right\}\]</div>
+<p>We define, <span class="arithmatex">\(X_1 \in \mathcal{P}\)</span> as <span class="arithmatex">\(X_1 = \emptyset\)</span>, and note that,</p>
+<div class="arithmatex">\[\left\{0\right\} \backslash X_1 = \left\{0\right\} \backslash \emptyset = \left\{0\right\}\]</div>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>We want to show that,</p>
+<div class="arithmatex">\[\bigcup\mathcal{P}\left(A\right) = A\]</div>
+<ul>
+<li><span class="arithmatex">\(\underline{\subseteq}\)</span>: Let <span class="arithmatex">\(x \in \bigcup\mathcal{P}\left(A\right)\)</span>, meaning that there exists a set <span class="arithmatex">\(X\in \mathcal{P}\left(A\right)\)</span> for which, <span class="arithmatex">\(x \in X\)</span>, but since <span class="arithmatex">\(X\subseteq A\)</span>, we get that <span class="arithmatex">\(x\in A\)</span>.</li>
+<li><span class="arithmatex">\(\underline{\supseteq}\)</span>: Let <span class="arithmatex">\(x\in A\)</span>, then because <span class="arithmatex">\(A\subseteq A\)</span> we get that <span class="arithmatex">\(A\in\mathcal{P}\left(A\right)\)</span>, hence <span class="arithmatex">\(x\in \bigcup\mathcal{P}\left(A\right)\)</span>.</li>
+</ul>
+</li>
+<li>
+<p>We want to show that,</p>
+<div class="arithmatex">\[\bigcap\mathcal{P}\left(A\right) = \emptyset\]</div>
+<p>We note that <span class="arithmatex">\(\emptyset\subseteq \bigcap\mathcal{P}\left(A\right)\)</span>, hence we need to show only one directional containment.</p>
+<p>We know that <span class="arithmatex">\(\emptyset \subseteq A\)</span>, hence <span class="arithmatex">\(\emptyset \in\mathcal{P}\left(A\right)\)</span>, and from the definition of the generalized intersection we get that,</p>
+<div class="arithmatex">\[\emptyset \subseteq \bigcap\mathcal{P}\left(A\right)\]</div>
+</li>
+</ol>
+</details>
+</details>
+<h2 id="relations">Relations<a class="headerlink" href="#relations" title="Permanent link">🔗</a></h2>
+<h3 id="ordered-pairs">Ordered Pairs<a class="headerlink" href="#ordered-pairs" title="Permanent link">🔗</a></h3>
+<p>Until now we have talked about sets, which is an object that has no repetition and no order, but sometimes we do want ordered and repetitions in our objects, for that we want to create an object that resembles a list in the way it behaves, meaning an object that will conform to the following property.</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Ordered Pair (Non formal)</p>
+<p>Let <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> be objects, then we define an object <span class="arithmatex">\(\left&lt;x, y\right&gt;\)</span> such that,</p>
+<div class="arithmatex">\[\forall a,b,c,d.\left(\left(\left&lt;a, b\right&gt; = \left&lt;c, d\right&gt;\right)\iff \left(\left(a = c\right)\land\left(b = d\right)\right)\right)\]</div>
+</div>
+<p>Note that we didn't give a definition for the object <span class="arithmatex">\(\left&lt;x, y\right&gt;\)</span>, and while precise definitions are required in math, sometimes we want to be able to just state the properties an object should have without worrying to much about it's construction details.</p>
+<p>With all that said, we still want to show how one can construct an object that has order and repartition from sets, for that we will give one <strong>exact</strong> definition for the ordered pair,</p>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Ordered Pair</p>
+<p>Let <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> be objects, then we define,</p>
+<div class="arithmatex">\[\left&lt;x, y\right&gt; = \left\{\left\{x\right\}, \left\{x, y\right\}\right\}\]</div>
+</div>
+<p>And now we want to prove that this definition does satisfy our initial property,</p>
+<div class="admonition claim">
+<p class="admonition-title"><em>Claim</em>: Characteristic of Ordered Pair</p>
+<p>Let <span class="arithmatex">\(a, b, c\)</span> and <span class="arithmatex">\(d\)</span> be objects, then,</p>
+<div class="arithmatex">\[\left(\left&lt;a, b\right&gt; = \left&lt;c, d\right&gt;\right)\iff \left(\left(a = c\right)\land\left(b = d\right)\right)\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<p>TODO</p>
+</details>
+</div>
+<details class="exercise" open="open">
+<summary><em>Exercise</em>: Alternative Definitions for the Ordered Pair</summary>
+<p>Determine which of the following definitions for the ordered pair is valid, meaning that the main characteristic for the ordered pair is satisfied by the definition.</p>
+<ul>
+<li><span class="arithmatex">\(\left&lt;a, b\right&gt; = \left\{\left\{0, a\right\}, \left\{1, b\right\}\right\}\)</span></li>
+<li><span class="arithmatex">\(\left&lt;a, b\right&gt; = \left\{a, \left\{b\right\}\right\}\)</span></li>
+</ul>
+<details class="solution">
+<summary>Solution</summary>
+<p>TODO</p>
+</details>
+</details>
+<h4 id="cartesian-product">Cartesian Product<a class="headerlink" href="#cartesian-product" title="Permanent link">🔗</a></h4>
+<div class="admonition def">
+<p class="admonition-title"><em>Definition</em>: Cartesian Product</p>
+<p>Let <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> be sets, then,</p>
+<div class="arithmatex">\[A\times B = \left\{\left&lt;a, b\right&gt;\mid \left(a\in A\right)\land \left(b\in B\right)\right\}\]</div>
+<p>Likewise, to express a cartesian product of a set with itself we use the recursive definition, <span class="arithmatex">\(A^1 = A\)</span>, and for all <span class="arithmatex">\(n\in\bbn_{+}\)</span> we define,</p>
+<div class="arithmatex">\[A^{n + 1} = A^n \times A\]</div>
+<details class="mnote">
+<summary>Mnote</summary>
+<p>We also use the following recursive sugar-syntax,</p>
+<div class="arithmatex">\[\left&lt;a, b,c\right&gt; = \left&lt;\left&lt;a, b\right&gt;, c\right&gt;\]</div>
+<p>and for all <span class="arithmatex">\(n\in\bbn_{\ge 3}\)</span>,</p>
+<div class="arithmatex">\[\left&lt;a_1,\ldots,a_{n + 1}\right&gt; = \left&lt;\left&lt;a_1,\ldots,a_n\right&gt;, a_{n+1}\right&gt;\]</div>
+</details>
+</div>
+<div class="admonition mexample">
+<p class="admonition-title"><em>Example</em></p>
+<p>Try to understand why the following is true,</p>
+<ul>
+<li><span class="arithmatex">\(\left\{ 1\right\} ^{3}=\left\{ \left&lt;1,1,1\right&gt;\right\}\)</span></li>
+<li><span class="arithmatex">\(\left\{ 1,2\right\} \times\left\{ 3,4\right\} =\left\{ \left&lt;1,3\right&gt;,\left&lt;1,4\right&gt;,\left&lt;2,3\right&gt;,\left&lt;2,4\right&gt;\right\}\)</span></li>
+<li><span class="arithmatex">\(\left\{ 1,2\right\} \times\left\{ 3,4\right\} \times\left\{ 5,6\right\} =\left\{ \left&lt;1,3,5\right&gt;,\left&lt;1,4,5\right&gt;,\left&lt;2,3,5\right&gt;,\left&lt;2,4,5\right&gt;,\left&lt;1,3,6\right&gt;,\left&lt;1,4,6\right&gt;,\left&lt;2,3,6\right&gt;,\left&lt;2,4,6\right&gt;\right\}\)</span></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 29, 2026 14:57:28 UTC">May 29, 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 29, 2026 14:57:28 UTC">May 29, 2026</span>
+  </span>
+
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"></path></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:mikhelman.ron@gmail.com">yeahBOYYYYY</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2024 - 2026 Ron Mikhelman
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/yeahBOYYYYY" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.share", "header.autohide"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
