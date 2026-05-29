@@ -138,3 +138,5 @@ nav:
     - Algorithms:
       - Algorithms: computer_science_bachelor/algorithms/algorithms.md
       - Data Structures: computer_science_bachelor/algorithms/data_structures.md
+    - Logic and Automata:
+      - Logic for Computer Science: computer_science_bachelor/logic_and_automata/logic_cs.md
