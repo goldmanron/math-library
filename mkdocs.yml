@@ -60,7 +60,7 @@ theme:
     - navigation.path
     - navigation.prune
     - navigation.indexes
-    - navigation.instant
+    # - navigation.instant
     - toc.follow
     # - toc.integrate
     - navigation.top
@@ -70,6 +70,31 @@ theme:
 
 plugins:
   - search
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+        - locale: he
+          name: Hebrew
+          build: true
+          site_name: ספריית מתמטיקה
+          nav_translations:
+            Home: דף הבית
+            Mathematics Bachelor: תואר ראשון במתמטיקה
+            Discrete Mathematics: מתמטיקה בדידה
+            Introduction to Logic: מבוא ללוגיקה
+            Introduction to Set Theory: מבוא לתורת הקבוצות
+            Introduction to Combinatorics: מבוא לקומבינטוריקה
+            Introduction to Graph Theory: מבוא לתורת הגרפים
+            Analysis: אנליזה
+            Real Analysis 1: חדו"א 1
+            Real Analysis 2: חדו"א 2
+            Computer Science Bachelor: תואר ראשון במדעי המחשב
+            Algorithms: אלגוריתמים
+            Data Structures: מבני נתונים
   - git-authors
   - git-revision-date-localized:
       type: date
