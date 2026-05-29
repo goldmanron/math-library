@@ -1883,3 +1883,78 @@ Because we know that the union is well defined, we will omit the power set world
             We know that $\emptyset \subseteq A$, hence $\emptyset \in\mathcal{P}\left(A\right)$, and from the definition of the generalized intersection we get that,
 
             $$\emptyset \subseteq \bigcap\mathcal{P}\left(A\right)$$
+
+## Relations
+
+### Ordered Pairs
+
+Until now we have talked about sets, which is an object that has no repetition and no order, but sometimes we do want ordered and repetitions in our objects, for that we want to create an object that resembles a list in the way it behaves, meaning an object that will conform to the following property.
+
+!!! def "_Definition_: Ordered Pair (Non formal)"
+
+    Let $x$ and $y$ be objects, then we define an object $\left<x, y\right>$ such that,
+
+    $$\forall a,b,c,d.\left(\left(\left<a, b\right> = \left<c, d\right>\right)\iff \left(\left(a = c\right)\land\left(b = d\right)\right)\right)$$
+
+Note that we didn't give a definition for the object $\left<x, y\right>$, and while precise definitions are required in math, sometimes we want to be able to just state the properties an object should have without worrying to much about it's construction details.
+
+With all that said, we still want to show how one can construct an object that has order and repartition from sets, for that we will give one **exact** definition for the ordered pair,
+
+!!! def "_Definition_: Ordered Pair"
+
+    Let $x$ and $y$ be objects, then we define,
+
+    $$\left<x, y\right> = \left\{\left\{x\right\}, \left\{x, y\right\}\right\}$$
+
+And now we want to prove that this definition does satisfy our initial property,
+
+!!! claim "_Claim_: Characteristic of Ordered Pair"
+
+    Let $a, b, c$ and $d$ be objects, then,
+
+    $$\left(\left<a, b\right> = \left<c, d\right>\right)\iff \left(\left(a = c\right)\land\left(b = d\right)\right)$$
+
+    ??? proof
+
+        TODO
+
+???+ exercise "_Exercise_: Alternative Definitions for the Ordered Pair"
+
+    Determine which of the following definitions for the ordered pair is valid, meaning that the main characteristic for the ordered pair is satisfied by the definition.
+
+    - $\left<a, b\right> = \left\{\left\{0, a\right\}, \left\{1, b\right\}\right\}$
+    - $\left<a, b\right> = \left\{a, \left\{b\right\}\right\}$
+
+    ??? solution
+
+        TODO
+
+#### Cartesian Product
+
+!!! def "_Definition_: Cartesian Product"
+
+    Let $A$ and $B$ be sets, then,
+
+    $$A\times B = \left\{\left<a, b\right>\mid \left(a\in A\right)\land \left(b\in B\right)\right\}$$
+
+    Likewise, to express a cartesian product of a set with itself we use the recursive definition, $A^1 = A$, and for all $n\in\bbn_{+}$ we define,
+
+    $$A^{n + 1} = A^n \times A$$
+
+    ??? mnote
+
+        We also use the following recursive sugar-syntax,
+        
+        $$\left<a, b,c\right> = \left<\left<a, b\right>, c\right>$$
+
+        and for all $n\in\bbn_{\ge 3}$,
+
+        $$\left<a_1,\ldots,a_{n + 1}\right> = \left<\left<a_1,\ldots,a_n\right>, a_{n+1}\right>$$
+
+!!! mexample "_Example_"
+
+    Try to understand why the following is true,
+
+    - $\left\{ 1\right\} ^{3}=\left\{ \left<1,1,1\right>\right\}$
+    - $\left\{ 1,2\right\} \times\left\{ 3,4\right\} =\left\{ \left<1,3\right>,\left<1,4\right>,\left<2,3\right>,\left<2,4\right>\right\}$
+    - $\left\{ 1,2\right\} \times\left\{ 3,4\right\} \times\left\{ 5,6\right\} =\left\{ \left<1,3,5\right>,\left<1,4,5\right>,\left<2,3,5\right>,\left<2,4,5\right>,\left<1,3,6\right>,\left<1,4,6\right>,\left<2,3,6\right>,\left<2,4,6\right>\right\}$
