@@ -39,6 +39,7 @@ Then you'll need to install the plugins used to deploy this site,
 pip install mkdocs-git-authors-plugin
 pip install mkdocs-git-revision-date-localized-plugin
 pip install mkdocs-glightbox
+pip install mkdocs-static-i18n
 ```
 
 Now you can run the project locally by running the following command from the folder with the `mkdocs.yml` file,
@@ -54,6 +55,42 @@ INFO    -  [16:32:38] Serving on http://127.0.0.1:8000/math-library/
 ```
 
 And from now on all the changes you make locally will show up **live** at this URL.
+
+### Understanding the Structure
+
+This project has a lot of files, and directories, as such, this is an explanation on the structure of the entire project,
+
+```
+.
+├── LICENSE.md
+├── README.md
+├── docs/
+│   ├── assets/
+│   ├── en/
+│   │   ├── computer_science_bachelor/
+│   │   ├── index.md
+│   │   └── mathematics_bachelor/
+│   │       ├── analysis/
+│   │       ├── discrete_mathematics/
+│   │       │   └── introduction_to_logic.md
+│   │       └── index.md
+│   ├── he/
+│   │   ├── index.md
+│   │   └── mathematics_bachelor/
+│   │       └── discrete_mathematics/
+│   │           └── introduction_to_logic.md
+│   ├── javascripts/
+│   └── stylesheets/
+└── mkdocs.yml
+```
+
+The most important file in the tree is the `mkdocs.yml` file, it contains the entire project settings, including all the navigation and the plugins used.
+
+After that we have the `docs/` folder, which contain all the files that need to be deployed on the site, all the extra javascript, css, assets, and most importantly the actual summaries. Because of that, under the `docs/` folder there are a lot of extra files that should be shipped with the project, such as the `javascript/` and `stylesheets/` folders.
+
+Likewise, under the `docs/` folder we can see the folders `en\` and `he\`, these are the actual places to write your summaries in, and the hierarchy inside them is just for the sake of organization. The `en\` and `he\` folders both correspond to the language that they are written in (`en\` for English, and `he\` for Hebrew), and any other language you want to add can be added this way. The hierarchy of the different language folders should be the same, with the only difference being the actual content inside the `.md` files as the leaves of the hierarchy.
+
+In this hierarchy, there is a specific file that you will encounter a lot, `index.md`, this is the "default visible file", this file will not show in the final site as it's original name, and will take the name of it's parent directory. For example, when you go to visit `en/mathematics_bachelor` on the site, it will show the content's of the file `en/mathematics_bachelor/index.md`.
 
 ### Syntax
 
